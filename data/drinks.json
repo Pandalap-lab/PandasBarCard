@@ -1,0 +1,1525 @@
+{
+  "version": 1,
+  "brand": {
+    "name": "First Floor",
+    "location": "Wien · Seitenstettengasse 5",
+    "website": "https://www.firstfloor.wien/",
+    "instagram": "https://www.instagram.com/firstfloorbar/"
+  },
+  "settings": {
+    "unavailableMode": "show"
+  },
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "The First Floor Martini",
+      "order": 0
+    },
+    {
+      "id": "cat-2",
+      "name": "Sunny Spring Sentiments",
+      "order": 1
+    },
+    {
+      "id": "cat-3",
+      "name": "Sudden Summer Surprises",
+      "order": 2
+    },
+    {
+      "id": "cat-4",
+      "name": "Another Attempted Autumn",
+      "order": 3
+    },
+    {
+      "id": "cat-5",
+      "name": "Welcoming Winter Warmth",
+      "order": 4
+    },
+    {
+      "id": "cat-6",
+      "name": "Classic and renowned",
+      "order": 5
+    },
+    {
+      "id": "cat-7",
+      "name": "The Spirit in the fruit",
+      "order": 6
+    },
+    {
+      "id": "cat-8",
+      "name": "Virgin Drinks",
+      "order": 7
+    },
+    {
+      "id": "cat-9",
+      "name": "Just Shots",
+      "order": 8
+    },
+    {
+      "id": "cat-10",
+      "name": "Signatures",
+      "order": 9
+    }
+  ],
+  "drinks": [
+    {
+      "id": "drink-001",
+      "name": "First Floor Martini",
+      "categoryId": "cat-1",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Another Hendricks",
+        "3cl Lemon Juice",
+        "2cl Bols White cacao",
+        "2cl White Choco Cointreau"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 0,
+      "preparation": "Shaker double strain",
+      "glass": "Martini",
+      "garnish": "Mikado Stick",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-002",
+      "name": "Bacardi Cola",
+      "categoryId": "cat-2",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Bacardi Oro",
+        "Fill Up with Cola"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 1,
+      "preparation": "Build in Glass",
+      "glass": "Collins Ice Cubes",
+      "garnish": "Lime wedge",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-003",
+      "name": "Gamondi Orange Spritz",
+      "categoryId": "cat-2",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Gamondi Aperitivo",
+        "½ Prosecco",
+        "½ Soda"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 2,
+      "preparation": "Build in Glass",
+      "glass": "Balloon Glas Ice Cubes",
+      "garnish": "Orange Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-004",
+      "name": "La Vie en Rose",
+      "categoryId": "cat-2",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Lillet Rosé",
+        "½ Prosecco",
+        "½ Rose Lemonade"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 3,
+      "preparation": "Build in Glass",
+      "glass": "Balloon Glas Ice Cubes",
+      "garnish": "Rose Petals",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-005",
+      "name": "Patrón Paloma",
+      "categoryId": "cat-2",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "4cl Patrón Repo",
+        "2cl Lime Juice",
+        "1ds Salt",
+        "Fill Up Grapefruit Soda"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 4,
+      "preparation": "Build in Glass",
+      "glass": "Small Patrón Longdrinkglas Ice Cubes",
+      "garnish": "Salt Rim Lime Wedge",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-006",
+      "name": "St. Germain Spritz",
+      "categoryId": "cat-2",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl St. Germain",
+        "½ Prosecco",
+        "½ Soda"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 5,
+      "preparation": "Build in Glass",
+      "glass": "Balloon Glas Ice Cubes",
+      "garnish": "Dry Lime Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 1
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-007",
+      "name": "Buttermilk Margarita",
+      "categoryId": "cat-3",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "12cl Buttermilk Margarita Batch"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 6,
+      "preparation": "Build in Glass",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Salt Rim Dry Lime Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+    },
+    {
+      "id": "drink-008",
+      "name": "Klima’s Rausch",
+      "categoryId": "cat-3",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Mezcal Del Maguay",
+        "3cl Gamondi Pink",
+        "3cl Lime Juice",
+        "1cl Agave Sirup",
+        "Fill Up Grapefruit Soda"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 7,
+      "preparation": "Build in Glass",
+      "glass": "Small Longdrinkglas Ice Cubes",
+      "garnish": "Dry Orange Slice Tajin Rim",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-009",
+      "name": "Royal Kiss",
+      "categoryId": "cat-3",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "4cl Minz Prinz",
+        "2cl Gin",
+        "3cl Lime Juice",
+        "2cl Cinnamon Sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 8,
+      "preparation": "Shaker",
+      "glass": "Coupette double strain",
+      "garnish": "Dried Apple Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-010",
+      "name": "Samba Sol",
+      "categoryId": "cat-3",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "3cl Coffee Cachaca",
+        "3cl Luxardo Bitter",
+        "3cl Vintage Vreimuth"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 9,
+      "preparation": "Stirring Glass or (10cl of Batch build in Glass)",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Lemon Peel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-011",
+      "name": "Tropical Dry Daiquiri",
+      "categoryId": "cat-3",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Plantation Mix",
+        "3cl Lime Juice",
+        "2 spoons Cane Sugar"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 10,
+      "preparation": "Shaker (50/50 Ice Cubes Crush Ice)",
+      "glass": "Coupette",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-012",
+      "name": "First Floor Negroni",
+      "categoryId": "cat-4",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "10cl Negroni Batch"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 11,
+      "preparation": "Build in Glass",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Orange Peel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+    },
+    {
+      "id": "drink-013",
+      "name": "Grey Goose Espresso Martini",
+      "categoryId": "cat-4",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Grey Goose",
+        "5cl Espresso",
+        "3cl Special Coffeeliqueur",
+        "1ds Sugar"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 12,
+      "preparation": "Shaker Double strain",
+      "glass": "Martini",
+      "garnish": "Coffee Beans",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-014",
+      "name": "Pink Rumble",
+      "categoryId": "cat-4",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Munakra Night Blossom",
+        "2cl Lime Juice",
+        "2cl Raspberry Sirup",
+        "2cl Mirtillo"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 13,
+      "preparation": "Shaker double strain",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Dried Berries",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 2
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-015",
+      "name": "Robbie Brown",
+      "categoryId": "cat-4",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Black Label",
+        "3cl Walnut Vermouth",
+        "1ds Maple Sirup",
+        "1ds Angostura"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 14,
+      "preparation": "Stirring Glas",
+      "glass": "Nick&Nora",
+      "garnish": "Walnut",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-016",
+      "name": "Sting& The Police",
+      "categoryId": "cat-4",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Chai Rye",
+        "3cl Lemon Juice",
+        "3cl St. Germain"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 15,
+      "preparation": "Shaker double Strain",
+      "glass": "Tumbler",
+      "garnish": "Dried Lemon Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-017",
+      "name": "Horchata our way",
+      "categoryId": "cat-5",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Tequila Blanco",
+        "4cl Coconut Cream",
+        "2cl Cinnamon Sirup",
+        "2ds Angostura",
+        "1cl Xila Liqueur",
+        "2ds Salt"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 16,
+      "preparation": "Shaker double strain (12 cl Batch)",
+      "glass": "Coupette",
+      "garnish": "Cinnamon",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-018",
+      "name": "Paracethanol",
+      "categoryId": "cat-5",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Talisker Skye",
+        "6cl Ginger Oxymel"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 17,
+      "preparation": "Shaker double strain",
+      "glass": "Tumbler Big Ice cube",
+      "garnish": "Fresh Orange Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-019",
+      "name": "Spiced Corn n’Oil",
+      "categoryId": "cat-5",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Spiced Rum",
+        "3cl Lime Juice",
+        "2cl Falernum",
+        "3ds Angostura"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 18,
+      "preparation": "Stirring Glas",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Lime Peel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-020",
+      "name": "White Russian",
+      "categoryId": "cat-5",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Vodka",
+        "4cl Kahlua",
+        "6cl Milk Cream",
+        "1,5cl Butterscotch"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 19,
+      "preparation": "Vodka and Kahlua build in Glas Milk shaked with Butterscotch",
+      "glass": "White Russian Tumbler",
+      "garnish": "Cacao Kiss",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-021",
+      "name": "Wiener Limettenzuckerl",
+      "categoryId": "cat-5",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Mintis Gin",
+        "3cl Lime Juice",
+        "2cl Cointreau",
+        "2cl Lime Cordial"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 20,
+      "preparation": "Shaker double strain",
+      "glass": "Coupette",
+      "garnish": "Mint Leave",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 3
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-022",
+      "name": "Gin Basil Smash",
+      "categoryId": "cat-6",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Gin",
+        "3cl Lemon Juice",
+        "2cl Sugar Sirup",
+        "1ds Basil Sirup",
+        "handfull Basil leaves"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 21,
+      "preparation": "Put everything in the blender then shake with ice double strain",
+      "glass": "Tumbler big ice cube",
+      "garnish": "Basil leaf",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-023",
+      "name": "Old Fashioned",
+      "categoryId": "cat-6",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Bourbon",
+        "3ds Angostura",
+        "2ds Orange Bitters",
+        "0,5cl Maple sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 22,
+      "preparation": "Stirring glas",
+      "glass": "Tumbler big ice cube",
+      "garnish": "Orange peel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-024",
+      "name": "Pornstar Martini",
+      "categoryId": "cat-6",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "12cl Pornstar Batch"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 23,
+      "preparation": "Blender then shake double strain",
+      "glass": "Coupette",
+      "garnish": "half passion fruit shotglas of crémant",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+    },
+    {
+      "id": "drink-025",
+      "name": "Spicy Margarita",
+      "categoryId": "cat-6",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Spicy Tequila",
+        "3cl Lime Juice",
+        "2cl Cointreau",
+        "1ds Agave sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 24,
+      "preparation": "Shake double strain",
+      "glass": "Coupette",
+      "garnish": "Salt Rim",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-026",
+      "name": "Whisky Sour",
+      "categoryId": "cat-6",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Bourbon",
+        "3cl Lemon Juice",
+        "2cl Sugar Sirup",
+        "(3cl Eggwhite)"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 25,
+      "preparation": "Blend then shake",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Angostura and Cherry",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-027",
+      "name": "Jungle Bird",
+      "categoryId": "cat-7",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Barcardi 8",
+        "5cl Pineapple Juice",
+        "2cl Lime Juice",
+        "2cl Gamondi Bitter",
+        "1cl Sugar Sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 26,
+      "preparation": "Shaker double strain",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Color droplets",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-028",
+      "name": "Mai Tai",
+      "categoryId": "cat-7",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "4cl White Rum",
+        "2cl Mamie Serum",
+        "4cl Lime juice",
+        "3cl Cointreau",
+        "2cl Almond Sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 27,
+      "preparation": "Shaker",
+      "glass": "Belly Glas Crushed Ice Overproof Rum on top",
+      "garnish": "Mint leaves",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 4
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-029",
+      "name": "Painkiller",
+      "categoryId": "cat-7",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Havana 7",
+        "6cl Pineapple Juice",
+        "2cl Coconut Cream",
+        "2cl Orange Juice"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 28,
+      "preparation": "Shake",
+      "glass": "Belly Glass/ Hurricane Glass Crushed Ice",
+      "garnish": "Dry Orange Slice Berry Powder",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 5
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-030",
+      "name": "Virus",
+      "categoryId": "cat-7",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Vodka",
+        "6cl Strawberry pulp",
+        "4cl Pineapple Juice",
+        "2cl Lemon Juice",
+        "2cl Coconut sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 29,
+      "preparation": "Shake",
+      "glass": "Hurricane Glass",
+      "garnish": "Dried Berries",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 5
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-031",
+      "name": "Zombie (Danger)",
+      "categoryId": "cat-7",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Bacardi Oro",
+        "5cl Dark Rum",
+        "3cl Overproof Rum",
+        "5cl Lime Juice",
+        "1cl Grapefruitjuice",
+        "2cl Falernum",
+        "1cl Cinnamon Sirup",
+        "0,5 cl Grenadine",
+        "2ds Absinth",
+        "1ds Angostura",
+        "(20cl Zombie Batch)"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 30,
+      "preparation": "Shake",
+      "glass": "Big Longdrink Glas Crushed Ice",
+      "garnish": "Mint Leaves",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 5
+      },
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+    },
+    {
+      "id": "drink-032",
+      "name": "Bitter Flower",
+      "categoryId": "cat-8",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "3cl Munakra 0%",
+        "3cl Martini Vibrante",
+        "3cl Rebels Rosso"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 31,
+      "preparation": "Stirring Glas",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Orange Peel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 5
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-033",
+      "name": "First Floor Juicer",
+      "categoryId": "cat-8",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Mango Pulp",
+        "5cl Milk Cream",
+        "3cl Orange Juice",
+        "1cl Grenadine"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 32,
+      "preparation": "Shaker",
+      "glass": "Coupette",
+      "garnish": "Physalis",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 5
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-034",
+      "name": "Light Amaretto Sour",
+      "categoryId": "cat-8",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "5cl Rebels Amaretto",
+        "3cl Lemon Juice",
+        "2cl Orange Juice",
+        "1cl Almond Sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 33,
+      "preparation": "Shaker",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Dry Orange Slice",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-035",
+      "name": "London Fog",
+      "categoryId": "cat-8",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "8cl Black Tea",
+        "5cl Milk Cream",
+        "2cl Vanilla Sirup",
+        "1ds Pepper",
+        "1 Lime Peel"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 34,
+      "preparation": "Shaker",
+      "glass": "Nick&Nora",
+      "garnish": "Cacao Kiss",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-036",
+      "name": "Not Rosé",
+      "categoryId": "cat-8",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl French Bloom",
+        "2cl Martini Floreale",
+        "2cl Strawberry Cordial"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 35,
+      "preparation": "Built in Glass",
+      "glass": "Prosecco Glas",
+      "garnish": "Dry Berry",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-037",
+      "name": "Espresso Shot",
+      "categoryId": "cat-9",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "3cl Koskenkorva Espresso"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 36,
+      "preparation": "Shaker",
+      "glass": "Small Shotglas",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-038",
+      "name": "Nut Job",
+      "categoryId": "cat-9",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "2cl Nüssle",
+        "2cl Zirbe Schnaps"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 37,
+      "preparation": "Built in glas",
+      "glass": "small shotglas",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-039",
+      "name": "Pink Shot",
+      "categoryId": "cat-9",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "2cl Tequila blanco",
+        "2cl Gamondi Pink"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 38,
+      "preparation": "Built in glas",
+      "glass": "small shotglas",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-040",
+      "name": "Pistolero",
+      "categoryId": "cat-9",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "1cl Jack Daniels",
+        "1cl Cointreau",
+        "1cl Amaretto"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 39,
+      "preparation": "Built in glas",
+      "glass": "small shotglas",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-041",
+      "name": "Strawberry",
+      "categoryId": "cat-9",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "1,5cl Strawberry pulp",
+        "1,5cl Vodka",
+        "1ds Lemon juice"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 40,
+      "preparation": "Shaker",
+      "glass": "small shotglas",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 6
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-042",
+      "name": "Apricot&Smoke",
+      "categoryId": "cat-10",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "4cl Bruichladdich Scotch",
+        "3cl Apricot Jam",
+        "3cl Vintage Vreimuth Vermouth"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 41,
+      "preparation": "Stirring",
+      "glass": "Nick&Nora glass",
+      "garnish": "Cherry Dried Orange Wheel Dried Apricot",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 7
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-043",
+      "name": "Norwegian Wood",
+      "categoryId": "cat-10",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Gin",
+        "5cl Pineapple Juice",
+        "3cl Lemon Juice",
+        "2cl St Germain"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 42,
+      "preparation": "Shaker",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Dried Berries Dried Flowers Lemon Wheel",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 7
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-044",
+      "name": "Red Opium",
+      "categoryId": "cat-10",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Vodka",
+        "8cl Strawberry Puree",
+        "2cl Peach Sirup",
+        "3cl Lemon Juice",
+        "4cl Strawberry Sirup",
+        "Small handful mint leaves"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 43,
+      "preparation": "Blender",
+      "glass": "Big Longdrinkglass",
+      "garnish": "Dried Berries Mint leaves",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 7
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-045",
+      "name": "Rose Petals",
+      "categoryId": "cat-10",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Gin",
+        "3cl Lemon Juice",
+        "3cl Rose Sirup",
+        "Fill Up Rose Lemonade"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 44,
+      "preparation": "Built in glass",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Rose Petals",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 7
+      },
+      "notes": ""
+    },
+    {
+      "id": "drink-046",
+      "name": "The Good, Bad, Ugly",
+      "categoryId": "cat-10",
+      "price": null,
+      "description": "",
+      "ingredients": [
+        "6cl Gin",
+        "5cl Pineapple Juice",
+        "3cl Lemon Juice",
+        "2cl Almond Sirup",
+        "2cl Kiwi Sirup"
+      ],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 45,
+      "preparation": "Shaker",
+      "glass": "Tumbler Ice Cubes",
+      "garnish": "Dried Lime Wheel Dried Flowers",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Receipes New Menu_Bar.pdf",
+        "page": 7
+      },
+      "notes": ""
+    }
+  ]
+}
