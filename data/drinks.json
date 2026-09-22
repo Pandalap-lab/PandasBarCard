@@ -74,8 +74,8 @@
         "2cl Bols White cacao",
         "2cl White Choco Cointreau"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/first-floor-martini.webp",
+      "photoAlt": "First Floor Martini – generierte Illustration",
       "active": true,
       "order": 0,
       "preparation": "Shaker double strain",
@@ -92,7 +92,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-002",
@@ -104,8 +105,8 @@
         "6cl Bacardi Oro",
         "Fill Up with Cola"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/bacardi-cola.webp",
+      "photoAlt": "Bacardi Cola – generierte Illustration",
       "active": true,
       "order": 1,
       "preparation": "Build in Glass",
@@ -122,7 +123,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-003",
@@ -135,8 +137,8 @@
         "½ Prosecco",
         "½ Soda"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/gamondi-orange-spritz.webp",
+      "photoAlt": "Gamondi Orange Spritz – generierte Illustration",
       "active": true,
       "order": 2,
       "preparation": "Build in Glass",
@@ -153,7 +155,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-004",
@@ -166,8 +169,8 @@
         "½ Prosecco",
         "½ Rose Lemonade"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/la-vie-en-rose.webp",
+      "photoAlt": "La Vie en Rose – generierte Illustration",
       "active": true,
       "order": 3,
       "preparation": "Build in Glass",
@@ -184,7 +187,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-005",
@@ -198,8 +202,8 @@
         "1ds Salt",
         "Fill Up Grapefruit Soda"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/patron-paloma.webp",
+      "photoAlt": "Patrón Paloma – generierte Illustration",
       "active": true,
       "order": 4,
       "preparation": "Build in Glass",
@@ -216,7 +220,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-006",
@@ -229,8 +234,8 @@
         "½ Prosecco",
         "½ Soda"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/st-germain-spritz.webp",
+      "photoAlt": "St. Germain Spritz – generierte Illustration",
       "active": true,
       "order": 5,
       "preparation": "Build in Glass",
@@ -247,7 +252,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 1
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-007",
@@ -258,8 +264,8 @@
       "ingredients": [
         "12cl Buttermilk Margarita Batch"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/buttermilk-margarita.webp",
+      "photoAlt": "Buttermilk Margarita – generierte Illustration",
       "active": true,
       "order": 6,
       "preparation": "Build in Glass",
@@ -276,7 +282,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen.",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-008",
@@ -291,8 +298,8 @@
         "1cl Agave Sirup",
         "Fill Up Grapefruit Soda"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/klimas-rausch.webp",
+      "photoAlt": "Klima’s Rausch – generierte Illustration",
       "active": true,
       "order": 7,
       "preparation": "Build in Glass",
@@ -309,7 +316,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-009",
@@ -323,8 +331,8 @@
         "3cl Lime Juice",
         "2cl Cinnamon Sirup"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/royal-kiss.webp",
+      "photoAlt": "Royal Kiss – generierte Illustration",
       "active": true,
       "order": 8,
       "preparation": "Shaker",
@@ -341,7 +349,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-010",
@@ -354,8 +363,8 @@
         "3cl Luxardo Bitter",
         "3cl Vintage Vreimuth"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/samba-sol.webp",
+      "photoAlt": "Samba Sol – generierte Illustration",
       "active": true,
       "order": 9,
       "preparation": "Stirring Glass or (10cl of Batch build in Glass)",
@@ -372,7 +381,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-011",
@@ -385,8 +395,8 @@
         "3cl Lime Juice",
         "2 spoons Cane Sugar"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/tropical-dry-daiquiri.webp",
+      "photoAlt": "Tropical Dry Daiquiri – generierte Illustration",
       "active": true,
       "order": 10,
       "preparation": "Shaker (50/50 Ice Cubes Crush Ice)",
@@ -403,7 +413,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-012",
@@ -414,8 +425,8 @@
       "ingredients": [
         "10cl Negroni Batch"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/first-floor-negroni.webp",
+      "photoAlt": "First Floor Negroni – generierte Illustration",
       "active": true,
       "order": 11,
       "preparation": "Build in Glass",
@@ -432,7 +443,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen.",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-013",
@@ -446,8 +458,8 @@
         "3cl Special Coffeeliqueur",
         "1ds Sugar"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/grey-goose-espresso-martini.webp",
+      "photoAlt": "Grey Goose Espresso Martini – generierte Illustration",
       "active": true,
       "order": 12,
       "preparation": "Shaker Double strain",
@@ -464,7 +476,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-014",
@@ -478,8 +491,8 @@
         "2cl Raspberry Sirup",
         "2cl Mirtillo"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/pink-rumble.webp",
+      "photoAlt": "Pink Rumble – generierte Illustration",
       "active": true,
       "order": 13,
       "preparation": "Shaker double strain",
@@ -496,7 +509,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 2
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-015",
@@ -510,8 +524,8 @@
         "1ds Maple Sirup",
         "1ds Angostura"
       ],
-      "photo": "",
-      "photoAlt": "",
+      "photo": "images/drinks/robbie-brown.webp",
+      "photoAlt": "Robbie Brown – generierte Illustration",
       "active": true,
       "order": 14,
       "preparation": "Stirring Glas",
@@ -528,7 +542,8 @@
         "file": "Receipes New Menu_Bar.pdf",
         "page": 3
       },
-      "notes": ""
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
     },
     {
       "id": "drink-016",
