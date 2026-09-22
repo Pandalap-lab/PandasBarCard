@@ -31,3 +31,6 @@ Speichern schreibt ausschließlich in localStorage dieses Browsers. `?preview=1`
 ## Gestaltung und Bedienung
 
 Native horizontale Scroll-Snap-Ansicht, Kategorien, Nachbar-Drinks, Detaildialog mit Fokusführung und Escape, runder Glas-Schließknopf, Safe Areas, reduzierte Bewegung, asynchrones/lazy Bildladen. Keine Frameworks, externen Schriften oder Analysedienste. Öffentliche Ansicht ohne Wartungslink.
+
+## Aktualisierung: echtes Seitenscrollen
+Alle Kategorien sind als vertikale Abschnitte vorhanden. Native Touchgesten scrollen die Seite vertikal und die Drinkreihen horizontal. Die klebende Kategorienleiste springt zum Abschnitt und verfolgt die Scrollposition. Das vom Nutzer bereitgestellte Foto assets/FirstP.jpg ist der gemeinsame Hintergrund, kein zugeordnetes Drinkfoto.
