@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BAR NO. 7 – Drinks</title>
+<style>
+:root{--bg:#0d0d0f;--card:#18181c;--text:#f5f1e8;--muted:#aaa39a;--accent:#d9b46f}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{padding:28px 20px 14px;position:sticky;top:0;background:linear-gradient(#0d0d0f 80%,transparent);z-index:5}
+.brand{font-size:13px;letter-spacing:.3em;color:var(--accent)} h1{margin:6px 0 4px;font-size:30px}.sub{color:var(--muted);font-size:14px}
+.tabs{display:flex;gap:9px;overflow:auto;padding:10px 20px 16px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid #34343a;background:#16161a;color:#eee;border-radius:999px;padding:9px 14px;white-space:nowrap}.tab.active{background:var(--accent);color:#111;border-color:var(--accent)}
+.section{padding:0 0 28px}.section h2{font-size:17px;padding:0 20px;margin:5px 0 12px}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 10px;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
+.card{min-width:78vw;max-width:330px;background:var(--card);border-radius:22px;overflow:hidden;scroll-snap-align:center;border:1px solid #27272d;box-shadow:0 10px 30px #0005}
+.pic{height:270px;display:grid;place-items:center;font-size:86px;background:radial-gradient(circle at 50% 35%,#34343b,#141418 68%)}
+.info{padding:16px}.row{display:flex;justify-content:space-between;gap:15px;align-items:center}.name{font-size:21px;font-weight:700}.price{color:var(--accent);font-weight:700}.hint{color:var(--muted);font-size:13px;margin-top:8px}
+footer{padding:24px 20px 45px;color:#777;text-align:center;font-size:12px}
+dialog{width:min(92vw,430px);border:1px solid #33333a;border-radius:24px;background:#17171b;color:var(--text);padding:0;box-shadow:0 25px 80px #000b}
+dialog::backdrop{background:#000b;backdrop-filter:blur(4px)}.modalpic{height:250px;display:grid;place-items:center;font-size:95px;background:radial-gradient(circle,#393941,#111 70%)}
+.modalbody{padding:20px}.modalbody h3{font-size:26px;margin:0 0 8px}.modalbody p{color:#c9c3b9;line-height:1.5}.ingredients{padding-left:18px;color:#eee;line-height:1.65}
+.close{width:100%;padding:13px;border:0;border-radius:14px;background:var(--accent);font-weight:800;font-size:16px}
+</style>
+</head>
+<body>
+<header><div class="brand">BAR NO. 7</div><h1>Was darf’s sein?</h1><div class="sub">Wischen. Entdecken. Antippen für Zutaten.</div></header>
+<div class="tabs" id="tabs"></div>
+<main id="content"></main>
+<footer>Demo einer interaktiven QR-Barkarte · optimiert fürs Smartphone</footer>
+<dialog id="detail"><div class="modalpic" id="mPic"></div><div class="modalbody"><div class="row"><h3 id="mName"></h3><div class="price" id="mPrice"></div></div><p id="mDesc"></p><b>Zutaten</b><ul class="ingredients" id="mIng"></ul><button class="close" onclick="detail.close()">Schließen</button></div></dialog>
+<script>
+const drinks=[
+["Cocktails","Espresso Martini","€ 12,50","☕","Kräftig, elegant und samtig.",["Vodka","Kaffeelikör","frischer Espresso","Zuckersirup"]],
+["Cocktails","Mojito","€ 11,90","🌿","Frisch, spritzig und minzig.",["weißer Rum","Limette","Minze","Rohrzucker","Soda"]],
+["Cocktails","Negroni","€ 12,90","🥃","Bitter, aromatisch und klassisch.",["Gin","Campari","roter Wermut","Orangenzeste"]],
+["Longdrinks","Gin & Tonic","€ 10,90","🍸","Trocken und erfrischend.",["Gin","Premium Tonic","Limette"]],
+["Longdrinks","Moscow Mule","€ 11,50","🫚","Würzig-frisch mit Ginger Beer.",["Vodka","Ginger Beer","Limettensaft"]],
+["Alkoholfrei","Virgin Mojito","€ 7,90","🍋","Minzig, frisch und ohne Alkohol.",["Limette","Minze","Rohrzucker","Soda"]],
+["Alkoholfrei","Berry Fizz","€ 8,50","🫐","Fruchtig und prickelnd.",["Beeren","Zitrone","Holunder","Soda"]],
+["Signature","Golden Panda","€ 13,90","🐼","Fruchtig-herb – unser Demo-Signature-Drink.",["Gin","Maracuja","Zitrone","Tonic","Bitter"]]
+];
+const cats=[...new Set(drinks.map(d=>d[0]))];
+tabs.innerHTML=cats.map((c,i)=>`<button class="tab ${i?'':'active'}" onclick="go('${c}',this)">${c}</button>`).join('');
+content.innerHTML=cats.map(c=>`<section class="section" id="${c}"><h2>${c}</h2><div class="rail">${
+ drinks.filter(d=>d[0]==c).map((d,i)=>`<article class="card" onclick='show(${JSON.stringify(d)})'><div class="pic">${d[3]}</div><div class="info"><div class="row"><div class="name">${d[1]}</div><div class="price">${d[2]}</div></div><div class="hint">Antippen für Details & Zutaten</div></div></article>`).join('')
+}</div></section>`).join('');
+function show(d){mPic.textContent=d[3];mName.textContent=d[1];mPrice.textContent=d[2];mDesc.textContent=d[4];mIng.innerHTML=d[5].map(x=>`<li>${x}</li>`).join('');detail.showModal()}
+function go(c,b){document.getElementById(c).scrollIntoView({behavior:'smooth'});document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+</script>
+</body></html>
