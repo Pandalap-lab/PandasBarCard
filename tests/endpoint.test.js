@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {stripTypeScriptTypes} from 'node:module';
 const env={SUPABASE_URL:'https://unit.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test-only',ADMIN_ORIGIN:'https://pandalap-lab.github.io',GITHUB_REPOSITORY:'Pandalap-lab/PandasBarCard',GITHUB_BRANCH:'main',GITHUB_TOKEN:'test-only',RESEND_API_KEY:'test-only',MAIL_FROM:'test@example.test',SECURITY_EMAIL:'security@example.test'};
-let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),publishWrites=0,session=true,updates=[],version=1;
+let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),publishWrites=0,session=true,updates=[],mailRequests=[],version=1;
 const id='11111111-1111-4111-8111-111111111111';
 const doc=JSON.parse(readFileSync(new URL('../data/drinks.json',import.meta.url)));
 globalThis.Deno={env:{get:k=>env[k]},serve:fn=>{handler=fn;}};
@@ -19,7 +19,7 @@ globalThis.fetch=async(url,opts={})=>{
  if(path.includes('/storage/v1/object/bar-drafts/'))return respond({Key:path});
  if(path.endsWith('/bar_draft'))return respond({id:1,version,document:doc});
  if(path.endsWith('/rpc/bar_publish')){publishWrites++;return respond(2);}
- if(u.hostname==='api.resend.com')return respond({id:'test'});
+ if(u.hostname==='api.resend.com'){mailRequests.push(JSON.parse(opts.body));return respond({id:'test'});}
  throw Error('Unexpected mocked request '+path);
 };
 let src=readFileSync(new URL('../supabase/functions/bar-admin/index.ts',import.meta.url),'utf8');
@@ -49,4 +49,12 @@ test('Photo upload requires editor MFA and returns only a private storage refere
  aal='aal2';const r=await request('upload',env.ADMIN_ORIGIN,{photo});assert.equal(r.status,200);assert.match((await r.json()).photo,/^storage:[a-f0-9]{64}\.webp$/);
  assert.equal((await request('upload',env.ADMIN_ORIGIN,{photo:'data:image/svg+xml;base64,AAAA'})).status,400);
  role='admin';
+});
+
+test('test mail requires admin MFA and ignores caller-supplied recipients',async()=>{
+ role='editor';assert.equal((await request('testMail')).status,403);
+ role='admin';aal='aal1';assert.equal((await request('testMail')).status,403);aal='aal2';
+ mailRequests=[];const r=await request('testMail',env.ADMIN_ORIGIN,{recipient:'evil@example.test'});
+ assert.equal(r.status,200);assert.equal((await r.json()).recipient,env.SECURITY_EMAIL);
+ assert.equal(mailRequests.length,1);assert.deepEqual(mailRequests[0].to,[env.SECURITY_EMAIL]);
 });
