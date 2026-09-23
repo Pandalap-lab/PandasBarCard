@@ -23,7 +23,7 @@ globalThis.fetch=async(url,opts={})=>{
  throw Error('Unexpected mocked request '+path);
 };
 let src=readFileSync(new URL('../supabase/functions/bar-admin/index.ts',import.meta.url),'utf8');
-src=src.replace('npm:@supabase/supabase-js@2.105.0',import.meta.resolve('@supabase/supabase-js')).replace('./policy.js',new URL('../supabase/functions/bar-admin/policy.js',import.meta.url).href);
+src=src.replace('npm:@supabase/supabase-js@2.105.0',import.meta.resolve('@supabase/supabase-js')).replace('./mail.js',new URL('../supabase/functions/bar-admin/mail.js',import.meta.url).href).replace('./policy.js',new URL('../supabase/functions/bar-admin/policy.js',import.meta.url).href);
 await import('data:text/javascript;base64,'+Buffer.from(stripTypeScriptTypes(src)).toString('base64'));
 const request=(action,origin=env.ADMIN_ORIGIN,fields={})=>{
  const token='x.'+Buffer.from(JSON.stringify({sub:id,aal,session_id:id,exp:Date.now()/1000+900})).toString('base64url')+'.x';
