@@ -2,7 +2,7 @@ export const LOCAL_KEY='pandas-barcard-draft-v1';
 const source=new URL('../data/drinks.json',import.meta.url);
 export let loadNotice='';
 const CONFIG=new URL('../admin/config.json',import.meta.url);
-export function setPhotoMap(map){sessionStorage.setItem('bar-photo-map',JSON.stringify(map||{}));localStorage.setItem('bar-preview-photos',JSON.stringify(map||{}));}
+export function setPhotoMap(map,merge=false){let previous={};if(merge){try{previous=JSON.parse(localStorage.getItem('bar-preview-photos')||'{}');}catch{}}localStorage.setItem('bar-preview-photos',JSON.stringify({...previous,...map}));}
 export async function loadData({draft=false}={}){
  loadNotice='';
  if(draft){const raw=localStorage.getItem(LOCAL_KEY);if(raw){loadNotice='Vorschau · unveröffentlichter Arbeitsentwurf';return validate(JSON.parse(raw));}}
