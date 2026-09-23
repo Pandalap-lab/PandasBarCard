@@ -15,6 +15,8 @@ globalThis.fetch=async(url,opts={})=>{
  if(path.endsWith('/rpc/bar_limit'))return respond(true);
  if(path.endsWith('/bar_members'))return respond({user_id:id,email:'test@example.test',role,enabled});
  if(path.endsWith('/bar_audit'))return respond(null,201);
+ if(path.includes('/storage/v1/object/sign/bar-drafts/'))return respond({signedURL:'/object/sign/bar-drafts/image.webp?token=test'});
+ if(path.includes('/storage/v1/object/bar-drafts/'))return respond({Key:path});
  if(path.endsWith('/bar_draft'))return respond({id:1,version,document:doc});
  if(path.endsWith('/rpc/bar_publish')){publishWrites++;return respond(2);}
  if(u.hostname==='api.resend.com')return respond({id:'test'});
@@ -23,9 +25,9 @@ globalThis.fetch=async(url,opts={})=>{
 let src=readFileSync(new URL('../supabase/functions/bar-admin/index.ts',import.meta.url),'utf8');
 src=src.replace('npm:@supabase/supabase-js@2.105.0',import.meta.resolve('@supabase/supabase-js')).replace('./policy.js',new URL('../supabase/functions/bar-admin/policy.js',import.meta.url).href);
 await import('data:text/javascript;base64,'+Buffer.from(stripTypeScriptTypes(src)).toString('base64'));
-const request=(action,origin=env.ADMIN_ORIGIN)=>{
+const request=(action,origin=env.ADMIN_ORIGIN,fields={})=>{
  const token='x.'+Buffer.from(JSON.stringify({sub:id,aal,session_id:id,exp:Date.now()/1000+900})).toString('base64url')+'.x';
- return handler(new Request('https://unit.supabase.co/functions/v1/bar-admin',{method:'POST',headers:{origin,authorization:'Bearer '+token,'content-type':'application/json'},body:JSON.stringify({action,version})}));
+ return handler(new Request('https://unit.supabase.co/functions/v1/bar-admin',{method:'POST',headers:{origin,authorization:'Bearer '+token,'content-type':'application/json'},body:JSON.stringify({action,version,...fields})}));
 };
 test('HTTP endpoint rejects origin, disabled users, revoked sessions, missing MFA and wrong roles before writes',async()=>{
  assert.equal((await request('publish','https://evil.example')).status,403);
@@ -37,4 +39,14 @@ test('HTTP endpoint rejects origin, disabled users, revoked sessions, missing MF
 });
 test('Publication commits a Supabase snapshot without any GitHub call',async()=>{
  const response=await request('publish');assert.equal(response.status,200);assert.equal((await response.json()).revision,2);assert.equal(publishWrites,1);
+});
+
+test('Photo upload requires editor MFA and returns only a private storage reference',async()=>{
+ const bytes=readFileSync(new URL('../images/drinks/first-floor-martini.webp',import.meta.url));
+ const photo='data:image/webp;base64,'+bytes.toString('base64');
+ role='viewer';assert.equal((await request('upload',env.ADMIN_ORIGIN,{photo})).status,403);
+ role='editor';aal='aal1';assert.equal((await request('upload',env.ADMIN_ORIGIN,{photo})).status,403);
+ aal='aal2';const r=await request('upload',env.ADMIN_ORIGIN,{photo});assert.equal(r.status,200);assert.match((await r.json()).photo,/^storage:[a-f0-9]{64}\.webp$/);
+ assert.equal((await request('upload',env.ADMIN_ORIGIN,{photo:'data:image/svg+xml;base64,AAAA'})).status,400);
+ role='admin';
 });
