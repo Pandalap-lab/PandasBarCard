@@ -5,7 +5,7 @@
 
 /* Real document sections over the supplied bar photograph. */
 .ambience{background:linear-gradient(180deg,#08151166,#100d0bcc),url('../assets/FirstP.jpg') center center/cover no-repeat}
-.ambience>div{opacity:.15!important;mix-blend-mode:soft-light}
+.ambience>div{opacity:.15;mix-blend-mode:soft-light}
 #categories{position:sticky;top:0;z-index:8;background:#141711e8;backdrop-filter:blur(14px);padding-top:calc(8px + env(safe-area-inset-top));}
 .category-section{min-height:calc(100svh - 80px);padding:22px 0 35px;scroll-margin-top:85px;border-bottom:1px solid #decba326}
 .sectionline h2{font:normal 22px Georgia;margin:0}
@@ -15,3 +15,37 @@
 .drink{text-shadow:0 2px 14px #000}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 @media(max-width:560px){.sectionline h2{font-size:20px}.category-section{scroll-margin-top:85px}}
+
+/* Reading controls and accessible fluid typography; pinch zoom remains enabled. */
+:root{--reading-scale:1;--muted:#e0d2be}
+:root[data-text-size=large]{--reading-scale:1.25}
+:root[data-text-size=largest]{--reading-scale:1.5}
+button,a,input,select,textarea{touch-action:manipulation}
+.rail{touch-action:pan-x pan-y pinch-zoom}
+#categories button{min-height:44px;font-size:calc(.875rem * var(--reading-scale));padding:10px 5px}
+.drink h3{font-size:calc(clamp(1.7rem,5vw,2.6rem) * var(--reading-scale));overflow-wrap:anywhere}
+.sectionline h2{font-size:calc(1.3rem * var(--reading-scale));overflow-wrap:anywhere}
+.sectionline{align-items:flex-start}.sectionline>span{white-space:normal;flex-shrink:0}
+.price,.serving{font-size:calc(1rem * var(--reading-scale))}
+.hint,.section-hint,.navigation span,.sectionline>span,.placeholder small{font-size:calc(.8rem * var(--reading-scale))!important}
+.detail-copy{font-size:calc(1rem * var(--reading-scale));overflow-wrap:anywhere}
+.detail-copy h2{font-size:calc(clamp(2rem,7vw,3.25rem) * var(--reading-scale))}
+.detail-copy h3{font-size:calc(1.3rem * var(--reading-scale))}
+.detail-copy .eyebrow,.detail-copy dl,.detail-copy .muted{font-size:calc(.9rem * var(--reading-scale))}
+.detail-copy dl{grid-template-columns:minmax(70px,1fr) minmax(0,3fr)}
+.drink{opacity:1}.drink:not(.current){transform:scale(.96)}
+.visual img{border-radius:0;-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 35%,#000c 53%,transparent 74%);mask-image:radial-gradient(ellipse at 50% 45%,#000 35%,#000c 53%,transparent 74%)}
+.ambience{background-image:linear-gradient(180deg,#100d0ba8,#100d0be8),url('../assets/FirstP.jpg')}
+.ambience>div{mix-blend-mode:normal;transition:opacity .4s ease}
+
+.compact-category{min-height:auto;padding-bottom:30px}.compact-category .visual{height:110px}.compact-category .placeholder svg{height:70px}.compact-category .placeholder small{display:none}
+.compact-category .drink{min-height:220px}
+.category-section{scroll-margin-top:110px}
+.reading-tools{position:fixed;bottom:calc(12px + env(safe-area-inset-bottom));right:16px;z-index:9}
+#aaButton{width:52px;height:48px;border:1px solid #cba16a;border-radius:24px;background:#291d13;color:#fff3df;font:1.25rem Georgia;box-shadow:0 4px 20px #0008}
+.category-section,footer{padding-bottom:75px}
+#readingDialog{inset:auto 0 0;margin:0 auto;width:min(100%,560px);height:auto;max-height:90svh;padding:28px 24px;border-radius:25px 25px 0 0;background:#241b14}
+.reading-inner{padding-top:30px}.reading-inner h2{font:1.7rem Georgia}.reading-inner label{font-size:1rem;display:block;margin:15px 0}.reading-inner select,.reading-inner button:not(.glass-close){font-size:1rem;padding:12px;min-height:44px;max-width:100%;background:#382719;color:#fff3df;border:1px solid #bd9769;border-radius:8px}.reading-inner select{width:100%}.reading-switch{min-height:44px}.reading-switch input{width:22px;height:22px;vertical-align:middle;accent-color:#ceaa79}.reading-inner .glass-close{position:absolute}.reading-inner .muted{font-size:.95rem}
+.skip-link{position:fixed;top:-120px;left:15px;z-index:20;padding:15px;background:#241b14;color:white}.skip-link:focus{top:15px}
+.high-contrast .ambience{background:#18110c}.high-contrast .ambience>div{display:none}.high-contrast{--ink:#fff;--muted:#fff;--bronze:#ffe0a8}.high-contrast button,.high-contrast .price,.high-contrast .section-hint{color:#fff}.high-contrast .navigation button,.high-contrast nav button{border-color:#fff}.high-contrast dialog{background:#18110c}
+.reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reduce-motion .drink{transform:none}

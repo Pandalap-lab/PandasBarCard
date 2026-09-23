@@ -27,7 +27,7 @@
     },
     {
       "id": "cat-4",
-      "name": "Another Attempted Autumn",
+      "name": "Another Attempted Autmn",
       "order": 3
     },
     {
@@ -37,12 +37,12 @@
     },
     {
       "id": "cat-6",
-      "name": "Classic and renowned",
+      "name": "Classic And Renowned",
       "order": 5
     },
     {
       "id": "cat-7",
-      "name": "The Spirit in the fruit",
+      "name": "The Spirit In The Fruit",
       "order": 6
     },
     {
@@ -56,31 +56,108 @@
       "order": 8
     },
     {
+      "id": "cat-11",
+      "name": "Scotch",
+      "order": 9,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-12",
+      "name": "Bourbon",
+      "order": 10,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-13",
+      "name": "Irish Whiskey",
+      "order": 11,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-14",
+      "name": "Gin",
+      "order": 12,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-15",
+      "name": "Rum",
+      "order": 13,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-16",
+      "name": "Tequila",
+      "order": 14,
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-17",
+      "name": "Vodka",
+      "order": 15,
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-18",
+      "name": "Sparkling Wine / Champagne / Others",
+      "order": 16,
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-19",
+      "name": "Beer",
+      "order": 17,
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-20",
+      "name": "Softdrinks",
+      "order": 18,
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "cat-21",
+      "name": "Snacks",
+      "order": 19,
+      "serving": "",
+      "kind": "snack"
+    },
+    {
       "id": "cat-10",
       "name": "Signatures",
-      "order": 9
+      "order": 20
     }
   ],
   "drinks": [
     {
       "id": "drink-001",
-      "name": "First Floor Martini",
+      "name": "The First Floor Martini",
       "categoryId": "cat-1",
-      "price": null,
+      "price": 18,
       "description": "",
       "ingredients": [
-        "5cl Another Hendricks",
-        "3cl Lemon Juice",
-        "2cl Bols White cacao",
-        "2cl White Choco Cointreau"
+        "Another Hendrick's",
+        "Lemon",
+        "Bols White Chocolate",
+        "White Chocolate Cointreau"
       ],
       "photo": "images/drinks/first-floor-martini.webp",
-      "photoAlt": "First Floor Martini – generierte Illustration",
+      "photoAlt": "The First Floor Martini – generierte Illustration",
       "active": true,
       "order": 0,
-      "preparation": "Shaker double strain",
-      "glass": "Martini",
-      "garnish": "Mikado Stick",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -89,29 +166,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 2
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "First Floor Martini",
+        "ingredients": [
+          "5cl Another Hendricks",
+          "3cl Lemon Juice",
+          "2cl Bols White cacao",
+          "2cl White Choco Cointreau"
+        ],
+        "preparation": "Shaker double strain",
+        "glass": "Martini",
+        "garnish": "Mikado Stick",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-002",
-      "name": "Bacardi Cola",
+      "name": "Barcardi Cola",
       "categoryId": "cat-2",
-      "price": null,
+      "price": 12,
       "description": "",
       "ingredients": [
-        "6cl Bacardi Oro",
-        "Fill Up with Cola"
+        "Bacardi Carta Oro",
+        "Coca-Cola"
       ],
       "photo": "images/drinks/bacardi-cola.webp",
-      "photoAlt": "Bacardi Cola – generierte Illustration",
+      "photoAlt": "Barcardi Cola – generierte Illustration",
       "active": true,
       "order": 1,
-      "preparation": "Build in Glass",
-      "glass": "Collins Ice Cubes",
-      "garnish": "Lime wedge",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -120,30 +215,46 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Bacardi Cola",
+        "ingredients": [
+          "6cl Bacardi Oro",
+          "Fill Up with Cola"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Collins Ice Cubes",
+        "garnish": "Lime wedge",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-003",
       "name": "Gamondi Orange Spritz",
       "categoryId": "cat-2",
-      "price": null,
+      "price": 10,
       "description": "",
       "ingredients": [
-        "6cl Gamondi Aperitivo",
-        "½ Prosecco",
-        "½ Soda"
+        "Gamondi Orange",
+        "Martini Prosecco",
+        "Soda"
       ],
       "photo": "images/drinks/gamondi-orange-spritz.webp",
       "photoAlt": "Gamondi Orange Spritz – generierte Illustration",
       "active": true,
       "order": 2,
-      "preparation": "Build in Glass",
-      "glass": "Balloon Glas Ice Cubes",
-      "garnish": "Orange Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -152,30 +263,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Gamondi Orange Spritz",
+        "ingredients": [
+          "6cl Gamondi Aperitivo",
+          "½ Prosecco",
+          "½ Soda"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Balloon Glas Ice Cubes",
+        "garnish": "Orange Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-004",
-      "name": "La Vie en Rose",
+      "name": "La Vie En Rose",
       "categoryId": "cat-2",
-      "price": null,
+      "price": 14,
       "description": "",
       "ingredients": [
-        "6cl Lillet Rosé",
-        "½ Prosecco",
-        "½ Rose Lemonade"
+        "Martini Prosecco",
+        "Lillet Rosé",
+        "Rose Limonade"
       ],
       "photo": "images/drinks/la-vie-en-rose.webp",
-      "photoAlt": "La Vie en Rose – generierte Illustration",
+      "photoAlt": "La Vie En Rose – generierte Illustration",
       "active": true,
       "order": 3,
-      "preparation": "Build in Glass",
-      "glass": "Balloon Glas Ice Cubes",
-      "garnish": "Rose Petals",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -184,31 +312,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "La Vie en Rose",
+        "ingredients": [
+          "6cl Lillet Rosé",
+          "½ Prosecco",
+          "½ Rose Lemonade"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Balloon Glas Ice Cubes",
+        "garnish": "Rose Petals",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-005",
       "name": "Patrón Paloma",
       "categoryId": "cat-2",
-      "price": null,
+      "price": 14,
       "description": "",
       "ingredients": [
-        "4cl Patrón Repo",
-        "2cl Lime Juice",
-        "1ds Salt",
-        "Fill Up Grapefruit Soda"
+        "Patrón Reposado",
+        "Lime",
+        "Salt",
+        "Fever Tree Grapefruit Soda"
       ],
       "photo": "images/drinks/patron-paloma.webp",
       "photoAlt": "Patrón Paloma – generierte Illustration",
       "active": true,
       "order": 4,
-      "preparation": "Build in Glass",
-      "glass": "Small Patrón Longdrinkglas Ice Cubes",
-      "garnish": "Salt Rim Lime Wedge",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -217,30 +362,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Patrón Paloma",
+        "ingredients": [
+          "4cl Patrón Repo",
+          "2cl Lime Juice",
+          "1ds Salt",
+          "Fill Up Grapefruit Soda"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Small Patrón Longdrinkglas Ice Cubes",
+        "garnish": "Salt Rim Lime Wedge",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-006",
       "name": "St. Germain Spritz",
       "categoryId": "cat-2",
-      "price": null,
+      "price": 12,
       "description": "",
       "ingredients": [
-        "6cl St. Germain",
-        "½ Prosecco",
-        "½ Soda"
+        "St. Germain",
+        "Martini Prosecco",
+        "Soda"
       ],
       "photo": "images/drinks/st-germain-spritz.webp",
       "photoAlt": "St. Germain Spritz – generierte Illustration",
       "active": true,
       "order": 5,
-      "preparation": "Build in Glass",
-      "glass": "Balloon Glas Ice Cubes",
-      "garnish": "Dry Lime Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -249,28 +412,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 1
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "St. Germain Spritz",
+        "ingredients": [
+          "6cl St. Germain",
+          "½ Prosecco",
+          "½ Soda"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Balloon Glas Ice Cubes",
+        "garnish": "Dry Lime Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 1
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-007",
       "name": "Buttermilk Margarita",
       "categoryId": "cat-3",
-      "price": null,
-      "description": "",
+      "price": 16,
+      "description": "inspired from Truth&Dare Bar",
       "ingredients": [
-        "12cl Buttermilk Margarita Batch"
+        "Patrón Silver",
+        "Lime",
+        "clarified with Buttermilk"
       ],
       "photo": "images/drinks/buttermilk-margarita.webp",
       "photoAlt": "Buttermilk Margarita – generierte Illustration",
       "active": true,
       "order": 6,
-      "preparation": "Build in Glass",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Salt Rim Dry Lime Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -279,32 +461,46 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen.",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Buttermilk Margarita",
+        "ingredients": [
+          "12cl Buttermilk Margarita Batch"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Salt Rim Dry Lime Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-008",
-      "name": "Klima’s Rausch",
+      "name": "Klima's Rausch",
       "categoryId": "cat-3",
-      "price": null,
-      "description": "",
+      "price": 16,
+      "description": "with love from Theo's Bar",
       "ingredients": [
-        "5cl Mezcal Del Maguay",
-        "3cl Gamondi Pink",
-        "3cl Lime Juice",
-        "1cl Agave Sirup",
-        "Fill Up Grapefruit Soda"
+        "Del Maguay Vida",
+        "Gamondi Pink",
+        "Lime",
+        "Fever Tree Grapefruit Soda"
       ],
       "photo": "images/drinks/klimas-rausch.webp",
-      "photoAlt": "Klima’s Rausch – generierte Illustration",
+      "photoAlt": "Klima's Rausch – generierte Illustration",
       "active": true,
       "order": 7,
-      "preparation": "Build in Glass",
-      "glass": "Small Longdrinkglas Ice Cubes",
-      "garnish": "Dry Orange Slice Tajin Rim",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -313,31 +509,50 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Klima’s Rausch",
+        "ingredients": [
+          "5cl Mezcal Del Maguay",
+          "3cl Gamondi Pink",
+          "3cl Lime Juice",
+          "1cl Agave Sirup",
+          "Fill Up Grapefruit Soda"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Small Longdrinkglas Ice Cubes",
+        "garnish": "Dry Orange Slice Tajin Rim",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-009",
       "name": "Royal Kiss",
       "categoryId": "cat-3",
-      "price": null,
-      "description": "",
+      "price": 16,
+      "description": "made with Nicolas Hölzl",
       "ingredients": [
-        "4cl Minz Prinz",
-        "2cl Gin",
-        "3cl Lime Juice",
-        "2cl Cinnamon Sirup"
+        "Minz Prinz",
+        "Gin",
+        "Lime",
+        "Cinnamon"
       ],
       "photo": "images/drinks/royal-kiss.webp",
       "photoAlt": "Royal Kiss – generierte Illustration",
       "active": true,
       "order": 8,
-      "preparation": "Shaker",
-      "glass": "Coupette double strain",
-      "garnish": "Dried Apple Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -346,61 +561,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Royal Kiss",
+        "ingredients": [
+          "4cl Minz Prinz",
+          "2cl Gin",
+          "3cl Lime Juice",
+          "2cl Cinnamon Sirup"
+        ],
+        "preparation": "Shaker",
+        "glass": "Coupette double strain",
+        "garnish": "Dried Apple Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-010",
       "name": "Samba Sol",
       "categoryId": "cat-3",
-      "price": null,
-      "description": "",
+      "price": 16,
+      "description": "created with Oscar Meth",
       "ingredients": [
-        "3cl Coffee Cachaca",
-        "3cl Luxardo Bitter",
-        "3cl Vintage Vreimuth"
+        "Leblon Cachaca with GOTA Beans",
+        "Vintage Vreimuth Vermouth",
+        "Bitterliqueur"
       ],
       "photo": "images/drinks/samba-sol.webp",
       "photoAlt": "Samba Sol – generierte Illustration",
       "active": true,
       "order": 9,
-      "preparation": "Stirring Glass or (10cl of Batch build in Glass)",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Lemon Peel",
-      "allergens": [],
-      "alcoholContent": null,
-      "tags": [],
-      "palette": [
-        "#563322",
-        "#ad7946"
-      ],
-      "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
-      },
-      "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
-    },
-    {
-      "id": "drink-011",
-      "name": "Tropical Dry Daiquiri",
-      "categoryId": "cat-3",
-      "price": null,
-      "description": "",
-      "ingredients": [
-        "6cl Plantation Mix",
-        "3cl Lime Juice",
-        "2 spoons Cane Sugar"
-      ],
-      "photo": "images/drinks/tropical-dry-daiquiri.webp",
-      "photoAlt": "Tropical Dry Daiquiri – generierte Illustration",
-      "active": true,
-      "order": 10,
-      "preparation": "Shaker (50/50 Ice Cubes Crush Ice)",
-      "glass": "Coupette",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -410,28 +611,97 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 3
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Samba Sol",
+        "ingredients": [
+          "3cl Coffee Cachaca",
+          "3cl Luxardo Bitter",
+          "3cl Vintage Vreimuth"
+        ],
+        "preparation": "Stirring Glass or (10cl of Batch build in Glass)",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Lemon Peel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
+    },
+    {
+      "id": "drink-011",
+      "name": "Tropical Dry Martini",
+      "categoryId": "cat-3",
+      "price": 16,
+      "description": "by The Sign Lounge",
+      "ingredients": [
+        "3 Plantation Rums",
+        "Lime",
+        "Sugar"
+      ],
+      "photo": "images/drinks/tropical-dry-daiquiri.webp",
+      "photoAlt": "Tropical Dry Martini – generierte Illustration",
+      "active": true,
+      "order": 10,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 3
+      },
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Tropical Dry Daiquiri",
+        "ingredients": [
+          "6cl Plantation Mix",
+          "3cl Lime Juice",
+          "2 spoons Cane Sugar"
+        ],
+        "preparation": "Shaker (50/50 Ice Cubes Crush Ice)",
+        "glass": "Coupette",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-012",
       "name": "First Floor Negroni",
       "categoryId": "cat-4",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "10cl Negroni Batch"
+        "Gin",
+        "Martini Riserva Rubino",
+        "Martini Riserva Bitter",
+        "Secret Ingredients"
       ],
       "photo": "images/drinks/first-floor-negroni.webp",
       "photoAlt": "First Floor Negroni – generierte Illustration",
       "active": true,
       "order": 11,
-      "preparation": "Build in Glass",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Orange Peel",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -440,31 +710,46 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen.",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "notes": "",
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "First Floor Negroni",
+        "ingredients": [
+          "10cl Negroni Batch"
+        ],
+        "preparation": "Build in Glass",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Orange Peel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-013",
       "name": "Grey Goose Espresso Martini",
       "categoryId": "cat-4",
-      "price": null,
+      "price": 18,
       "description": "",
       "ingredients": [
-        "6cl Grey Goose",
-        "5cl Espresso",
-        "3cl Special Coffeeliqueur",
-        "1ds Sugar"
+        "Grey Goose Vodka",
+        "Coffee",
+        "Selfmade Coffee Liqueur",
+        "Sugar"
       ],
       "photo": "images/drinks/grey-goose-espresso-martini.webp",
       "photoAlt": "Grey Goose Espresso Martini – generierte Illustration",
       "active": true,
       "order": 12,
-      "preparation": "Shaker Double strain",
-      "glass": "Martini",
-      "garnish": "Coffee Beans",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -473,31 +758,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Grey Goose Espresso Martini",
+        "ingredients": [
+          "6cl Grey Goose",
+          "5cl Espresso",
+          "3cl Special Coffeeliqueur",
+          "1ds Sugar"
+        ],
+        "preparation": "Shaker Double strain",
+        "glass": "Martini",
+        "garnish": "Coffee Beans",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-014",
       "name": "Pink Rumble",
       "categoryId": "cat-4",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "5cl Munakra Night Blossom",
-        "2cl Lime Juice",
-        "2cl Raspberry Sirup",
-        "2cl Mirtillo"
+        "Munakra Night Blossom",
+        "Lime",
+        "Raspberry",
+        "Freihof Mirtillo"
       ],
       "photo": "images/drinks/pink-rumble.webp",
       "photoAlt": "Pink Rumble – generierte Illustration",
       "active": true,
       "order": 13,
-      "preparation": "Shaker double strain",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Dried Berries",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -506,31 +809,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 2
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Pink Rumble",
+        "ingredients": [
+          "5cl Munakra Night Blossom",
+          "2cl Lime Juice",
+          "2cl Raspberry Sirup",
+          "2cl Mirtillo"
+        ],
+        "preparation": "Shaker double strain",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Dried Berries",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 2
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-015",
       "name": "Robbie Brown",
       "categoryId": "cat-4",
-      "price": null,
+      "price": 17,
       "description": "",
       "ingredients": [
-        "5cl Black Label",
-        "3cl Walnut Vermouth",
-        "1ds Maple Sirup",
-        "1ds Angostura"
+        "Johnnie Walker Black Label",
+        "Walnut Sweet Vermouth",
+        "Bitters"
       ],
       "photo": "images/drinks/robbie-brown.webp",
       "photoAlt": "Robbie Brown – generierte Illustration",
       "active": true,
       "order": 14,
-      "preparation": "Stirring Glas",
-      "glass": "Nick&Nora",
-      "garnish": "Walnut",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -539,30 +859,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
       "notes": "",
-      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket"
+      "photoSource": "Generierte Illustration aus bereitgestelltem Bildpaket",
+      "legacyRecipe": {
+        "name": "Robbie Brown",
+        "ingredients": [
+          "5cl Black Label",
+          "3cl Walnut Vermouth",
+          "1ds Maple Sirup",
+          "1ds Angostura"
+        ],
+        "preparation": "Stirring Glas",
+        "glass": "Nick&Nora",
+        "garnish": "Walnut",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-016",
-      "name": "Sting& The Police",
+      "name": "Sting & The Police",
       "categoryId": "cat-4",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Chai Rye",
-        "3cl Lemon Juice",
-        "3cl St. Germain"
+        "Chai Bulleit Rye",
+        "St. Germain",
+        "Lemon"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 15,
-      "preparation": "Shaker double Strain",
-      "glass": "Tumbler",
-      "garnish": "Dried Lemon Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -571,32 +909,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Sting& The Police",
+        "ingredients": [
+          "6cl Chai Rye",
+          "3cl Lemon Juice",
+          "3cl St. Germain"
+        ],
+        "preparation": "Shaker double Strain",
+        "glass": "Tumbler",
+        "garnish": "Dried Lemon Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-017",
       "name": "Horchata our way",
       "categoryId": "cat-5",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "5cl Tequila Blanco",
-        "4cl Coconut Cream",
-        "2cl Cinnamon Sirup",
-        "2ds Angostura",
-        "1cl Xila Liqueur",
-        "2ds Salt"
+        "Cazadores Blanco",
+        "Cinnamon",
+        "Coconut Cream",
+        "Xila Liqueur",
+        "Bitters"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 16,
-      "preparation": "Shaker double strain (12 cl Batch)",
-      "glass": "Coupette",
-      "garnish": "Cinnamon",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -605,28 +959,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Horchata our way",
+        "ingredients": [
+          "5cl Tequila Blanco",
+          "4cl Coconut Cream",
+          "2cl Cinnamon Sirup",
+          "2ds Angostura",
+          "1cl Xila Liqueur",
+          "2ds Salt"
+        ],
+        "preparation": "Shaker double strain (12 cl Batch)",
+        "glass": "Coupette",
+        "garnish": "Cinnamon",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-018",
       "name": "Paracethanol",
       "categoryId": "cat-5",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "5cl Talisker Skye",
-        "6cl Ginger Oxymel"
+        "Talisker Skye",
+        "Ginger Oxymel"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 17,
-      "preparation": "Shaker double strain",
-      "glass": "Tumbler Big Ice cube",
-      "garnish": "Fresh Orange Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -635,30 +1009,46 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Paracethanol",
+        "ingredients": [
+          "5cl Talisker Skye",
+          "6cl Ginger Oxymel"
+        ],
+        "preparation": "Shaker double strain",
+        "glass": "Tumbler Big Ice cube",
+        "garnish": "Fresh Orange Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-019",
-      "name": "Spiced Corn n’Oil",
+      "name": "Spiced Corn n' Oil",
       "categoryId": "cat-5",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Spiced Rum",
-        "3cl Lime Juice",
-        "2cl Falernum",
-        "3ds Angostura"
+        "Selfmade Spiced Nut Rum",
+        "Lime",
+        "Rum Liqueur",
+        "Bitters"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 18,
-      "preparation": "Stirring Glas",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Lime Peel",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -667,30 +1057,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Spiced Corn n’Oil",
+        "ingredients": [
+          "6cl Spiced Rum",
+          "3cl Lime Juice",
+          "2cl Falernum",
+          "3ds Angostura"
+        ],
+        "preparation": "Stirring Glas",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Lime Peel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-020",
       "name": "White Russian",
       "categoryId": "cat-5",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "5cl Vodka",
-        "4cl Kahlua",
-        "6cl Milk Cream",
-        "1,5cl Butterscotch"
+        "Vodka",
+        "Kahlúa",
+        "Milk",
+        "Caramel"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 19,
-      "preparation": "Vodka and Kahlua build in Glas Milk shaked with Butterscotch",
-      "glass": "White Russian Tumbler",
-      "garnish": "Cacao Kiss",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -699,30 +1107,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "White Russian",
+        "ingredients": [
+          "5cl Vodka",
+          "4cl Kahlua",
+          "6cl Milk Cream",
+          "1,5cl Butterscotch"
+        ],
+        "preparation": "Vodka and Kahlua build in Glas Milk shaked with Butterscotch",
+        "glass": "White Russian Tumbler",
+        "garnish": "Cacao Kiss",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-021",
       "name": "Wiener Limettenzuckerl",
       "categoryId": "cat-5",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "5cl Mintis Gin",
-        "3cl Lime Juice",
-        "2cl Cointreau",
-        "2cl Lime Cordial"
+        "Mintis Gin",
+        "Lime",
+        "Cointreau",
+        "Lime Cordial"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 20,
-      "preparation": "Shaker double strain",
-      "glass": "Coupette",
-      "garnish": "Mint Leave",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -731,31 +1157,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 3
+        "file": "Karte26 2.pdf",
+        "page": 5
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Wiener Limettenzuckerl",
+        "ingredients": [
+          "5cl Mintis Gin",
+          "3cl Lime Juice",
+          "2cl Cointreau",
+          "2cl Lime Cordial"
+        ],
+        "preparation": "Shaker double strain",
+        "glass": "Coupette",
+        "garnish": "Mint Leave",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 3
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-022",
       "name": "Gin Basil Smash",
       "categoryId": "cat-6",
-      "price": null,
+      "price": 17,
       "description": "",
       "ingredients": [
-        "6cl Gin",
-        "3cl Lemon Juice",
-        "2cl Sugar Sirup",
-        "1ds Basil Sirup",
-        "handfull Basil leaves"
+        "Basil",
+        "Gin",
+        "Lemon",
+        "Sugar"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 21,
-      "preparation": "Put everything in the blender then shake with ice double strain",
-      "glass": "Tumbler big ice cube",
-      "garnish": "Basil leaf",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -764,30 +1207,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Gin Basil Smash",
+        "ingredients": [
+          "6cl Gin",
+          "3cl Lemon Juice",
+          "2cl Sugar Sirup",
+          "1ds Basil Sirup",
+          "handfull Basil leaves"
+        ],
+        "preparation": "Put everything in the blender then shake with ice double strain",
+        "glass": "Tumbler big ice cube",
+        "garnish": "Basil leaf",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-023",
       "name": "Old Fashioned",
       "categoryId": "cat-6",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "6cl Bourbon",
-        "3ds Angostura",
-        "2ds Orange Bitters",
-        "0,5cl Maple sirup"
+        "Bourbon",
+        "Maple Syrup",
+        "Bitters",
+        "Orange"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 22,
-      "preparation": "Stirring glas",
-      "glass": "Tumbler big ice cube",
-      "garnish": "Orange peel",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -796,27 +1258,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Old Fashioned",
+        "ingredients": [
+          "6cl Bourbon",
+          "3ds Angostura",
+          "2ds Orange Bitters",
+          "0,5cl Maple sirup"
+        ],
+        "preparation": "Stirring glas",
+        "glass": "Tumbler big ice cube",
+        "garnish": "Orange peel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-024",
       "name": "Pornstar Martini",
       "categoryId": "cat-6",
-      "price": null,
+      "price": 20,
       "description": "",
       "ingredients": [
-        "12cl Pornstar Batch"
+        "Vodka",
+        "Passion Fruit",
+        "Vanilla",
+        "Lemon",
+        "Crémant"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 23,
-      "preparation": "Blender then shake double strain",
-      "glass": "Coupette",
-      "garnish": "half passion fruit shotglas of crémant",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -825,30 +1309,45 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Pornstar Martini",
+        "ingredients": [
+          "12cl Pornstar Batch"
+        ],
+        "preparation": "Blender then shake double strain",
+        "glass": "Coupette",
+        "garnish": "half passion fruit shotglas of crémant",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-025",
       "name": "Spicy Margarita",
       "categoryId": "cat-6",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "6cl Spicy Tequila",
-        "3cl Lime Juice",
-        "2cl Cointreau",
-        "1ds Agave sirup"
+        "Chili Cazadores Blanco",
+        "Cointreau",
+        "Lime",
+        "Agave"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 24,
-      "preparation": "Shake double strain",
-      "glass": "Coupette",
-      "garnish": "Salt Rim",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -857,30 +1356,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Spicy Margarita",
+        "ingredients": [
+          "6cl Spicy Tequila",
+          "3cl Lime Juice",
+          "2cl Cointreau",
+          "1ds Agave sirup"
+        ],
+        "preparation": "Shake double strain",
+        "glass": "Coupette",
+        "garnish": "Salt Rim",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-026",
-      "name": "Whisky Sour",
+      "name": "Whiskey Sour",
       "categoryId": "cat-6",
-      "price": null,
+      "price": 15,
       "description": "",
       "ingredients": [
-        "6cl Bourbon",
-        "3cl Lemon Juice",
-        "2cl Sugar Sirup",
-        "(3cl Eggwhite)"
+        "Bourbon",
+        "Lemon",
+        "Eggwhite (as desired)"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 25,
-      "preparation": "Blend then shake",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Angostura and Cherry",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -889,31 +1405,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Whisky Sour",
+        "ingredients": [
+          "6cl Bourbon",
+          "3cl Lemon Juice",
+          "2cl Sugar Sirup",
+          "(3cl Eggwhite)"
+        ],
+        "preparation": "Blend then shake",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Angostura and Cherry",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-027",
-      "name": "Jungle Bird",
+      "name": "Junge Bird",
       "categoryId": "cat-7",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "5cl Barcardi 8",
-        "5cl Pineapple Juice",
-        "2cl Lime Juice",
-        "2cl Gamondi Bitter",
-        "1cl Sugar Sirup"
+        "Bacardi Reserva Ocho",
+        "Pineapple",
+        "Gamondi Bitter",
+        "Lime"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 26,
-      "preparation": "Shaker double strain",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Color droplets",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -922,31 +1455,51 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Jungle Bird",
+        "ingredients": [
+          "5cl Barcardi 8",
+          "5cl Pineapple Juice",
+          "2cl Lime Juice",
+          "2cl Gamondi Bitter",
+          "1cl Sugar Sirup"
+        ],
+        "preparation": "Shaker double strain",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Color droplets",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-028",
       "name": "Mai Tai",
       "categoryId": "cat-7",
-      "price": null,
+      "price": 18,
       "description": "",
       "ingredients": [
-        "4cl White Rum",
-        "2cl Mamie Serum",
-        "4cl Lime juice",
-        "3cl Cointreau",
-        "2cl Almond Sirup"
+        "White Rum",
+        "Mamie Serum",
+        "Overproof Rum",
+        "Lime",
+        "Cointreau",
+        "Almond"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 27,
-      "preparation": "Shaker",
-      "glass": "Belly Glas Crushed Ice Overproof Rum on top",
-      "garnish": "Mint leaves",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -955,30 +1508,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 4
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Mai Tai",
+        "ingredients": [
+          "4cl White Rum",
+          "2cl Mamie Serum",
+          "4cl Lime juice",
+          "3cl Cointreau",
+          "2cl Almond Sirup"
+        ],
+        "preparation": "Shaker",
+        "glass": "Belly Glas Crushed Ice Overproof Rum on top",
+        "garnish": "Mint leaves",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 4
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-029",
       "name": "Painkiller",
       "categoryId": "cat-7",
-      "price": null,
+      "price": 17,
       "description": "",
       "ingredients": [
-        "6cl Havana 7",
-        "6cl Pineapple Juice",
-        "2cl Coconut Cream",
-        "2cl Orange Juice"
+        "Havana 7",
+        "Pineapple",
+        "Orange",
+        "Coconut"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 28,
-      "preparation": "Shake",
-      "glass": "Belly Glass/ Hurricane Glass Crushed Ice",
-      "garnish": "Dry Orange Slice Berry Powder",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -987,31 +1559,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 5
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Painkiller",
+        "ingredients": [
+          "6cl Havana 7",
+          "6cl Pineapple Juice",
+          "2cl Coconut Cream",
+          "2cl Orange Juice"
+        ],
+        "preparation": "Shake",
+        "glass": "Belly Glass/ Hurricane Glass Crushed Ice",
+        "garnish": "Dry Orange Slice Berry Powder",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 5
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-030",
       "name": "Virus",
       "categoryId": "cat-7",
-      "price": null,
+      "price": 18,
       "description": "",
       "ingredients": [
-        "6cl Vodka",
-        "6cl Strawberry pulp",
-        "4cl Pineapple Juice",
-        "2cl Lemon Juice",
-        "2cl Coconut sirup"
+        "Vodka",
+        "Coconut",
+        "Strawberry",
+        "Pineapple",
+        "Lemon"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 29,
-      "preparation": "Shake",
-      "glass": "Hurricane Glass",
-      "garnish": "Dried Berries",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1020,37 +1610,53 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 5
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Virus",
+        "ingredients": [
+          "6cl Vodka",
+          "6cl Strawberry pulp",
+          "4cl Pineapple Juice",
+          "2cl Lemon Juice",
+          "2cl Coconut sirup"
+        ],
+        "preparation": "Shake",
+        "glass": "Hurricane Glass",
+        "garnish": "Dried Berries",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 5
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-031",
-      "name": "Zombie (Danger)",
+      "name": "Zombie (Danger!)",
       "categoryId": "cat-7",
-      "price": null,
+      "price": 20,
       "description": "",
       "ingredients": [
-        "5cl Bacardi Oro",
-        "5cl Dark Rum",
-        "3cl Overproof Rum",
-        "5cl Lime Juice",
-        "1cl Grapefruitjuice",
-        "2cl Falernum",
-        "1cl Cinnamon Sirup",
-        "0,5 cl Grenadine",
-        "2ds Absinth",
-        "1ds Angostura",
-        "(20cl Zombie Batch)"
+        "Bacardi Carta Oro",
+        "Dark Rum",
+        "Overproof Rum",
+        "Lime",
+        "Grapefruit",
+        "Rum Liqueur",
+        "Cinnamon",
+        "Bitters"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 30,
-      "preparation": "Shake",
-      "glass": "Big Longdrink Glas Crushed Ice",
-      "garnish": "Mint Leaves",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1059,29 +1665,54 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 5
+        "file": "Karte26 2.pdf",
+        "page": 7
       },
-      "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Zombie (Danger)",
+        "ingredients": [
+          "5cl Bacardi Oro",
+          "5cl Dark Rum",
+          "3cl Overproof Rum",
+          "5cl Lime Juice",
+          "1cl Grapefruitjuice",
+          "2cl Falernum",
+          "1cl Cinnamon Sirup",
+          "0,5 cl Grenadine",
+          "2ds Absinth",
+          "1ds Angostura",
+          "(20cl Zombie Batch)"
+        ],
+        "preparation": "Shake",
+        "glass": "Big Longdrink Glas Crushed Ice",
+        "garnish": "Mint Leaves",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 5
+        },
+        "notes": "Mischung laut PDF; vollständige Bestandteile fehlen."
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-032",
       "name": "Bitter Flower",
       "categoryId": "cat-8",
-      "price": null,
+      "price": 12,
       "description": "",
       "ingredients": [
-        "3cl Munakra 0%",
-        "3cl Martini Vibrante",
-        "3cl Rebels Rosso"
+        "Munakra 0%",
+        "Martini Vibrante",
+        "Rebels Rosso"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 31,
-      "preparation": "Stirring Glas",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Orange Peel",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1090,30 +1721,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 5
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Bitter Flower",
+        "ingredients": [
+          "3cl Munakra 0%",
+          "3cl Martini Vibrante",
+          "3cl Rebels Rosso"
+        ],
+        "preparation": "Stirring Glas",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Orange Peel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 5
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-033",
       "name": "First Floor Juicer",
       "categoryId": "cat-8",
-      "price": null,
+      "price": 10,
       "description": "",
       "ingredients": [
-        "6cl Mango Pulp",
-        "5cl Milk Cream",
-        "3cl Orange Juice",
-        "1cl Grenadine"
+        "Mango",
+        "Grenadine",
+        "Orange",
+        "Milk"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 32,
-      "preparation": "Shaker",
-      "glass": "Coupette",
-      "garnish": "Physalis",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1122,30 +1770,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 5
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "First Floor Juicer",
+        "ingredients": [
+          "6cl Mango Pulp",
+          "5cl Milk Cream",
+          "3cl Orange Juice",
+          "1cl Grenadine"
+        ],
+        "preparation": "Shaker",
+        "glass": "Coupette",
+        "garnish": "Physalis",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 5
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-034",
       "name": "Light Amaretto Sour",
       "categoryId": "cat-8",
-      "price": null,
+      "price": 12,
       "description": "",
       "ingredients": [
-        "5cl Rebels Amaretto",
-        "3cl Lemon Juice",
-        "2cl Orange Juice",
-        "1cl Almond Sirup"
+        "Rebels Amaretto",
+        "Almond",
+        "Lemon",
+        "Orange"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 33,
-      "preparation": "Shaker",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Dry Orange Slice",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1154,31 +1820,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Light Amaretto Sour",
+        "ingredients": [
+          "5cl Rebels Amaretto",
+          "3cl Lemon Juice",
+          "2cl Orange Juice",
+          "1cl Almond Sirup"
+        ],
+        "preparation": "Shaker",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Dry Orange Slice",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-035",
       "name": "London Fog",
       "categoryId": "cat-8",
-      "price": null,
+      "price": 12,
       "description": "",
       "ingredients": [
-        "8cl Black Tea",
-        "5cl Milk Cream",
-        "2cl Vanilla Sirup",
-        "1ds Pepper",
-        "1 Lime Peel"
+        "Earl Grey Tea",
+        "Milk",
+        "Vanilla",
+        "Pepper",
+        "Lime"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 34,
-      "preparation": "Shaker",
-      "glass": "Nick&Nora",
-      "garnish": "Cacao Kiss",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1187,29 +1871,48 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "London Fog",
+        "ingredients": [
+          "8cl Black Tea",
+          "5cl Milk Cream",
+          "2cl Vanilla Sirup",
+          "1ds Pepper",
+          "1 Lime Peel"
+        ],
+        "preparation": "Shaker",
+        "glass": "Nick&Nora",
+        "garnish": "Cacao Kiss",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-036",
       "name": "Not Rosé",
       "categoryId": "cat-8",
-      "price": null,
+      "price": 10,
       "description": "",
       "ingredients": [
-        "6cl French Bloom",
-        "2cl Martini Floreale",
-        "2cl Strawberry Cordial"
+        "French Bloom Le Blanc",
+        "Martini Floreale",
+        "Strawberry Cordial"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 35,
-      "preparation": "Built in Glass",
-      "glass": "Prosecco Glas",
-      "garnish": "Dry Berry",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1218,26 +1921,43 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Not Rosé",
+        "ingredients": [
+          "6cl French Bloom",
+          "2cl Martini Floreale",
+          "2cl Strawberry Cordial"
+        ],
+        "preparation": "Built in Glass",
+        "glass": "Prosecco Glas",
+        "garnish": "Dry Berry",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-037",
       "name": "Espresso Shot",
       "categoryId": "cat-9",
-      "price": null,
+      "price": 6,
       "description": "",
       "ingredients": [
-        "3cl Koskenkorva Espresso"
+        "Koskenkorva Espresso"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 36,
-      "preparation": "Shaker",
-      "glass": "Small Shotglas",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -1247,27 +1967,42 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Espresso Shot",
+        "ingredients": [
+          "3cl Koskenkorva Espresso"
+        ],
+        "preparation": "Shaker",
+        "glass": "Small Shotglas",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-038",
       "name": "Nut Job",
       "categoryId": "cat-9",
-      "price": null,
+      "price": 6,
       "description": "",
       "ingredients": [
-        "2cl Nüssle",
-        "2cl Zirbe Schnaps"
+        "Waldgeist Zirbe",
+        "Nüssle Hazelnut"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 37,
-      "preparation": "Built in glas",
-      "glass": "small shotglas",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -1277,27 +2012,43 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Nut Job",
+        "ingredients": [
+          "2cl Nüssle",
+          "2cl Zirbe Schnaps"
+        ],
+        "preparation": "Built in glas",
+        "glass": "small shotglas",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-039",
       "name": "Pink Shot",
       "categoryId": "cat-9",
-      "price": null,
+      "price": 6,
       "description": "",
       "ingredients": [
-        "2cl Tequila blanco",
-        "2cl Gamondi Pink"
+        "Cazadores Blanco",
+        "Gamondi Pink"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 38,
-      "preparation": "Built in glas",
-      "glass": "small shotglas",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -1307,28 +2058,44 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Pink Shot",
+        "ingredients": [
+          "2cl Tequila blanco",
+          "2cl Gamondi Pink"
+        ],
+        "preparation": "Built in glas",
+        "glass": "small shotglas",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-040",
       "name": "Pistolero",
       "categoryId": "cat-9",
-      "price": null,
+      "price": 6,
       "description": "",
       "ingredients": [
-        "1cl Jack Daniels",
-        "1cl Cointreau",
-        "1cl Amaretto"
+        "Jack Daniels",
+        "Cointreau",
+        "Amaretto"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 39,
-      "preparation": "Built in glas",
-      "glass": "small shotglas",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -1338,28 +2105,45 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Pistolero",
+        "ingredients": [
+          "1cl Jack Daniels",
+          "1cl Cointreau",
+          "1cl Amaretto"
+        ],
+        "preparation": "Built in glas",
+        "glass": "small shotglas",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-041",
       "name": "Strawberry",
       "categoryId": "cat-9",
-      "price": null,
+      "price": 6,
       "description": "",
       "ingredients": [
-        "1,5cl Strawberry pulp",
-        "1,5cl Vodka",
-        "1ds Lemon juice"
+        "Vodka",
+        "Strawberry",
+        "Lemon"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 40,
-      "preparation": "Shaker",
-      "glass": "small shotglas",
+      "preparation": "",
+      "glass": "",
       "garnish": "",
       "allergens": [],
       "alcoholContent": null,
@@ -1369,29 +2153,46 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 6
+        "file": "Karte26 2.pdf",
+        "page": 9
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Strawberry",
+        "ingredients": [
+          "1,5cl Strawberry pulp",
+          "1,5cl Vodka",
+          "1ds Lemon juice"
+        ],
+        "preparation": "Shaker",
+        "glass": "small shotglas",
+        "garnish": "",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 6
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-042",
-      "name": "Apricot&Smoke",
+      "name": "Apricot & Smoke",
       "categoryId": "cat-10",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "4cl Bruichladdich Scotch",
-        "3cl Apricot Jam",
-        "3cl Vintage Vreimuth Vermouth"
+        "Bruichladdich Classic Laddie",
+        "Apricot Jam",
+        "Vintage Vreimuth Vermouth"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 41,
-      "preparation": "Stirring",
-      "glass": "Nick&Nora glass",
-      "garnish": "Cherry Dried Orange Wheel Dried Apricot",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1400,30 +2201,47 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 7
+        "file": "Karte26 2.pdf",
+        "page": 15
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Apricot&Smoke",
+        "ingredients": [
+          "4cl Bruichladdich Scotch",
+          "3cl Apricot Jam",
+          "3cl Vintage Vreimuth Vermouth"
+        ],
+        "preparation": "Stirring",
+        "glass": "Nick&Nora glass",
+        "garnish": "Cherry Dried Orange Wheel Dried Apricot",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 7
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-043",
       "name": "Norwegian Wood",
       "categoryId": "cat-10",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Gin",
-        "5cl Pineapple Juice",
-        "3cl Lemon Juice",
-        "2cl St Germain"
+        "Gin",
+        "Lemon",
+        "St. Germain",
+        "Pineapple"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 42,
-      "preparation": "Shaker",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Dried Berries Dried Flowers Lemon Wheel",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1432,32 +2250,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 7
+        "file": "Karte26 2.pdf",
+        "page": 15
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Norwegian Wood",
+        "ingredients": [
+          "6cl Gin",
+          "5cl Pineapple Juice",
+          "3cl Lemon Juice",
+          "2cl St Germain"
+        ],
+        "preparation": "Shaker",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Dried Berries Dried Flowers Lemon Wheel",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 7
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-044",
       "name": "Red Opium",
       "categoryId": "cat-10",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Vodka",
-        "8cl Strawberry Puree",
-        "2cl Peach Sirup",
-        "3cl Lemon Juice",
-        "4cl Strawberry Sirup",
-        "Small handful mint leaves"
+        "Vodka",
+        "Lemon",
+        "Peach",
+        "Strawberry",
+        "Mint"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 43,
-      "preparation": "Blender",
-      "glass": "Big Longdrinkglass",
-      "garnish": "Dried Berries Mint leaves",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1466,30 +2301,50 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 7
+        "file": "Karte26 2.pdf",
+        "page": 15
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Red Opium",
+        "ingredients": [
+          "6cl Vodka",
+          "8cl Strawberry Puree",
+          "2cl Peach Sirup",
+          "3cl Lemon Juice",
+          "4cl Strawberry Sirup",
+          "Small handful mint leaves"
+        ],
+        "preparation": "Blender",
+        "glass": "Big Longdrinkglass",
+        "garnish": "Dried Berries Mint leaves",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 7
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-045",
       "name": "Rose Petals",
       "categoryId": "cat-10",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Gin",
-        "3cl Lemon Juice",
-        "3cl Rose Sirup",
-        "Fill Up Rose Lemonade"
+        "Gin",
+        "Rose",
+        "Lemon",
+        "Rose Limonade"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 44,
-      "preparation": "Built in glass",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Rose Petals",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1498,31 +2353,49 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 7
+        "file": "Karte26 2.pdf",
+        "page": 15
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "Rose Petals",
+        "ingredients": [
+          "6cl Gin",
+          "3cl Lemon Juice",
+          "3cl Rose Sirup",
+          "Fill Up Rose Lemonade"
+        ],
+        "preparation": "Built in glass",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Rose Petals",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 7
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
     },
     {
       "id": "drink-046",
-      "name": "The Good, Bad, Ugly",
+      "name": "The Good, The Bad & The Ugly",
       "categoryId": "cat-10",
-      "price": null,
+      "price": 16,
       "description": "",
       "ingredients": [
-        "6cl Gin",
-        "5cl Pineapple Juice",
-        "3cl Lemon Juice",
-        "2cl Almond Sirup",
-        "2cl Kiwi Sirup"
+        "Gin",
+        "Almond",
+        "Kiwi",
+        "Lemon",
+        "Pineapple"
       ],
       "photo": "",
       "photoAlt": "",
       "active": true,
       "order": 45,
-      "preparation": "Shaker",
-      "glass": "Tumbler Ice Cubes",
-      "garnish": "Dried Lime Wheel Dried Flowers",
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
       "allergens": [],
       "alcoholContent": null,
       "tags": [],
@@ -1531,10 +2404,2466 @@
         "#ad7946"
       ],
       "source": {
-        "file": "Receipes New Menu_Bar.pdf",
-        "page": 7
+        "file": "Karte26 2.pdf",
+        "page": 15
       },
-      "notes": ""
+      "notes": "",
+      "legacyRecipe": {
+        "name": "The Good, Bad, Ugly",
+        "ingredients": [
+          "6cl Gin",
+          "5cl Pineapple Juice",
+          "3cl Lemon Juice",
+          "2cl Almond Sirup",
+          "2cl Kiwi Sirup"
+        ],
+        "preparation": "Shaker",
+        "glass": "Tumbler Ice Cubes",
+        "garnish": "Dried Lime Wheel Dried Flowers",
+        "source": {
+          "file": "Receipes New Menu_Bar.pdf",
+          "page": 7
+        },
+        "notes": ""
+      },
+      "kind": "cocktail"
+    },
+    {
+      "id": "item-047",
+      "name": "Ballantine's Finest",
+      "categoryId": "cat-11",
+      "price": 13,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 46,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-048",
+      "name": "Bruichladdich Classic Laddie",
+      "categoryId": "cat-11",
+      "price": 17,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 47,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "50 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-049",
+      "name": "Caol Ila 12",
+      "categoryId": "cat-11",
+      "price": 18,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 48,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-050",
+      "name": "Chivas Regal 12Y",
+      "categoryId": "cat-11",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 49,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-051",
+      "name": "Dalwhinnie 15Y",
+      "categoryId": "cat-11",
+      "price": 19,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 50,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-052",
+      "name": "Glenfiddich 12Y",
+      "categoryId": "cat-11",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 51,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-053",
+      "name": "Glenlivet 12Y",
+      "categoryId": "cat-11",
+      "price": 17,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 52,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-054",
+      "name": "Glenmorangie 12Y",
+      "categoryId": "cat-11",
+      "price": 18,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 53,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-055",
+      "name": "Highland Park 12Y",
+      "categoryId": "cat-11",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 54,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-056",
+      "name": "Johnnie Walker Black Label",
+      "categoryId": "cat-11",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 55,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-057",
+      "name": "Lagavulin 16Y",
+      "categoryId": "cat-11",
+      "price": 34,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 56,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-058",
+      "name": "Laphroaig 10Y",
+      "categoryId": "cat-11",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 57,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-059",
+      "name": "Macallan 12Y",
+      "categoryId": "cat-11",
+      "price": 37,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 58,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-060",
+      "name": "Macallan 15Y",
+      "categoryId": "cat-11",
+      "price": 71,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 59,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-061",
+      "name": "Monkey Shoulder",
+      "categoryId": "cat-11",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 60,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-062",
+      "name": "Oban 14Y",
+      "categoryId": "cat-11",
+      "price": 26,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 61,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-063",
+      "name": "Talisker 10Y",
+      "categoryId": "cat-11",
+      "price": 14,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 62,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "45 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-064",
+      "name": "Basil Hayden 8Y",
+      "categoryId": "cat-12",
+      "price": 21,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 63,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-065",
+      "name": "Buffalo Trace Bourbon",
+      "categoryId": "cat-12",
+      "price": 9,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 64,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-066",
+      "name": "Maker's Mark",
+      "categoryId": "cat-12",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 65,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "45 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-067",
+      "name": "Wild Turkey 101 Proof",
+      "categoryId": "cat-12",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 66,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "51 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-068",
+      "name": "Woodford Reserve",
+      "categoryId": "cat-12",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 67,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 11
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-069",
+      "name": "Grace O'Malley",
+      "categoryId": "cat-13",
+      "price": 11,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 68,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-070",
+      "name": "Jameson",
+      "categoryId": "cat-13",
+      "price": 9,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 69,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-071",
+      "name": "Redbreast 12Y",
+      "categoryId": "cat-13",
+      "price": 21,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 70,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-072",
+      "name": "Teeling Single Grain",
+      "categoryId": "cat-13",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 71,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "46 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-073",
+      "name": "Teeling Small Batch",
+      "categoryId": "cat-13",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 72,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "46 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-074",
+      "name": "Beefeater 24",
+      "categoryId": "cat-14",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 73,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "45 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-075",
+      "name": "Bombay Saphire",
+      "categoryId": "cat-14",
+      "price": 9,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 74,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-076",
+      "name": "Hendrick's",
+      "categoryId": "cat-14",
+      "price": 16,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 75,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "42 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-077",
+      "name": "Mintis Gin",
+      "categoryId": "cat-14",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 76,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "41 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-078",
+      "name": "Monkey 47",
+      "categoryId": "cat-14",
+      "price": 19,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 77,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "47 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-079",
+      "name": "Monkey 47 Sloe Gin",
+      "categoryId": "cat-14",
+      "price": 20,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 78,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "29 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-080",
+      "name": "Munakra Black",
+      "categoryId": "cat-14",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 79,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "42 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-081",
+      "name": "Munakra Chardonnay Cask",
+      "categoryId": "cat-14",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 80,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "42 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-082",
+      "name": "Munakra Mystic Garden",
+      "categoryId": "cat-14",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 81,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "42 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-083",
+      "name": "Munakra Night Blossom",
+      "categoryId": "cat-14",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 82,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "42 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-084",
+      "name": "Tanqueray Dry",
+      "categoryId": "cat-14",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 83,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "43 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-085",
+      "name": "Tanqueray Flor de Sevilla",
+      "categoryId": "cat-14",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 84,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "41 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-086",
+      "name": "Tanqueray No. Ten",
+      "categoryId": "cat-14",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 85,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "47 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-087",
+      "name": "Bacardi Reserva Ocho",
+      "categoryId": "cat-15",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 86,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-088",
+      "name": "Bumbu XO",
+      "categoryId": "cat-15",
+      "price": 14,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 87,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-089",
+      "name": "Diplomatico Reserva Exclusiva 12Y",
+      "categoryId": "cat-15",
+      "price": 16,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 88,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-090",
+      "name": "Don Papa Baroko",
+      "categoryId": "cat-15",
+      "price": 14,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 89,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-091",
+      "name": "Havana Club Anejo 7Y",
+      "categoryId": "cat-15",
+      "price": 11,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 90,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-092",
+      "name": "Matusalem Gran Reserva 15Y",
+      "categoryId": "cat-15",
+      "price": 10,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 91,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-093",
+      "name": "Plantation XO",
+      "categoryId": "cat-15",
+      "price": 18,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 92,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-094",
+      "name": "Zacapa Centenario 23Y",
+      "categoryId": "cat-15",
+      "price": 21,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 93,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 12
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-095",
+      "name": "1800 Tequila Blanco/Reposado/Anejo",
+      "categoryId": "cat-16",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 94,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "38 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-096",
+      "name": "Del Maguay Vida Mezcal",
+      "categoryId": "cat-16",
+      "price": 15,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 95,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "38 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-097",
+      "name": "Patron Silver/Reposado/Anejo/XO Café",
+      "categoryId": "cat-16",
+      "price": 14,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 96,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-098",
+      "name": "Siete Misterios Doba-Yej Mezcal",
+      "categoryId": "cat-16",
+      "price": 17,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 97,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "44 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-099",
+      "name": "Volcan de mi Tierra Blanco",
+      "categoryId": "cat-16",
+      "price": 17,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 98,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "4 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-100",
+      "name": "Belvedere",
+      "categoryId": "cat-17",
+      "price": 13,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 99,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-101",
+      "name": "Ciroc Vodka",
+      "categoryId": "cat-17",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 100,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-102",
+      "name": "Edelweiss Vodka",
+      "categoryId": "cat-17",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 101,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-103",
+      "name": "Grey Goose",
+      "categoryId": "cat-17",
+      "price": 14,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 102,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-104",
+      "name": "Haku Japanese Vodka",
+      "categoryId": "cat-17",
+      "price": 12,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 103,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "40 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "5 cl",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-105",
+      "name": "Andre delorme Crémant Flasche",
+      "categoryId": "cat-18",
+      "price": 48,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 104,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "12 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-106",
+      "name": "Andre delorme Crémant Glas",
+      "categoryId": "cat-18",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 105,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "12 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-107",
+      "name": "Born Rosé Barcelona ROSÈ Spritz Flasche",
+      "categoryId": "cat-18",
+      "price": 39,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 106,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "8 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-108",
+      "name": "French Bloom Le Blanc 0,375L Fla",
+      "categoryId": "cat-18",
+      "price": 38,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 107,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "0,375L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-109",
+      "name": "French Bloom Le Blanc 0,75L Flas",
+      "categoryId": "cat-18",
+      "price": 58,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 108,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "0,75L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-110",
+      "name": "Hochriegl Trocken Flasche 0,70L",
+      "categoryId": "cat-18",
+      "price": 31,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 109,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "12 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "0,70L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-111",
+      "name": "Philipponnat Royale Reserve Brut Flasche 0,75L",
+      "categoryId": "cat-18",
+      "price": 170,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 110,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "13 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "0,75L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-112",
+      "name": "Prosecco Costa Del RE Flasche",
+      "categoryId": "cat-18",
+      "price": 30,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 111,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "11 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-113",
+      "name": "Prosecco Costa Del RE Glas",
+      "categoryId": "cat-18",
+      "price": 4,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 112,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "11 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-114",
+      "name": "Vessele Brut Réserve Champagner Flasche",
+      "categoryId": "cat-18",
+      "price": 108,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 113,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "12 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-115",
+      "name": "Veuve Clicquot Brut Flasche 0,75L",
+      "categoryId": "cat-18",
+      "price": 159,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 114,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "12 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 13
+      },
+      "notes": "",
+      "serving": "0,75L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-116",
+      "name": "Hefeweizen 0,33L",
+      "categoryId": "cat-19",
+      "price": 8,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 115,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "6 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,33L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-117",
+      "name": "Pils 0,33L",
+      "categoryId": "cat-19",
+      "price": 8,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 116,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": "5 % vol",
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,33L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-118",
+      "name": "Coca-Cola 0,33L",
+      "categoryId": "cat-20",
+      "price": 5,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 117,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,33L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-119",
+      "name": "Fever Tree Bitter Lemon 0,20L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 118,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,20L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-120",
+      "name": "Fever Tree Ginger Ale 0,20L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 119,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,20L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-121",
+      "name": "Fever Tree Ginger Beer 0,20L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 120,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,20L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-122",
+      "name": "Fever Tree Pink Grapefruit Soda 0,20L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 121,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,20L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-123",
+      "name": "Fever Tree Tonic Water 0,20L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 122,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,20L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-124",
+      "name": "Mineral Water 0,33L",
+      "categoryId": "cat-20",
+      "price": 3,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 123,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,33L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-125",
+      "name": "Mineral Water 0,75L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 124,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,75L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-126",
+      "name": "Rosenlimonade 0,275L",
+      "categoryId": "cat-20",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 125,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "0,275L",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-127",
+      "name": "Soda Elderflower",
+      "categoryId": "cat-20",
+      "price": 5,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 126,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-128",
+      "name": "Soda Lime",
+      "categoryId": "cat-20",
+      "price": 5,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 127,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-129",
+      "name": "Soda Passion Fruit",
+      "categoryId": "cat-20",
+      "price": 5,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 128,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "beverage"
+    },
+    {
+      "id": "item-130",
+      "name": "Oliven",
+      "categoryId": "cat-21",
+      "price": 6,
+      "description": "",
+      "ingredients": [],
+      "photo": "",
+      "photoAlt": "",
+      "active": true,
+      "order": 129,
+      "preparation": "",
+      "glass": "",
+      "garnish": "",
+      "allergens": [],
+      "alcoholContent": null,
+      "tags": [],
+      "palette": [
+        "#563322",
+        "#ad7946"
+      ],
+      "source": {
+        "file": "Karte26 2.pdf",
+        "page": 14
+      },
+      "notes": "",
+      "serving": "",
+      "kind": "snack"
     }
-  ]
+  ],
+  "revision": "karte26-2-2026-09-23"
 }

@@ -1,0 +1,20 @@
+project_id = "pandasbarcard"
+[auth]
+site_url = "https://pandalap-lab.github.io/PandasBarCard/admin/"
+additional_redirect_urls = ["https://pandalap-lab.github.io/PandasBarCard/admin/"]
+enable_signup = false
+jwt_expiry = 900
+minimum_password_length = 12
+[auth.email]
+enable_signup = false
+enable_confirmations = true
+secure_password_change = true
+otp_expiry = 900
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+[auth.hook.send_email]
+enabled = true
+uri = "pg-functions://postgres/public/block_public_auth_email"
+[functions.bar-admin]
+verify_jwt = false

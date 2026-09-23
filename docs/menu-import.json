@@ -1,0 +1,338 @@
+{
+  "source": "Karte26 2.pdf",
+  "baseCommit": "c48ffe7eb1006fedba67573e2a97d193323f74a4",
+  "existingDrinks": 46,
+  "newEntries": 84,
+  "total": 130,
+  "changes": [
+    {
+      "id": "drink-001",
+      "oldName": "First Floor Martini",
+      "newName": "The First Floor Martini",
+      "price": 18,
+      "page": 2
+    },
+    {
+      "id": "drink-002",
+      "oldName": "Bacardi Cola",
+      "newName": "Barcardi Cola",
+      "price": 12,
+      "page": 3
+    },
+    {
+      "id": "drink-003",
+      "oldName": "Gamondi Orange Spritz",
+      "newName": "Gamondi Orange Spritz",
+      "price": 10,
+      "page": 3
+    },
+    {
+      "id": "drink-004",
+      "oldName": "La Vie en Rose",
+      "newName": "La Vie En Rose",
+      "price": 14,
+      "page": 3
+    },
+    {
+      "id": "drink-005",
+      "oldName": "Patrón Paloma",
+      "newName": "Patrón Paloma",
+      "price": 14,
+      "page": 3
+    },
+    {
+      "id": "drink-006",
+      "oldName": "St. Germain Spritz",
+      "newName": "St. Germain Spritz",
+      "price": 12,
+      "page": 3
+    },
+    {
+      "id": "drink-007",
+      "oldName": "Buttermilk Margarita",
+      "newName": "Buttermilk Margarita",
+      "price": 16,
+      "page": 3
+    },
+    {
+      "id": "drink-008",
+      "oldName": "Klima’s Rausch",
+      "newName": "Klima's Rausch",
+      "price": 16,
+      "page": 3
+    },
+    {
+      "id": "drink-009",
+      "oldName": "Royal Kiss",
+      "newName": "Royal Kiss",
+      "price": 16,
+      "page": 3
+    },
+    {
+      "id": "drink-010",
+      "oldName": "Samba Sol",
+      "newName": "Samba Sol",
+      "price": 16,
+      "page": 3
+    },
+    {
+      "id": "drink-011",
+      "oldName": "Tropical Dry Daiquiri",
+      "newName": "Tropical Dry Martini",
+      "price": 16,
+      "page": 3
+    },
+    {
+      "id": "drink-012",
+      "oldName": "First Floor Negroni",
+      "newName": "First Floor Negroni",
+      "price": 15,
+      "page": 5
+    },
+    {
+      "id": "drink-013",
+      "oldName": "Grey Goose Espresso Martini",
+      "newName": "Grey Goose Espresso Martini",
+      "price": 18,
+      "page": 5
+    },
+    {
+      "id": "drink-014",
+      "oldName": "Pink Rumble",
+      "newName": "Pink Rumble",
+      "price": 15,
+      "page": 5
+    },
+    {
+      "id": "drink-015",
+      "oldName": "Robbie Brown",
+      "newName": "Robbie Brown",
+      "price": 17,
+      "page": 5
+    },
+    {
+      "id": "drink-016",
+      "oldName": "Sting& The Police",
+      "newName": "Sting & The Police",
+      "price": 16,
+      "page": 5
+    },
+    {
+      "id": "drink-017",
+      "oldName": "Horchata our way",
+      "newName": "Horchata our way",
+      "price": 15,
+      "page": 5
+    },
+    {
+      "id": "drink-018",
+      "oldName": "Paracethanol",
+      "newName": "Paracethanol",
+      "price": 15,
+      "page": 5
+    },
+    {
+      "id": "drink-019",
+      "oldName": "Spiced Corn n’Oil",
+      "newName": "Spiced Corn n' Oil",
+      "price": 16,
+      "page": 5
+    },
+    {
+      "id": "drink-020",
+      "oldName": "White Russian",
+      "newName": "White Russian",
+      "price": 15,
+      "page": 5
+    },
+    {
+      "id": "drink-021",
+      "oldName": "Wiener Limettenzuckerl",
+      "newName": "Wiener Limettenzuckerl",
+      "price": 16,
+      "page": 5
+    },
+    {
+      "id": "drink-022",
+      "oldName": "Gin Basil Smash",
+      "newName": "Gin Basil Smash",
+      "price": 17,
+      "page": 7
+    },
+    {
+      "id": "drink-023",
+      "oldName": "Old Fashioned",
+      "newName": "Old Fashioned",
+      "price": 15,
+      "page": 7
+    },
+    {
+      "id": "drink-024",
+      "oldName": "Pornstar Martini",
+      "newName": "Pornstar Martini",
+      "price": 20,
+      "page": 7
+    },
+    {
+      "id": "drink-025",
+      "oldName": "Spicy Margarita",
+      "newName": "Spicy Margarita",
+      "price": 15,
+      "page": 7
+    },
+    {
+      "id": "drink-026",
+      "oldName": "Whisky Sour",
+      "newName": "Whiskey Sour",
+      "price": 15,
+      "page": 7
+    },
+    {
+      "id": "drink-027",
+      "oldName": "Jungle Bird",
+      "newName": "Junge Bird",
+      "price": 16,
+      "page": 7
+    },
+    {
+      "id": "drink-028",
+      "oldName": "Mai Tai",
+      "newName": "Mai Tai",
+      "price": 18,
+      "page": 7
+    },
+    {
+      "id": "drink-029",
+      "oldName": "Painkiller",
+      "newName": "Painkiller",
+      "price": 17,
+      "page": 7
+    },
+    {
+      "id": "drink-030",
+      "oldName": "Virus",
+      "newName": "Virus",
+      "price": 18,
+      "page": 7
+    },
+    {
+      "id": "drink-031",
+      "oldName": "Zombie (Danger)",
+      "newName": "Zombie (Danger!)",
+      "price": 20,
+      "page": 7
+    },
+    {
+      "id": "drink-032",
+      "oldName": "Bitter Flower",
+      "newName": "Bitter Flower",
+      "price": 12,
+      "page": 9
+    },
+    {
+      "id": "drink-033",
+      "oldName": "First Floor Juicer",
+      "newName": "First Floor Juicer",
+      "price": 10,
+      "page": 9
+    },
+    {
+      "id": "drink-034",
+      "oldName": "Light Amaretto Sour",
+      "newName": "Light Amaretto Sour",
+      "price": 12,
+      "page": 9
+    },
+    {
+      "id": "drink-035",
+      "oldName": "London Fog",
+      "newName": "London Fog",
+      "price": 12,
+      "page": 9
+    },
+    {
+      "id": "drink-036",
+      "oldName": "Not Rosé",
+      "newName": "Not Rosé",
+      "price": 10,
+      "page": 9
+    },
+    {
+      "id": "drink-037",
+      "oldName": "Espresso Shot",
+      "newName": "Espresso Shot",
+      "price": 6,
+      "page": 9
+    },
+    {
+      "id": "drink-038",
+      "oldName": "Nut Job",
+      "newName": "Nut Job",
+      "price": 6,
+      "page": 9
+    },
+    {
+      "id": "drink-039",
+      "oldName": "Pink Shot",
+      "newName": "Pink Shot",
+      "price": 6,
+      "page": 9
+    },
+    {
+      "id": "drink-040",
+      "oldName": "Pistolero",
+      "newName": "Pistolero",
+      "price": 6,
+      "page": 9
+    },
+    {
+      "id": "drink-041",
+      "oldName": "Strawberry",
+      "newName": "Strawberry",
+      "price": 6,
+      "page": 9
+    },
+    {
+      "id": "drink-042",
+      "oldName": "Apricot&Smoke",
+      "newName": "Apricot & Smoke",
+      "price": 16,
+      "page": 15
+    },
+    {
+      "id": "drink-043",
+      "oldName": "Norwegian Wood",
+      "newName": "Norwegian Wood",
+      "price": 16,
+      "page": 15
+    },
+    {
+      "id": "drink-044",
+      "oldName": "Red Opium",
+      "newName": "Red Opium",
+      "price": 16,
+      "page": 15
+    },
+    {
+      "id": "drink-045",
+      "oldName": "Rose Petals",
+      "newName": "Rose Petals",
+      "price": 16,
+      "page": 15
+    },
+    {
+      "id": "drink-046",
+      "oldName": "The Good, Bad, Ugly",
+      "newName": "The Good, The Bad & The Ugly",
+      "price": 16,
+      "page": 15
+    }
+  ],
+  "notes": [
+    "Quellschreibweisen Barcardi Cola, Junge Bird und Autmn bewusst erhalten.",
+    "Tropical Dry Daiquiri wird in der aktuellen Karte Tropical Dry Martini genannt; vorhandene ID und Illustration erhalten.",
+    "Historische Rezeptdetails werden in legacyRecipe aufbewahrt, öffentlich gelten die Zutaten der neuen Karte.",
+    "Varianten mit Schrägstrich sind ein gemeinsamer Karteneintrag.",
+    "Keine Allergene aus Zutaten abgeleitet."
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"pandasbarcard","private":true,"type":"module","scripts":{"build:auth":"node scripts/vendor-auth.mjs","test":"node --test tests/*.test.js"},"dependencies":{"@supabase/supabase-js":"2.105.0"},"devDependencies":{"@electric-sql/pglite":"0.3.14"}}
