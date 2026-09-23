@@ -17,7 +17,7 @@ GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersat
 - Fotos: private Entwürfe, veröffentlichte Kopien im öffentlichen Bildbereich. Keine Browser-Schreibrechte auf Storage.
 - Veröffentlichung: Versionskontrolle und Transaktion mit Audit. Gleichzeitige Änderungen werden nicht still überschrieben.
 - Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Gmail-Versand ist eingerichtet; die Ende-zu-Ende-Prüfung des Reset-E-Mail-Versands steht noch aus.**
-- Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Versandtest und Empfänger für Sicherheitsmeldungen noch offen; Fehler werden protokolliert.
+- Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Empfänger für Sicherheitsmeldungen: noname.g8@gmail.com; Versandtest noch offen; Fehler werden protokolliert.
 - Passkeys: vorbereitet, derzeit deaktiviert; keine Behauptung einer produktiven Passkey-Einrichtung.
 - Keine Passwörter, Service-Schlüssel oder GitHub-Tokens im Browser. Publishable Key ist absichtlich öffentlich.
 
@@ -49,4 +49,4 @@ A5-Hochformat (148 × 210 mm), ruhiger brauner Hintergrund, goldene Überschrift
 Prüfung: 12 automatisierte Tests bestanden, A5-Seitengröße und vollständige Eintragszahl geprüft, alle 19 Beispielseiten visuell kontrolliert. Beispiel basiert auf 130 Einträgen. Online-Administration weiterhin mit Rollenprüfung und MFA; Nur-Lesen-Rolle erhält keine zusätzlichen Rechte durch den Export.
 
 
-Gmail-Status 23.09.2026: Google-Freigabe erteilt, fünf Mail-Konfigurationswerte in Supabase Secrets gespeichert, neue Edge Function bereitgestellt. Noch kein bestätigter Mailversand. Empfängerbestätigung für Test und Sicherheitsmeldungen ausstehend. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
+Gmail-Status 23.09.2026: Google-Freigabe erteilt, fünf Mail-Konfigurationswerte in Supabase Secrets gespeichert, neue Edge Function bereitgestellt. Noch kein bestätigter Mailversand. Empfänger für Test und Sicherheitsmeldungen bestätigt: noname.g8@gmail.com. Unter Benutzerverwaltung steht Administratoren „Test-E-Mail senden“ zur Verfügung. Der Test schreibt einen Audit-Eintrag und versendet nur an den konfigurierten Empfänger. 13 automatisierte Tests bestanden. Versand-/Empfangsprüfung noch ausstehend. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
