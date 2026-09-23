@@ -1,6 +1,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.105.0';
 import {ApiError,authorize,validateMenu,parseClaims} from './policy.js';
-const env=(k:string)=>{const v=Deno.env.get(k);if(!v)throw new Error('Missing configuration: '+k);return v;};
+const defaults:Record<string,string>={ADMIN_ORIGIN:'https://pandalap-lab.github.io',ADMIN_URL:'https://pandalap-lab.github.io/PandasBarCard/admin/'};
+const env=(k:string)=>{const v=Deno.env.get(k)||defaults[k];if(!v)throw new Error('Missing configuration: '+k);return v;};
 const db=createClient(env('SUPABASE_URL'),env('SUPABASE_SERVICE_ROLE_KEY'),{auth:{persistSession:false,autoRefreshToken:false}});
 const origin=env('ADMIN_ORIGIN');
 const checked=async(q:any)=>{const {data,error}=await q;if(error)throw new ApiError(409,'Vorgang nicht abgeschlossen. Daten neu laden oder Administrator kontaktieren.');return data;};
@@ -13,18 +14,53 @@ async function notice(actor:string,event:string,details:any){
  try{await mail(env('SECURITY_EMAIL'),'PANDAsBarCard: '+event,JSON.stringify({at:new Date().toISOString(),actor,...details},null,2));return true;}
  catch{await audit(actor,'email.failed',{event});return false;}
 }
-async function github(path:string,method='GET',body?:any){
- const r=await fetch('https://api.github.com/repos/'+env('GITHUB_REPOSITORY')+path,{method,headers:{Authorization:'Bearer '+env('GITHUB_TOKEN'),Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json','User-Agent':'PandasBarCard'},body:body?JSON.stringify(body):undefined});
- if(!r.ok)throw new ApiError(r.status===409||r.status===422?409:502,'GitHub-Vorgang fehlgeschlagen. Bei Konflikt Daten neu laden.');
- return r.json();
-}
-const decode=(s:string)=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));
-const encode=(s:string)=>{const bytes=new TextEncoder().encode(s);let bin='';for(let i=0;i<bytes.length;i+=8192)bin+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(bin);};
+const storagePrefix=env('SUPABASE_URL')+'/storage/v1/object/public/bar-published/';
+const refPattern=/^storage:([a-f0-9]{64}\.(?:webp|png|jpg))$/;
 async function published(){
- const result=await github('/contents/data/drinks.json?ref='+encodeURIComponent(env('GITHUB_BRANCH')));
- // Contents API omits content for larger files: fetch the Git blob, never a caller-provided URL.
- const blob=result.content?result:await github('/git/blobs/'+result.sha);
- return {document:validateMenu(JSON.parse(decode(blob.content))),sha:result.sha};
+ const row=await checked(db.from('bar_published').select('*').eq('id',1).maybeSingle());
+ if(!row)throw new ApiError(409,'Die Erstübernahme der veröffentlichten Karte fehlt.');
+ return row;
+}
+function imageBytes(value:string){
+ const match=/^data:image\/(webp|png|jpeg);base64,([A-Za-z0-9+/]+=*)$/.exec(value);
+ if(!match||value.length>2700000)throw new ApiError(400,'Bild ungültig oder zu groß.');
+ const bytes=Uint8Array.from(atob(match[2]),c=>c.charCodeAt(0));
+ const head=String.fromCharCode(...bytes.subarray(0,12));
+ if(bytes.length>2000000||!(match[1]==='webp'&&head.startsWith('RIFF')&&head.slice(8)==='WEBP'||match[1]==='png'&&head.startsWith('\x89PNG\r\n\x1a\n')||match[1]==='jpeg'&&bytes[0]===255&&bytes[1]===216&&bytes[2]===255))throw new ApiError(400,'Kein unterstütztes Rasterbild.');
+ return {bytes,type:'image/'+match[1],ext:match[1]==='jpeg'?'jpg':match[1]};
+}
+async function storeImage(value:string){
+ const {bytes,type,ext}=imageBytes(value);
+ const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
+ const path=digest+'.'+ext;
+ const {error}=await db.storage.from('bar-drafts').upload(path,bytes,{contentType:type,upsert:false});
+ if(error&&String(error.statusCode)!=='409')throw new ApiError(502,'Bild konnte nicht gespeichert werden.');
+ return 'storage:'+path;
+}
+async function photoMap(document:any){
+ const refs=[...new Set<string>(document.drinks.map((x:any)=>x.photo).filter((x:any)=>refPattern.test(x)))];
+ const map:Record<string,string>={};
+ for(const ref of refs){const result=await checked(db.storage.from('bar-drafts').createSignedUrl(ref.slice(8),3600));map[ref]=result.signedUrl;}
+ return map;
+}
+async function publicDocument(d:any){
+ const result=structuredClone(d);
+ const photos=new Map<string,string>();
+ for(const drink of result.drinks){
+  const photo=drink.photo;if(!photo)continue;
+  if(!refPattern.test(photo)){
+   if(photo.startsWith('data:'))throw new ApiError(409,'Bilder zuerst auf dem Server speichern.');
+   continue;
+  }
+  if(!photos.has(photo)){
+   const path=photo.slice(8);const blob=await checked(db.storage.from('bar-drafts').download(path));
+   const upload=await db.storage.from('bar-published').upload(path,blob,{contentType:blob.type,cacheControl:'31536000',upsert:false});
+   if(upload.error&&String(upload.error.statusCode)!=='409')throw new ApiError(502,'Bild konnte nicht veröffentlicht werden.');
+   photos.set(photo,storagePrefix+path);
+  }
+  drink.photo=photos.get(photo);
+ }
+ result.revision='published-'+new Date().toISOString();return result;
 }
 async function body(req:Request){
  if(!req.headers.get('content-type')?.startsWith('application/json'))throw new ApiError(415,'JSON erforderlich.');
@@ -52,33 +88,28 @@ Deno.serve(async(req)=>{
   if(!await checked(db.rpc('bar_limit',{p_key:actor,p_max:60})))throw new ApiError(429,'Zu viele Anfragen. Bitte eine Minute warten.');
   const input=await body(req);const action=input.action;
   if(action==='session')return reply({email:member.email,role:member.role,aal:claims.aal});
-  const policy:Record<string,string>={load:'read',save:'save',publish:'publish',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',audit:'audit'};
+  const policy:Record<string,string>={load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',audit:'audit'};
   if(!policy[action])throw new ApiError(400,'Unbekannte Aktion.');authorize(member,claims,policy[action]);
   if(action==='load'){
    const live=await published();const draft=await checked(db.from('bar_draft').select('*').eq('id',1).single());
-   return reply({published:live,...draft,document:draft.document??live.document,base_sha:draft.base_sha??live.sha});
+   const document=draft.document??live.document;return reply({published:live,...draft,document,photos:await photoMap(document)});
   }
+  if(action==='upload')return reply({photo:await storeImage(input.photo)});
   if(action==='save'){
-   const document=validateMenu(input.document);if(!Number.isInteger(input.version)||!/^[a-f0-9]{40}$/.test(input.base_sha))throw new ApiError(400,'Versionsangabe fehlt.');
-   const version=await checked(db.rpc('bar_save',{p_actor:actor,p_version:input.version,p_document:document,p_sha:input.base_sha}));
-   return reply({version});
+   const document=validateMenu(input.document);if(!Number.isInteger(input.version))throw new ApiError(400,'Versionsangabe fehlt.');
+   for(const drink of document.drinks)if(drink.photo?.startsWith('data:'))drink.photo=await storeImage(drink.photo);
+   const version=await checked(db.rpc('bar_save',{p_actor:actor,p_version:input.version,p_document:document,p_sha:null}));
+   return reply({version,document,photos:await photoMap(document)});
   }
   if(action==='publish'){
    if(!Number.isInteger(input.version))throw new ApiError(400,'Versionsangabe fehlt.');
    if(!await checked(db.rpc('bar_limit',{p_key:actor+':publish',p_max:3})))throw new ApiError(429,'Bitte vor der nächsten Veröffentlichung warten.');
-   const lock=crypto.randomUUID();
-   const draft=await checked(db.from('bar_draft').update({publish_lock:lock,lock_at:new Date().toISOString()}).eq('id',1).eq('version',input.version).is('publish_lock',null).select().maybeSingle());
-   if(!draft)throw new ApiError(409,'Kein gespeicherter Entwurf oder Veröffentlichung läuft.');
-   if(!draft.document){await checked(db.from('bar_draft').update({publish_lock:null,lock_at:null}).eq('publish_lock',lock));throw new ApiError(409,'Zuerst Entwurf speichern.');}
-   // Keep the lock on ambiguous network failure. Owner reconciles GitHub before unlocking.
-   await audit(actor,'publish.started',{version:draft.version,lock});
-   const live=await published();if(live.sha!==draft.base_sha){await checked(db.from('bar_draft').update({publish_lock:null,lock_at:null}).eq('publish_lock',lock));throw new ApiError(409,'GitHub wurde inzwischen geändert. Änderungen zuerst abgleichen.');}
-   const document=validateMenu(draft.document);document.revision='published-'+new Date().toISOString();
-   const result=await github('/contents/data/drinks.json','PUT',{message:'Barkarte veröffentlichen (Entwurf '+draft.version+')',content:encode(JSON.stringify(document,null,2)+'\n'),sha:live.sha,branch:env('GITHUB_BRANCH')});
-   await checked(db.from('bar_draft').update({document,base_sha:result.content.sha,version:draft.version+1,publish_lock:null,lock_at:null}).eq('publish_lock',lock));
-   await audit(actor,'publish.committed',{commit:result.commit.sha,version:draft.version});
-   const emailSent=await notice(actor,'Veröffentlichung',{commit:result.commit.sha});
-   return reply({commit:result.commit.sha,emailSent,message:'Commit erstellt. GitHub Pages muss den neuen Stand noch ausliefern.'});
+   const draft=await checked(db.from('bar_draft').select('*').eq('id',1).single());
+   if(draft.version!==input.version||!draft.document)throw new ApiError(409,'Entwurf inzwischen geändert. Bitte neu laden.');
+   const document=await publicDocument(validateMenu(draft.document));
+   const revision=await checked(db.rpc('bar_publish',{p_actor:actor,p_version:input.version,p_document:document}));
+   const emailSent=await notice(actor,'Veröffentlichung',{revision});
+   return reply({revision,emailSent,message:'Veröffentlicht. Gäste sehen den neuen Stand beim nächsten Laden.'});
   }
   if(action==='users')return reply(await checked(db.from('bar_members').select('*').order('created_at')));
   if(action==='audit')return reply(await checked(db.from('bar_audit').select('*').order('id',{ascending:false}).limit(100)));

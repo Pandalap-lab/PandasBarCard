@@ -19,7 +19,7 @@ export function validateMenu(d){
   for(const k of ['description','glass','garnish','serving','photoAlt'])if(x[k]!=null&&!str(x[k],5000))bad();
   if(x.photo){
    // Publish only same-site raster assets or bounded raster data URLs, never SVG/HTML/remote trackers.
-   if(!/^images\/[a-zA-Z0-9_./-]+\.(webp|png|jpe?g)$/.test(x.photo)&&!/^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+/]+=*$/.test(x.photo))bad();
+   if(!/^storage:[a-f0-9]{64}\.(webp|png|jpg)$/.test(x.photo)&&!/^https:\/\/owsbknyknzaihxtnutyk\.supabase\.co\/storage\/v1\/object\/public\/bar-published\/[a-f0-9]{64}\.(webp|png|jpg)$/.test(x.photo)&&!/^images\/[a-zA-Z0-9_./-]+\.(webp|png|jpe?g)$/.test(x.photo)&&!/^data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+/]+=*$/.test(x.photo))bad();
    if(x.photo.includes('..')||x.photo.length>750000)bad();
    if(x.photo.startsWith('data:')){
     let bin;try{bin=atob(x.photo.split(',')[1]);}catch{bad();}
