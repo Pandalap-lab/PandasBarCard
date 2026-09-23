@@ -1,6 +1,6 @@
 # Gmail-Versand – Vorbereitung
 
-Absender: pandasbarcard.mail@gmail.com. Die Gmail-Anbindung ist lokal implementiert und getestet, noch nicht live aktiviert. Der bestehende Auth-Mail-Hook bleibt bestehen: nur Administratoren können Einrichtungs-/Reset-Links über das Backend versenden.
+Absender: pandasbarcard.mail@gmail.com. Die Gmail-Anbindung ist implementiert, automatisiert getestet und am 23.09.2026 als Edge Function bereitgestellt. Der tatsächliche Versandtest steht noch aus. Der bestehende Auth-Mail-Hook bleibt bestehen: nur Administratoren können Einrichtungs-/Reset-Links über das Backend versenden.
 
 ## Google-Einrichtung
 
@@ -24,4 +24,4 @@ Quellen: https://developers.google.com/workspace/gmail/api/guides/sending und ht
 
 Google-Projekt `lucid-diode-509518-k7`, App `PANDAsBarCard Mail`, Client `PANDAsBarCard Mail Server`. Eigentümer hat Cloud-Bedingungen, API-Nutzerdatenrichtlinie sowie Erstellung der Sendefreigabe und geschützte Speicherung in Supabase bestätigt. Gmail API aktiviert, ausschließlich gmail.send konfiguriert, OAuth-Status „In Produktion“. Keine Abrechnung und kein Testabo aktiviert.
 
-App-Informationen und Datenschutzhinweise: /admin/mail-info.html. Einmalige Autorisierung über Googles OAuth Playground mit eigenen Clientdaten und Offline-Zugriff. Client-ID und Clientsecret als GMAIL_CLIENT_ID und GMAIL_CLIENT_SECRET in Supabase Secrets gespeichert (im Dashboard bestätigt). Google zeigt beim Absender eine Warnung zur nicht überprüften App; Eigentümer muss diesen Schritt persönlich übernehmen. Noch kein Refresh-Token übernommen, keine Gmail-Mail versendet. Live-Backend noch nicht auf Gmail umgestellt.
+App-Informationen und Datenschutzhinweise: /admin/mail-info.html. Einmalige Autorisierung über Googles OAuth Playground mit eigenen Clientdaten und Offline-Zugriff. Eigentümer hat die Google-Freigabe persönlich bestätigt. Client-ID, Clientsecret und Refresh-Token sind in Supabase Secrets hinterlegt. MAIL_PROVIDER=gmail und MAIL_FROM=pandasbarcard.mail@gmail.com gespeichert. Gmail-Backend bereitgestellt. Der OAuth-Playground-Tab wurde geschlossen; keine Zugangsdaten in Projektdateien. Noch keine Gmail-Mail versendet. SECURITY_EMAIL und der abschließende Versandtest warten auf Bestätigung der Empfängeradresse durch den Eigentümer.
