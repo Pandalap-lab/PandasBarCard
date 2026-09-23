@@ -17,7 +17,7 @@ GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersat
 - Fotos: private Entwürfe, veröffentlichte Kopien im öffentlichen Bildbereich. Keine Browser-Schreibrechte auf Storage.
 - Veröffentlichung: Versionskontrolle und Transaktion mit Audit. Gleichzeitige Änderungen werden nicht still überschrieben.
 - Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Gmail-Versand ist eingerichtet; die Ende-zu-Ende-Prüfung des Reset-E-Mail-Versands steht noch aus.**
-- Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Empfänger für Sicherheitsmeldungen: noname.g8@gmail.com; Versandtest noch offen; Fehler werden protokolliert.
+- Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Empfänger für Sicherheitsmeldungen: noname.g8@gmail.com; Testmail versendet und Empfang vom Eigentümer bestätigt; Fehler werden protokolliert.
 - Passkeys: vorbereitet, derzeit deaktiviert; keine Behauptung einer produktiven Passkey-Einrichtung.
 - Keine Passwörter, Service-Schlüssel oder GitHub-Tokens im Browser. Publishable Key ist absichtlich öffentlich.
 
@@ -35,9 +35,9 @@ Die SQL-Migrationen liegen unter `supabase/migrations`, der Backend-Code unter `
 
 [Backend-Entscheidung und kostenlose Limits](docs/backend-decision.md) · [Einrichtung](docs/backend-setup.md) · [Live-Status](docs/live-setup-status.md).
 
-## Gmail-Versand in Vorbereitung
+## Gmail-Versand
 
-Für das separate Absenderkonto wurde ein Gmail-API-Adapter lokal ergänzt. Zehn Tests bestehen einschließlich UTF-8-Mailaufbau, Schutz vor Header-Manipulation und serverseitigem Tokenaustausch. Google-Projekt, Versandfreigabe und Secrets sind noch einzurichten; der Adapter ist noch nicht live aktiviert. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
+Der Gmail-API-Adapter ist live eingerichtet. 13 automatisierte Tests bestehen einschließlich UTF-8-Mailaufbau, Schutz vor Header-Manipulation und serverseitigem Tokenaustausch. Testversand und Empfang wurden vom Eigentümer bestätigt. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
 
 
 ## A5-Druckkarte als PDF
@@ -49,4 +49,13 @@ A5-Hochformat (148 × 210 mm), ruhiger brauner Hintergrund, goldene Überschrift
 Prüfung: 12 automatisierte Tests bestanden, A5-Seitengröße und vollständige Eintragszahl geprüft, alle 19 Beispielseiten visuell kontrolliert. Beispiel basiert auf 130 Einträgen. Online-Administration weiterhin mit Rollenprüfung und MFA; Nur-Lesen-Rolle erhält keine zusätzlichen Rechte durch den Export.
 
 
-Gmail-Status 23.09.2026: Google-Freigabe erteilt, fünf Mail-Konfigurationswerte in Supabase Secrets gespeichert, neue Edge Function bereitgestellt. Noch kein bestätigter Mailversand. Empfänger für Test und Sicherheitsmeldungen bestätigt: noname.g8@gmail.com. Unter Benutzerverwaltung steht Administratoren „Test-E-Mail senden“ zur Verfügung. Der Test schreibt einen Audit-Eintrag und versendet nur an den konfigurierten Empfänger. 13 automatisierte Tests bestanden. Versand-/Empfangsprüfung noch ausstehend. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
+Gmail-Status 23.09.2026: Google-Freigabe erteilt, sechs Mail-Konfigurationswerte in Supabase Secrets gespeichert, neue Edge Function bereitgestellt. Testmail an noname.g8@gmail.com versendet, Empfang vom Eigentümer bestätigt. Empfänger für Test und Sicherheitsmeldungen bestätigt: noname.g8@gmail.com. Unter Benutzerverwaltung steht Administratoren „Test-E-Mail senden“ zur Verfügung. Der Test schreibt einen Audit-Eintrag und versendet nur an den konfigurierten Empfänger. 13 automatisierte Tests bestanden. Versand und Empfang der Testmail vom Eigentümer bestätigt. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
+
+
+## Symbole für den Handy-Startbildschirm
+
+Gästekarte und Administration verwenden das Panda-Kopf-Martiniglas-Symbol unter assets/app-icons. Separate Manifeste und Startadressen: „Drinks“ öffnet die Gästekarte, „Bar Admin“ öffnet /admin/. Apple-Touch-Icon 180 px, Android-/Manifest-Icons 192 und 512 px, Browsericon 32 px. Die beiden Manifeste haben unterschiedliche aufgelöste IDs und starten ohne Vorschau- oder Anmeldetoken in der URL. Standalone-Darstellung wird angefragt; die tatsächliche Darstellung bestimmt der Browser. Anmeldung, MFA und Berechtigungen bleiben erforderlich. Kein zusätzlicher Offline-Cache für Admin- oder Zugangsdaten.
+
+iPhone: gewünschte Seite in Safari öffnen → Teilen → Zum Home-Bildschirm → Hinzufügen. Beide Seiten separat hinzufügen. Bereits gespeicherte Verknüpfungen gegebenenfalls vom Home-Bildschirm entfernen und neu hinzufügen, wenn iOS noch das alte Symbol zeigt. Android: gewünschte Seite in Chrome öffnen → Menü → Zum Startbildschirm hinzufügen / App installieren (Bezeichnung je nach Version).
+
+Bild mit der integrierten Bildgenerierung erzeugt, anschließend ausschließlich in die technischen Icon-Größen verkleinert. Finales Briefing: freundlicher, frontal ausgerichteter Panda-Kopf und nach links geneigtes vollständiges Martiniglas mit goldfarbenem Cocktail und Olive, ohne Körper, Kleidung, Hände, Schrift oder weitere Symbole; dunkler espresso-brauner Hintergrund. Das finale Original und alle Größen sind im Projekt gespeichert. Vollständiges Bildbriefing: docs/app-icon-prompt.txt.
