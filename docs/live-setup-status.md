@@ -31,3 +31,5 @@
 - Physische iPhone-/Android-Gesten und vollständiger Screenreadertest nicht durchgeführt. Aa und Browser-Pinch-Zoom bleiben technisch freigegeben.
 
 Passkey-Anmeldeoptionen live geprüft: HTTP 200, RP-ID pandalap-lab.github.io. Live-Adminseite zeigt „Mit Passkey anmelden“. Persönliche Geräte-Registrierung bleibt erforderlich.
+
+Passkey-Direktzugang: Migration 202609240004_passkey_sessions.sql live angewendet. Edge Function prüft WebAuthn UP/UV plus Provider-Signatur und bindet die Freigabe an die ausgegebene Auth-Sitzung. Passwort/TOTP bleibt Alternative. 18 Tests bestanden; Live-Abweisung ohne Nachweis und Schutz der Tabelle/RPC geprüft. iPhone-Direktlogin ohne Code noch persönlich zu bestätigen.
