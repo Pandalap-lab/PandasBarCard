@@ -9,7 +9,7 @@
 - `bar_published`: 130 Einträge und 21 Kategorien übernommen. Alle Namen und Preise stimmen mit der bisherigen Gästekarte überein; UTF-8-Abgleich erfolgreich.
 - 16 bestehende Bilder (15 Drinkillustrationen, ein Hintergrund) in privaten und öffentlichen Storage-Bereich übernommen. Alle öffentlichen Dateien per SHA-256 byteidentisch zum Bestand geprüft.
 - Gemeinsamer Entwurf bei der Übernahme mit erwarteter Version 1 geschützt aktualisiert; Version danach 2. Vorhandene Originaldateien bleiben erhalten.
-- `bar-admin` auf Supabase-Veröffentlichung umgestellt. Kein GitHub-API-Aufruf oder GitHub-Token mehr im Funktionscode. Der frühere Token bleibt bis zum ausdrücklichen Widerruf ungenutzt hinterlegt (Ablauf 23.10.2026).
+- `bar-admin` auf Supabase-Veröffentlichung umgestellt. Kein GitHub-API-Aufruf oder GitHub-Token mehr im Funktionscode. Der frühere Token wurde nach Nutzerbestätigung am 23.09.2026 bei GitHub widerrufen; GITHUB_TOKEN wurde aus Supabase Secrets entfernt.
 - Website-Anbindung, Adminoberfläche und Gestaltung in GitHub aktualisiert; live ausgelieferte Dateien auf die neue Anbindung geprüft.
 
 ## Tatsächlich geprüft
@@ -29,3 +29,5 @@
 - Passkeys am 23.09.2026 serverseitig aktiviert, RP-ID pandalap-lab.github.io, erlaubter Origin https://pandalap-lab.github.io. Persönliche Registrierung und Face-ID-Test am Gerät stehen aus. TOTP bleibt aktiv.
 - JWT-Laufzeit 900 Sekunden aus der Vorlage noch nicht im Live-Dashboard verifiziert.
 - Physische iPhone-/Android-Gesten und vollständiger Screenreadertest nicht durchgeführt. Aa und Browser-Pinch-Zoom bleiben technisch freigegeben.
+
+Passkey-Anmeldeoptionen live geprüft: HTTP 200, RP-ID pandalap-lab.github.io. Live-Adminseite zeigt „Mit Passkey anmelden“. Persönliche Geräte-Registrierung bleibt erforderlich.
