@@ -1,0 +1,4 @@
+Built-in image_gen; final edit specification:
+ONLY PANDA HEAD AND MARTINI GLASS. Preserve friendly panda face identity and refined ivory/black/gold palette. Remove ALL body, shoulders, tuxedo, neck clothing, arms, paws and hands. Large isolated panda head including both ears, one complete freestanding elegant martini glass in foreground to lower left, stem and base visible, amber-gold drink and one olive. Compact centered emblem recognizable at 60px. Full square opaque dark espresso-brown background. Important art inside central 75% for rounded corner masks. No badges, shields, text, letters, extra objects or mockup.
+
+Final correction approved by user: Panda head perfectly frontal, upright and symmetrical; martini glass leaning to the viewer's left. Preserve head-only composition, complete glass, espresso background and ivory/black/gold palette. No body or hands. Built-in image_gen edit.

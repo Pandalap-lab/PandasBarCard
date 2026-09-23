@@ -1,6 +1,6 @@
 # Gmail-Versand – Vorbereitung
 
-Absender: pandasbarcard.mail@gmail.com. Die Gmail-Anbindung ist implementiert, automatisiert getestet und am 23.09.2026 als Edge Function bereitgestellt. Der tatsächliche Versandtest steht noch aus. Der bestehende Auth-Mail-Hook bleibt bestehen: nur Administratoren können Einrichtungs-/Reset-Links über das Backend versenden.
+Absender: pandasbarcard.mail@gmail.com. Die Gmail-Anbindung ist implementiert, automatisiert getestet und am 23.09.2026 als Edge Function bereitgestellt. Der Eigentümer hat den Testversand ausgelöst und den Eingang der Testmail an noname.g8@gmail.com bestätigt. Der bestehende Auth-Mail-Hook bleibt bestehen: nur Administratoren können Einrichtungs-/Reset-Links über das Backend versenden.
 
 ## Google-Einrichtung
 
@@ -16,7 +16,7 @@ Der Server tauscht den Refresh-Token gegen einen kurzlebigen Zugriffstoken und s
 
 ## Prüfung vor Freigabe
 
-Versand ausschließlich an einen ausdrücklich bestätigten Empfänger testen. Danach Einrichtungslink für den neu angelegten Admin senden und Empfang/Festlegen des Passworts/2FA durch den Empfänger prüfen. Bisher wurde mit der neuen Gmail-Anbindung keine E-Mail verschickt.
+Versand ausschließlich an einen ausdrücklich bestätigten Empfänger testen. Danach Einrichtungslink für den neu angelegten Admin senden und Empfang/Festlegen des Passworts/2FA durch den Empfänger prüfen. Testmail versendet; Eingang am 23.09.2026 vom Eigentümer bestätigt.
 
 Quellen: https://developers.google.com/workspace/gmail/api/guides/sending und https://developers.google.com/identity/protocols/oauth2/web-server
 
@@ -24,4 +24,4 @@ Quellen: https://developers.google.com/workspace/gmail/api/guides/sending und ht
 
 Google-Projekt `lucid-diode-509518-k7`, App `PANDAsBarCard Mail`, Client `PANDAsBarCard Mail Server`. Eigentümer hat Cloud-Bedingungen, API-Nutzerdatenrichtlinie sowie Erstellung der Sendefreigabe und geschützte Speicherung in Supabase bestätigt. Gmail API aktiviert, ausschließlich gmail.send konfiguriert, OAuth-Status „In Produktion“. Keine Abrechnung und kein Testabo aktiviert.
 
-App-Informationen und Datenschutzhinweise: /admin/mail-info.html. Einmalige Autorisierung über Googles OAuth Playground mit eigenen Clientdaten und Offline-Zugriff. Eigentümer hat die Google-Freigabe persönlich bestätigt. Client-ID, Clientsecret und Refresh-Token sind in Supabase Secrets hinterlegt. MAIL_PROVIDER=gmail und MAIL_FROM=pandasbarcard.mail@gmail.com gespeichert. Gmail-Backend bereitgestellt. Der OAuth-Playground-Tab wurde geschlossen; keine Zugangsdaten in Projektdateien. Noch keine Gmail-Mail versendet. SECURITY_EMAIL=noname.g8@gmail.com vom Eigentümer bestätigt und in Supabase hinterlegt. Geschützter Testversand über Adminaktion testMail: nur admin+AAL2, aktive Sitzung, maximal einmal pro Minute, Empfänger ausschließlich serverseitig. Die tatsächliche Testmail und Empfangsbestätigung stehen noch aus.
+App-Informationen und Datenschutzhinweise: /admin/mail-info.html. Einmalige Autorisierung über Googles OAuth Playground mit eigenen Clientdaten und Offline-Zugriff. Eigentümer hat die Google-Freigabe persönlich bestätigt. Client-ID, Clientsecret und Refresh-Token sind in Supabase Secrets hinterlegt. MAIL_PROVIDER=gmail und MAIL_FROM=pandasbarcard.mail@gmail.com gespeichert. Gmail-Backend bereitgestellt. Der OAuth-Playground-Tab wurde geschlossen; keine Zugangsdaten in Projektdateien. Testmail erfolgreich beim Eigentümer eingegangen. SECURITY_EMAIL=noname.g8@gmail.com vom Eigentümer bestätigt und in Supabase hinterlegt. Geschützter Testversand über Adminaktion testMail: nur admin+AAL2, aktive Sitzung, maximal einmal pro Minute, Empfänger ausschließlich serverseitig. Testversand und Empfang am 23.09.2026 vom Eigentümer bestätigt. Die Einrichtung eines weiteren Administrators über einen Reset-Link ist davon separat zu prüfen.
