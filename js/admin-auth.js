@@ -48,7 +48,7 @@ export async function init(){
   if(!config.supabaseUrl||!config.publishableKey){message('Online-Administration noch nicht eingerichtet. Die lokale Entwurfsfunktion bleibt verfügbar.');$('loginForm').inert=true;return;}
   if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(config.supabaseUrl))throw Error('Ungültige Backend-Konfiguration.');
   // Auth credentials are held only in memory. Reload deliberately requires a new login.
-  client=createClient(config.supabaseUrl,config.publishableKey,{auth:{persistSession:false,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:!!config.passkeysEnabled}}});
+  message('Bitte anmelden.');client=createClient(config.supabaseUrl,config.publishableKey,{auth:{persistSession:false,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:!!config.passkeysEnabled}}});
   $('loginForm').onsubmit=run(async()=>{checked(await client.auth.signInWithPassword({email:$('loginEmail').value,password:$('loginPassword').value}));$('loginPassword').value='';await ready();});
   $('passkeyLogin').hidden=!config.passkeysEnabled;$('passkeyLogin').onclick=run(async()=>{checked(await client.auth.signInWithPasskey());await ready();});
   $('signOut').onclick=run(async()=>{checked(await client.auth.signOut({scope:'local'}));location.reload();});

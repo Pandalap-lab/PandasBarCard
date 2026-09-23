@@ -1,4 +1,4 @@
-function canonical(value){if(Array.isArray(value))return value.map(canonical);if(value&&typeof value==='object')return Object.fromEntries(Object.keys(value).sort().filter(k=>!(['serving','alcoholContent'].includes(k)&&(value[k]===''||value[k]===null))).map(k=>[k,canonical(value[k])]));return value;}
+function canonical(value){if(typeof value==='string'&&/^https:\/\/owsbknyknzaihxtnutyk\.supabase\.co\/storage\/v1\/object\/public\/bar-published\/[a-f0-9]{64}\.(webp|png|jpg)$/.test(value))return 'storage:'+value.split('/').pop();if(Array.isArray(value))return value.map(canonical);if(value&&typeof value==='object')return Object.fromEntries(Object.keys(value).sort().filter(k=>!(['serving','alcoholContent'].includes(k)&&(value[k]===''||value[k]===null))).map(k=>[k,canonical(value[k])]));return value;}
 const equal=(a,b)=>JSON.stringify(canonical(a))===JSON.stringify(canonical(b));
 export function countChanges(base,draft){
  let count=0;
