@@ -94,7 +94,7 @@ Deno.serve(async(req)=>{
    const live=await published();const draft=await checked(db.from('bar_draft').select('*').eq('id',1).single());
    const document=draft.document??live.document;return reply({published:live,...draft,document,photos:await photoMap(document)});
   }
-  if(action==='upload')return reply({photo:await storeImage(input.photo)});
+  if(action==='upload'){const photo=await storeImage(input.photo);const signed=await checked(db.storage.from('bar-drafts').createSignedUrl(photo.slice(8),3600));return reply({photo,url:signed.signedUrl});}
   if(action==='save'){
    const document=validateMenu(input.document);if(!Number.isInteger(input.version))throw new ApiError(400,'Versionsangabe fehlt.');
    for(const drink of document.drinks)if(drink.photo?.startsWith('data:'))drink.photo=await storeImage(drink.photo);
