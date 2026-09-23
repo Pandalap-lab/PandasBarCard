@@ -20,14 +20,14 @@ async function ready(){
   message(factorId?'Bitte Code aus der Authenticator-App eingeben.':'Bitte zuerst den zweiten Faktor einrichten.');return;
  }
  $('mfaPanel').hidden=true;message('Angemeldet.');
- $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled;
+ $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled||!window.PublicKeyCredential;
  if(config.passkeysEnabled){try{await passkeys();}catch{message('Passkey-Verwaltung derzeit nicht verfügbar. Passwort/TOTP bleibt nutzbar.');}}
  $('userManagement').hidden=member.role!=='admin';$('auditPanel').hidden=member.role!=='admin';
  const editor=await import('./admin.js?v=20260923-pdf');await editor.startOnline({api,role:member.role});
 }
 async function passkeys(){
  const keys=checked(await client.auth.passkey.list());$('passkeyList').replaceChildren();
- for(const key of keys){const row=document.createElement('p');row.textContent=key.friendly_name||key.id;const b=document.createElement('button');b.textContent='Passkey entfernen';b.onclick=run(async()=>{checked(await client.auth.passkey.delete({passkeyId:key.id}));await passkeys();});row.append(b);$('passkeyList').append(row);}
+ for(const key of keys){const row=document.createElement('p');row.textContent=key.friendly_name||key.id;const b=document.createElement('button');b.textContent='Passkey entfernen';b.onclick=run(async()=>{if(!confirm('Diesen Passkey dauerhaft entfernen? Passwort und Zwei-Faktor-Anmeldung bleiben verfügbar.'))return;checked(await client.auth.passkey.delete({passkeyId:key.id}));await passkeys();});row.append(b);$('passkeyList').append(row);}
 }
 async function users(){
  const list=await api('users');$('userList').replaceChildren();
@@ -50,12 +50,12 @@ export async function init(){
   // Auth credentials are held only in memory. Reload deliberately requires a new login.
   message('Bitte anmelden.');client=createClient(config.supabaseUrl,config.publishableKey,{auth:{persistSession:false,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:!!config.passkeysEnabled}}});
   $('loginForm').onsubmit=run(async()=>{checked(await client.auth.signInWithPassword({email:$('loginEmail').value,password:$('loginPassword').value}));$('loginPassword').value='';await ready();});
-  $('passkeyLogin').hidden=!config.passkeysEnabled;$('passkeyLogin').onclick=run(async()=>{checked(await client.auth.signInWithPasskey());await ready();});
+  $('passkeyLogin').hidden=!config.passkeysEnabled||!window.PublicKeyCredential;$('passkeyLogin').onclick=run(async()=>{checked(await client.auth.signInWithPasskey());await ready();});
   $('signOut').onclick=run(async()=>{checked(await client.auth.signOut({scope:'local'}));location.reload();});
   $('signOutAll').onclick=run(async()=>{checked(await client.auth.signOut({scope:'global'}));location.reload();});
   $('enrollMfa').onclick=run(async()=>{const result=checked(await client.auth.mfa.enroll({factorType:'totp',friendlyName:'PANDAsBarCard'}));factorId=result.id;$('mfaQr').src=result.totp.qr_code;$('mfaQr').hidden=false;$('mfaSecret').textContent=result.totp.secret;$('verifyMfa').hidden=false;$('enrollMfa').disabled=true;});
   $('verifyMfa').onsubmit=run(async()=>{checked(await client.auth.mfa.challengeAndVerify({factorId,code:$('mfaCode').value}));$('mfaCode').value='';$('mfaSecret').textContent='';$('mfaQr').removeAttribute('src');$('mfaQr').hidden=true;await ready();});
-  $('registerPasskey').onclick=run(async()=>{checked(await client.auth.registerPasskey());await passkeys();message('Passkey registriert.');});
+  $('registerPasskey').onclick=run(async()=>{if(!window.PublicKeyCredential)throw Error('Dieser Browser unterstützt keine Passkeys. Bitte Safari oder Chrome auf deinem Gerät verwenden.');if(member?.aal!=='aal2')throw Error('Bitte zuerst die Zwei-Faktor-Anmeldung abschließen.');checked(await client.auth.registerPasskey());await passkeys();message('Passkey gespeichert. Bei der nächsten Anmeldung „Mit Passkey anmelden“ wählen; dein Gerät bestätigt mit Face ID, Touch ID oder Gerätesperre.');});
   $('passwordForm').onsubmit=run(async()=>{checked(await client.auth.updateUser({password:$('newPassword').value}));$('newPassword').value='';$('passwordPanel').hidden=true;message('Passwort geändert. Bitte anschließend zweiten Faktor bestätigen.');await ready();});
   $('showPassword').onclick=()=>{$('passwordPanel').hidden=false;};
   if($('testMail'))$('testMail').onclick=async()=>{const b=$('testMail'),status=$('mailTestStatus');b.disabled=true;status.textContent='Testmail wird gesendet …';try{const r=await api('testMail');status.textContent='Versand von Gmail bestätigt an '+r.recipient+'. Bitte Posteingang und Spamordner prüfen.';}catch(e){status.textContent=e.message;}finally{b.disabled=false;}};
