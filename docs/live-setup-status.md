@@ -18,14 +18,14 @@
 - Aktuelle Admin-API: Preflight 204, ohne Anmeldung 401, fremder Origin 403.
 - Private Tabellen `bar_draft`, `bar_members`, `bar_audit`: ohne Anmeldung HTTP 401.
 - Zugriff auf private Bilder über öffentliche Bild-URL: verweigert (HTTP 400).
-- Acht automatisierte Tests bestanden: Rollen/MFA/Sitzung, Origin, Validierung, SQL-Rechte, Versionskonflikte, Audit, atomare Veröffentlichung und Bildreferenzvergleich.
+- Ursprünglich acht automatisierte Tests bestanden (inzwischen 13 einschließlich PDF und Gmail): Rollen/MFA/Sitzung, Origin, Validierung, SQL-Rechte, Versionskonflikte, Audit, atomare Veröffentlichung und Bildreferenzvergleich.
 - Live-Gästekarte: 130 Einträge, 21 Kategorien; geladenes Drinkbild aus Supabase (1024 Pixel); kein Ersatzstand aktiv.
 - Mobile Vorschau 390 × 844 bei „Sehr groß“: keine Überschneidung zwischen Drinkbild und Name, keine horizontale Seitenüberbreite, Kategorienleiste fest bei top=0 und horizontal scrollbar. Kategorienwechsel bis „Signatures“ erfolgreich.
 
 ## Noch zu bestätigen / Einschränkungen
 
-- Positiver Live-Test nach erneuter Anmeldung des Eigentümers erfolgreich: 130 Einträge und private Bildvorschau geladen, unveränderten Entwurf gespeichert (Version 3), Veröffentlichung ausgeführt. Öffentlicher Stand 3 wurde per API geprüft: alle Namen, Preise und Zutaten unverändert. UI meldet keine offenen Änderungen. Benachrichtigungsfehler betrifft ausschließlich den fehlenden Maildienst.
-- Maildienst/Absender noch nicht eingerichtet: Sicherheits- und Reset-E-Mails können nicht produktiv zugestellt werden. Das Audit protokolliert Versandfehler.
-- Passkeys vorbereitet, weiterhin deaktiviert. TOTP bleibt aktiv.
+- Positiver Live-Test nach erneuter Anmeldung des Eigentümers erfolgreich: 130 Einträge und private Bildvorschau geladen, unveränderten Entwurf gespeichert (Version 3), Veröffentlichung ausgeführt. Öffentlicher Stand 3 wurde per API geprüft: alle Namen, Preise und Zutaten unverändert. UI meldet keine offenen Änderungen. Der damals fehlende Maildienst wurde inzwischen eingerichtet.
+- Gmail eingerichtet, Testversand und Empfang am 23.09.2026 bestätigt. Der Ende-zu-Ende-Zugangstest für den zweiten Administrator wird auf ausdrücklichen Nutzerwunsch verschoben.
+- Passkeys am 23.09.2026 serverseitig aktiviert, RP-ID pandalap-lab.github.io, erlaubter Origin https://pandalap-lab.github.io. Persönliche Registrierung und Face-ID-Test am Gerät stehen aus. TOTP bleibt aktiv.
 - JWT-Laufzeit 900 Sekunden aus der Vorlage noch nicht im Live-Dashboard verifiziert.
 - Physische iPhone-/Android-Gesten und vollständiger Screenreadertest nicht durchgeführt. Aa und Browser-Pinch-Zoom bleiben technisch freigegeben.
