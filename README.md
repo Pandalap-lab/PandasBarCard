@@ -16,8 +16,8 @@ GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersat
 - Entwürfe, Benutzer und Audit: für Gäste gesperrt. Öffentliche Tabelle `bar_published`: nur lesbar.
 - Fotos: private Entwürfe, veröffentlichte Kopien im öffentlichen Bildbereich. Keine Browser-Schreibrechte auf Storage.
 - Veröffentlichung: Versionskontrolle und Transaktion mit Audit. Gleichzeitige Änderungen werden nicht still überschrieben.
-- Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Reset-E-Mail-Versand ist ohne eingerichteten Maildienst noch nicht produktiv nutzbar.**
-- Benachrichtigungen/Sicherheitsmails: Resend-Anbindung vorhanden, Zugang/Absender fehlen; Fehler werden protokolliert.
+- Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Gmail-Versand ist eingerichtet; die Ende-zu-Ende-Prüfung des Reset-E-Mail-Versands steht noch aus.**
+- Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Versandtest und Empfänger für Sicherheitsmeldungen noch offen; Fehler werden protokolliert.
 - Passkeys: vorbereitet, derzeit deaktiviert; keine Behauptung einer produktiven Passkey-Einrichtung.
 - Keine Passwörter, Service-Schlüssel oder GitHub-Tokens im Browser. Publishable Key ist absichtlich öffentlich.
 
@@ -47,3 +47,6 @@ Unter „Druckkarte als PDF“ können Administratoren und Bearbeiter die aktuel
 A5-Hochformat (148 × 210 mm), ruhiger brauner Hintergrund, goldene Überschriften/Preise und helle Schrift. Enthalten sind Kategorien, Getränkenamen, Zutaten, vorhandene Portionsangaben und Preise, keine Bilder. Fehlende Preise bleiben „Preis offen“; pausierte Drinks folgen der Anzeigeeinstellung. Text bleibt im PDF auswählbar; Seitenumbrüche und Fortsetzungsüberschriften werden automatisch erzeugt. Schrift unterstützt westliche europäische Zeichen; nicht unterstützte Zeichen melden einen Fehler, statt Inhalte still zu entfernen. PDF-Erstellung lokal im Browser mit gebündeltem pdf-lib 1.17.1, ohne externen PDF-Dienst. Build: `node scripts/vendor-pdf.mjs`. Druck: A5 und tatsächliche Größe / 100 %. Hintergrund ist bereits Bestandteil der PDF.
 
 Prüfung: 12 automatisierte Tests bestanden, A5-Seitengröße und vollständige Eintragszahl geprüft, alle 19 Beispielseiten visuell kontrolliert. Beispiel basiert auf 130 Einträgen. Online-Administration weiterhin mit Rollenprüfung und MFA; Nur-Lesen-Rolle erhält keine zusätzlichen Rechte durch den Export.
+
+
+Gmail-Status 23.09.2026: Google-Freigabe erteilt, fünf Mail-Konfigurationswerte in Supabase Secrets gespeichert, neue Edge Function bereitgestellt. Noch kein bestätigter Mailversand. Empfängerbestätigung für Test und Sicherheitsmeldungen ausstehend. Siehe [Gmail-Einrichtung](docs/gmail-setup.md).
