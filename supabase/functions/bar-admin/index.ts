@@ -1,5 +1,6 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.105.0';
 import {sendMail} from './mail.js';
+import {completePasskey} from './passkey.js';
 import {ApiError,authorize,validateMenu,parseClaims} from './policy.js';
 const defaults:Record<string,string>={MAIL_PROVIDER:'resend',ADMIN_ORIGIN:'https://pandalap-lab.github.io',ADMIN_URL:'https://pandalap-lab.github.io/PandasBarCard/admin/'};
 const env=(k:string)=>{const v=Deno.env.get(k)||defaults[k];if(!v)throw new Error('Missing configuration: '+k);return v;};
@@ -78,6 +79,11 @@ Deno.serve(async(req)=>{
  let actor:string|null=null;
  try{
   if(req.method!=='POST')throw new ApiError(405,'POST erforderlich.');
+  const input=await body(req);const action=input.action;
+  if(action==='passkeyComplete'){
+   if(!await checked(db.rpc('bar_limit',{p_key:'passkey-complete-global',p_max:60})))throw new ApiError(429,'Zu viele Anmeldeversuche. Bitte eine Minute warten.');
+   return reply(await completePasskey(input,{origin,env,db,checked,audit}));
+  }
   const token=req.headers.get('authorization')?.replace(/^Bearer /,'');if(!token)throw new ApiError(401,'Anmeldung erforderlich.');
   // getUser verifies the supplied token with Auth BEFORE any decoded claim is trusted.
   const {data:auth,error}=await db.auth.getUser(token);if(error||!auth.user)throw new ApiError(401,'Sitzung abgelaufen.');actor=auth.user.id;
@@ -86,10 +92,10 @@ Deno.serve(async(req)=>{
   const member=await checked(db.from('bar_members').select('*').eq('user_id',actor).maybeSingle());
   authorize(member,claims,'session');
   if(!await checked(db.rpc('bar_limit',{p_key:actor,p_max:60})))throw new ApiError(429,'Zu viele Anfragen. Bitte eine Minute warten.');
-  const input=await body(req);const action=input.action;
-  if(action==='session')return reply({email:member.email,role:member.role,aal:claims.aal});
+  const verifiedPasskey=claims.aal!=='aal2'&&await checked(db.rpc('bar_passkey_session_valid',{p_session:claims.session_id,p_user:actor}))===true;
+  if(action==='session')return reply({email:member.email,role:member.role,aal:claims.aal,strongAuth:claims.aal==='aal2'||verifiedPasskey,verifiedPasskey});
   const policy:Record<string,string>={load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',testMail:'users',audit:'audit'};
-  if(!policy[action])throw new ApiError(400,'Unbekannte Aktion.');authorize(member,claims,policy[action]);
+  if(!policy[action])throw new ApiError(400,'Unbekannte Aktion.');authorize(member,claims,policy[action],verifiedPasskey);
   if(action==='testMail'){
    if(!await checked(db.rpc('bar_limit',{p_key:actor+':test-mail',p_max:1})))throw new ApiError(429,'Bitte eine Minute bis zur nächsten Testmail warten.');
    const recipient=env('SECURITY_EMAIL');

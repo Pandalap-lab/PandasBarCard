@@ -1,8 +1,8 @@
 export class ApiError extends Error { constructor(status,message){super(message);this.status=status;} }
-export function authorize(member,claims,action){
+export function authorize(member,claims,action,verifiedPasskey=false){
  if(!member?.enabled)throw new ApiError(403,'Kein freigeschalteter Zugang.');
  if(action==='session')return;
- if(claims.aal!=='aal2')throw new ApiError(403,'Zweiten Faktor bestätigen.');
+ if(claims.aal!=='aal2'&&verifiedPasskey!==true)throw new ApiError(403,'Zweiten Faktor oder gerätebestätigten Passkey verwenden.');
  const allowed={read:['admin','editor','viewer'],save:['admin','editor'],publish:['admin'],users:['admin'],audit:['admin']};
  if(!allowed[action]?.includes(member.role))throw new ApiError(403,'Berechtigung fehlt.');
 }
