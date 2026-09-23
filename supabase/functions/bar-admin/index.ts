@@ -88,8 +88,15 @@ Deno.serve(async(req)=>{
   if(!await checked(db.rpc('bar_limit',{p_key:actor,p_max:60})))throw new ApiError(429,'Zu viele Anfragen. Bitte eine Minute warten.');
   const input=await body(req);const action=input.action;
   if(action==='session')return reply({email:member.email,role:member.role,aal:claims.aal});
-  const policy:Record<string,string>={load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',audit:'audit'};
+  const policy:Record<string,string>={load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',testMail:'users',audit:'audit'};
   if(!policy[action])throw new ApiError(400,'Unbekannte Aktion.');authorize(member,claims,policy[action]);
+  if(action==='testMail'){
+   if(!await checked(db.rpc('bar_limit',{p_key:actor+':test-mail',p_max:1})))throw new ApiError(429,'Bitte eine Minute bis zur nächsten Testmail warten.');
+   const recipient=env('SECURITY_EMAIL');
+   try{await mail(recipient,'PANDAsBarCard - Testmail','Der E-Mail-Versand der PANDAsBarCard ist eingerichtet. Diese Testmail wurde durch einen angemeldeten Administrator ausgelöst.\n\nAbsender: '+env('MAIL_FROM')+'\nZeitpunkt: '+new Date().toISOString());}
+   catch(e){await audit(actor,'email.failed',{event:'mail.test'});throw e;}
+   await audit(actor,'mail.test.sent');return reply({ok:true,recipient});
+  }
   if(action==='load'){
    const live=await published();const draft=await checked(db.from('bar_draft').select('*').eq('id',1).single());
    const document=draft.document??live.document;return reply({published:live,...draft,document,photos:await photoMap(document)});
