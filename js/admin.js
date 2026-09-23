@@ -29,3 +29,14 @@ $('serverPublish').onclick=serverAction(async()=>{if(dirty||JSON.stringify(data)
 function updateDraftStatus(){if(!baseline||!data)return;const n=countChanges(baseline,data);$('draftStatus').textContent=n?`${n} unveröffentlichte Änderungen (Einträge/Kategorien/Einstellungen)`:'Keine offenen Änderungen';$('draftWarning').textContent=data.revision!==baseline.revision?'Dieser lokale Entwurf basiert auf einer älteren Karte. Vor dem Weiterarbeiten exportieren oder die aktuelle veröffentlichte Karte laden.':'';}
 $('loadPublished').onclick=()=>{if(confirm('Lokalen Entwurf durch die aktuelle veröffentlichte Karte ersetzen? Nicht exportierte Änderungen gehen verloren.')){data=structuredClone(baseline);persist();categories();select(data.drinks[0]?.id);$('mode').value=data.settings?.unavailableMode||'show';}};
 $('removePhoto').onclick=()=>{$('photo').value='';$('upload').value='';newPalette=null;dirty=true;preview();};
+
+if($('printPDF'))$('printPDF').onclick=async()=>{
+ const button=$('printPDF'),status=$('printStatus'),draft=$('printSource').value==='draft';
+ if(draft&&dirty){status.textContent='Bitte den bearbeiteten Drink zuerst lokal speichern.';return;}
+ button.disabled=true;status.textContent='Druckkarte wird erstellt …';
+ try{
+  const source=draft?structuredClone(data):(online?(await online.api('load')).published.document:await loadData());
+  const {downloadMenuPDF}=await import('./print-menu.js?v=1');
+  const r=await downloadMenuPDF(source,{draft});status.textContent=`PDF erstellt: ${r.pages} A5-Seiten, ${r.drinks} Einträge${draft?' · als Entwurf gekennzeichnet':''}.`;
+ }catch(e){status.textContent='PDF konnte nicht erstellt werden: '+e.message;}finally{button.disabled=false;}
+};
