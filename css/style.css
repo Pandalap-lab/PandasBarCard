@@ -49,3 +49,24 @@ button,a,input,select,textarea{touch-action:manipulation}
 .skip-link{position:fixed;top:-120px;left:15px;z-index:20;padding:15px;background:#241b14;color:white}.skip-link:focus{top:15px}
 .high-contrast .ambience{background:#18110c}.high-contrast .ambience>div{display:none}.high-contrast{--ink:#fff;--muted:#fff;--bronze:#ffe0a8}.high-contrast button,.high-contrast .price,.high-contrast .section-hint{color:#fff}.high-contrast .navigation button,.high-contrast nav button{border-color:#fff}.high-contrast dialog{background:#18110c}
 .reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reduce-motion .drink{transform:none}
+
+/* Guest refinements: bounded image layout, fixed category bar, native gestures. */
+html:has(body.guest){font-size:101%;overflow-x:clip}
+body.guest{overflow-x:clip;overscroll-behavior-x:none;padding-top:var(--category-height,80px)}
+.guest header{touch-action:pan-y pinch-zoom}
+.guest #categories{position:fixed;inset:0 0 auto;max-width:100%;overflow-x:auto;overflow-y:hidden;touch-action:pan-x pan-y pinch-zoom}
+.guest .visual{min-width:0;min-height:0;overflow:hidden;isolation:isolate;margin-bottom:18px}
+.guest .visual img{min-height:0;min-width:0;max-height:100%;max-width:100%;display:block}
+.guest .drink h3{position:relative;z-index:1;margin-top:12px}
+.guest .category-section{scroll-margin-top:calc(var(--category-height,80px) + 12px)}
+.guest .category-section:first-child{border-top:0}
+.guest .drink{transition:opacity .7s ease,transform .7s ease}
+.guest dialog{transition:opacity .55s ease,transform .55s ease;transform:none}
+.guest .ambience{background-image:linear-gradient(180deg,#100d0ba8,#100d0be8),var(--bar-background,url('../assets/FirstP.jpg'))}
+
+
+body.guest{font-size:16.16px}
+@media(prefers-reduced-motion:no-preference){
+ .guest.has-reveal:not(.reduce-motion) .category-section{opacity:.25;transition:opacity .8s ease}
+ .guest.has-reveal:not(.reduce-motion) .category-section.in-view{opacity:1}
+}
