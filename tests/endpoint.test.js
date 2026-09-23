@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {stripTypeScriptTypes} from 'node:module';
 const env={SUPABASE_URL:'https://unit.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test-only',ADMIN_ORIGIN:'https://pandalap-lab.github.io',GITHUB_REPOSITORY:'Pandalap-lab/PandasBarCard',GITHUB_BRANCH:'main',GITHUB_TOKEN:'test-only',RESEND_API_KEY:'test-only',MAIL_FROM:'test@example.test',SECURITY_EMAIL:'security@example.test'};
-let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),githubWrites=0,session=true,updates=[],version=1;
+let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),publishWrites=0,session=true,updates=[],version=1;
 const id='11111111-1111-4111-8111-111111111111';
 const doc=JSON.parse(readFileSync(new URL('../data/drinks.json',import.meta.url)));
 globalThis.Deno={env:{get:k=>env[k]},serve:fn=>{handler=fn;}};
@@ -15,15 +15,8 @@ globalThis.fetch=async(url,opts={})=>{
  if(path.endsWith('/rpc/bar_limit'))return respond(true);
  if(path.endsWith('/bar_members'))return respond({user_id:id,email:'test@example.test',role,enabled});
  if(path.endsWith('/bar_audit'))return respond(null,201);
- if(path.endsWith('/bar_draft')){
-  const b=JSON.parse(opts.body||'{}');updates.push(b);
-  if(b.publish_lock)return respond({id:1,version,document:doc,base_sha:sha,publish_lock:b.publish_lock});
-  return respond(null,204);
- }
- if(path.includes('/contents/data/drinks.json')){
-  if(opts.method==='PUT'){githubWrites++;const b=JSON.parse(opts.body);assert.equal(b.sha,sha);assert.equal(b.branch,'main');assert.equal(JSON.parse(Buffer.from(b.content,'base64')).drinks.length,130);return respond({content:{sha:'b'.repeat(40)},commit:{sha:'c'.repeat(40)}});}
-  return respond({sha:'a'.repeat(40),content:Buffer.from(JSON.stringify(doc)).toString('base64')});
- }
+ if(path.endsWith('/bar_draft'))return respond({id:1,version,document:doc});
+ if(path.endsWith('/rpc/bar_publish')){publishWrites++;return respond(2);}
  if(u.hostname==='api.resend.com')return respond({id:'test'});
  throw Error('Unexpected mocked request '+path);
 };
@@ -40,9 +33,8 @@ test('HTTP endpoint rejects origin, disabled users, revoked sessions, missing MF
  session=false;assert.equal((await request('publish')).status,401);session=true;
  aal='aal1';assert.equal((await request('publish')).status,403);aal='aal2';
  role='editor';assert.equal((await request('publish')).status,403);role='viewer';assert.equal((await request('users')).status,403);role='admin';
- assert.equal(githubWrites,0);
+ assert.equal(publishWrites,0);
 });
-test('Publication detects GitHub conflict, unlocks safely, and successful publish changes only drinks.json',async()=>{
- sha='d'.repeat(40);updates=[];assert.equal((await request('publish')).status,409);assert.equal(githubWrites,0);assert.ok(updates.some(x=>x.publish_lock===null));
- sha='a'.repeat(40);updates=[];const response=await request('publish');assert.equal(response.status,200);assert.equal((await response.json()).commit,'c'.repeat(40));assert.equal(githubWrites,1);assert.ok(updates.some(x=>x.version===2));
+test('Publication commits a Supabase snapshot without any GitHub call',async()=>{
+ const response=await request('publish');assert.equal(response.status,200);assert.equal((await response.json()).revision,2);assert.equal(publishWrites,1);
 });

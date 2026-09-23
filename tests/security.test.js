@@ -57,3 +57,28 @@ test('Database migration: isolation, audit, concurrency, last admin, email recov
  assert.equal((await db.query("select block_public_auth_email('{}') as r")).rows[0].r.error.http_code,403);
  await db.close();
 });
+
+test('Supabase content publication is atomic, versioned, public-read-only and private-draft isolated',async()=>{
+ const db=new PGlite();
+ await db.exec(`create role anon;create role authenticated;create role service_role;create role supabase_auth_admin;create schema auth;create table auth.users(id uuid primary key);create schema storage;create table storage.buckets(id text,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);`);
+ for(const name of ['202609230001_admin.sql','202609230003_content.sql'])await db.exec(readFileSync(new URL('../supabase/migrations/'+name,import.meta.url),'utf8'));
+ const a='11111111-1111-4111-8111-111111111111';
+ menu.revision ||= 'test-revision';
+ await db.query('insert into auth.users values($1)',[a]);await db.query("insert into bar_members(user_id,email,role) values($1,'a@test.example','admin')",[a]);
+ await db.query('select bar_save($1,0,$2,null)',[a,menu]);
+ await db.exec('set role service_role');
+ assert.equal((await db.query('select bar_publish($1,1,$2) as r',[a,menu])).rows[0].r,1);
+ await assert.rejects(db.query('select bar_publish($1,1,$2)',[a,menu]));
+ await db.exec('reset role;set role anon');
+ assert.equal((await db.query('select document from bar_published')).rows[0].document.drinks.length,130);
+ await assert.rejects(db.query('select * from bar_draft'));
+ await assert.rejects(db.query("update bar_published set document='{}'"));
+ await assert.rejects(db.query('select bar_publish($1,2,$2)',[a,menu]));
+ await db.exec('reset role');
+ assert.equal((await db.query("select count(*)::int as n from bar_audit where event='publish.committed'")).rows[0].n,1);
+ assert.equal((await db.query('select version from bar_draft')).rows[0].version,2);
+ await db.close();
+});
+
+import {countChanges} from '../js/changes.js';
+test('Private and published references of the same image are not reported as content edits',()=>{const a=structuredClone(menu),b=structuredClone(menu);a.drinks[0].photo='storage:'+'a'.repeat(64)+'.webp';b.drinks[0].photo='https://owsbknyknzaihxtnutyk.supabase.co/storage/v1/object/public/bar-published/'+'a'.repeat(64)+'.webp';assert.equal(countChanges(a,b),0);b.drinks[0].price+=1;assert.equal(countChanges(a,b),1);});
