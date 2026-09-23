@@ -58,6 +58,7 @@ export async function init(){
   $('registerPasskey').onclick=run(async()=>{checked(await client.auth.registerPasskey());await passkeys();message('Passkey registriert.');});
   $('passwordForm').onsubmit=run(async()=>{checked(await client.auth.updateUser({password:$('newPassword').value}));$('newPassword').value='';$('passwordPanel').hidden=true;message('Passwort geändert. Bitte anschließend zweiten Faktor bestätigen.');await ready();});
   $('showPassword').onclick=()=>{$('passwordPanel').hidden=false;};
+  if($('testMail'))$('testMail').onclick=async()=>{const b=$('testMail'),status=$('mailTestStatus');b.disabled=true;status.textContent='Testmail wird gesendet …';try{const r=await api('testMail');status.textContent='Versand von Gmail bestätigt an '+r.recipient+'. Bitte Posteingang und Spamordner prüfen.';}catch(e){status.textContent=e.message;}finally{b.disabled=false;}};
   $('loadUsers').onclick=run(users);
   $('createUserForm').onsubmit=run(async()=>{await api('createUser',{email:$('newUserEmail').value,role:$('newUserRole').value});$('newUserEmail').value='';await users();message('Benutzer angelegt. Zum Einrichten „Passwort-Reset senden“ wählen.');});
   $('loadAudit').onclick=run(async()=>{const rows=await api('audit');$('auditLog').textContent=rows.map(x=>`${x.at} · ${x.event} · ${JSON.stringify(x.details)}`).join('\n');});
