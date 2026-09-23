@@ -8,7 +8,7 @@ QR-Code → GitHub Pages → veröffentlichte Kartendaten und Fotos aus Supabase
 
 `/admin/` → Anmeldung und TOTP → serverseitige Rollenprüfung → geschützter Entwurf → Vorschau → **ÄNDERUNGEN VERÖFFENTLICHEN** → Supabase-Datenbank und Bildspeicher.
 
-GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersatzstand. Für das Veröffentlichen von Kartendaten ist kein Repository-Schreibzugriff mehr nötig. Der zuvor eingerichtete GitHub-Token wird vom neuen Backend nicht verwendet; seine Aufhebung ist separat zu erledigen.
+GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersatzstand. Für das Veröffentlichen von Kartendaten ist kein Repository-Schreibzugriff mehr nötig. Der zuvor eingerichtete GitHub-Token „PandasBarCard Supabase Publishing“ wurde am 23.09.2026 widerrufen und der ungenutzte GITHUB_TOKEN-Eintrag aus Supabase Secrets entfernt.
 
 ## Sicherheit und tatsächlicher Status
 
@@ -65,3 +65,7 @@ Bild mit der integrierten Bildgenerierung erzeugt, anschließend ausschließlich
 Auf dem eigenen iPhone die Adminseite in Safari öffnen, mit Passwort und TOTP anmelden und unter Kontosicherheit „Face ID / Passkey einrichten“ wählen. Die Geräteabfrage selbst bestätigen. Danach „Mit Passkey anmelden“ verwenden. Face ID, Touch ID oder Gerätesperre werden vom Gerät gewählt; biometrische Daten verlassen das Gerät nicht. Bestehende Rollen und die AAL2-Prüfung bleiben erforderlich. Bei einem späteren Domainwechsel müssen Passkeys für die neue Domain erneut registriert werden. Passwort/TOTP bleiben der Rückweg.
 
 Prüfung am 23.09.2026: 13 automatisierte Tests erfolgreich. Mobile Browseransicht 390 × 844: Kategorienwechsel, horizontaler Drinkwechsel (2/5), feststehende Kategorienleiste und keine horizontale Seitenüberbreite geprüft. Physische iPhone-Gesten und Face ID können erst am echten Gerät bestätigt werden.
+
+## Geplanter nächster Gestaltungsschritt
+
+Adminoberfläche für häufige Nutzung am Smartphone überarbeiten: klare Aufteilung nach Aufgaben, große Bedienelemente und kurze Wege für alltägliche Änderungen. Gleichzeitig eine passende Laptopansicht mit sinnvoller Nutzung des größeren Bildschirms erhalten. Vom Nutzer ausdrücklich für später vorgemerkt; noch nicht umgesetzt.
