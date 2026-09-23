@@ -1,4 +1,5 @@
 import {createClient} from './vendor/supabase.js';
+import {signInWithVerifiedPasskey} from './passkey-login.js';
 const $=id=>document.getElementById(id);
 let client,config,member,factorId;
 const message=s=>{$('authMessage').textContent=s;};
@@ -13,15 +14,18 @@ const run=fn=>async e=>{e?.preventDefault();try{await fn();}catch(error){message
 async function ready(){
  member=await api('session');$('authIdentity').textContent=member.email+' · '+member.role;
  $('loginForm').hidden=true;$('signOut').hidden=false;$('securityPanel').hidden=false;
- if(member.aal!=='aal2'){
+ if(!member.strongAuth){
   $('mfaPanel').hidden=false;const factors=checked(await client.auth.mfa.listFactors());
   factorId=factors.totp.find(x=>x.status==='verified')?.id;
   $('enrollMfa').hidden=!!factorId;$('verifyMfa').hidden=!factorId;
   message(factorId?'Bitte Code aus der Authenticator-App eingeben.':'Bitte zuerst den zweiten Faktor einrichten.');return;
  }
- $('mfaPanel').hidden=true;message('Angemeldet.');
- $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled||!window.PublicKeyCredential;
- if(config.passkeysEnabled){try{await passkeys();}catch{message('Passkey-Verwaltung derzeit nicht verfügbar. Passwort/TOTP bleibt nutzbar.');}}
+ $('mfaPanel').hidden=true;message(member.verifiedPasskey?'Mit gerätebestätigtem Passkey angemeldet.':'Angemeldet.');
+ $('showPassword').hidden=member.aal!=='aal2';
+ let step=$('securityStepUp');if(!step){step=document.createElement('button');step.id='securityStepUp';step.type='button';step.textContent='Passwort / Passkeys verwalten (mit Sicherheitscode)';$('securityPanel').append(step);}
+ step.hidden=member.aal==='aal2';step.onclick=run(async()=>{const factors=checked(await client.auth.mfa.listFactors());factorId=factors.totp.find(x=>x.status==='verified')?.id;$('mfaPanel').hidden=false;$('enrollMfa').hidden=!!factorId;$('verifyMfa').hidden=!factorId;message('Nur für Änderungen an Passwort oder Passkeys: Sicherheitscode bestätigen.');});
+ $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled||!window.PublicKeyCredential||member.aal!=='aal2';
+ if(config.passkeysEnabled&&member.aal==='aal2'){try{await passkeys();}catch{message('Passkey-Verwaltung derzeit nicht verfügbar. Passwort/TOTP bleibt nutzbar.');}}
  $('userManagement').hidden=member.role!=='admin';$('auditPanel').hidden=member.role!=='admin';
  const editor=await import('./admin.js?v=20260923-pdf');await editor.startOnline({api,role:member.role});
 }
@@ -50,7 +54,7 @@ export async function init(){
   // Auth credentials are held only in memory. Reload deliberately requires a new login.
   message('Bitte anmelden.');client=createClient(config.supabaseUrl,config.publishableKey,{auth:{persistSession:false,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:!!config.passkeysEnabled}}});
   $('loginForm').onsubmit=run(async()=>{checked(await client.auth.signInWithPassword({email:$('loginEmail').value,password:$('loginPassword').value}));$('loginPassword').value='';await ready();});
-  $('passkeyLogin').hidden=!config.passkeysEnabled||!window.PublicKeyCredential;$('passkeyLogin').onclick=run(async()=>{checked(await client.auth.signInWithPasskey());await ready();});
+  $('passkeyLogin').hidden=!config.passkeysEnabled||!window.PublicKeyCredential;$('passkeyLogin').onclick=run(async()=>{const b=$('passkeyLogin');b.disabled=true;try{await signInWithVerifiedPasskey(client,config);await ready();}finally{b.disabled=false;}});
   $('signOut').onclick=run(async()=>{checked(await client.auth.signOut({scope:'local'}));location.reload();});
   $('signOutAll').onclick=run(async()=>{checked(await client.auth.signOut({scope:'global'}));location.reload();});
   $('enrollMfa').onclick=run(async()=>{const result=checked(await client.auth.mfa.enroll({factorType:'totp',friendlyName:'PANDAsBarCard'}));factorId=result.id;$('mfaQr').src=result.totp.qr_code;$('mfaQr').hidden=false;$('mfaSecret').textContent=result.totp.secret;$('verifyMfa').hidden=false;$('enrollMfa').disabled=true;});
