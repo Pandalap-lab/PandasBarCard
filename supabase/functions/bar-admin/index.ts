@@ -1,14 +1,14 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.105.0';
+import {sendMail} from './mail.js';
 import {ApiError,authorize,validateMenu,parseClaims} from './policy.js';
-const defaults:Record<string,string>={ADMIN_ORIGIN:'https://pandalap-lab.github.io',ADMIN_URL:'https://pandalap-lab.github.io/PandasBarCard/admin/'};
+const defaults:Record<string,string>={MAIL_PROVIDER:'resend',ADMIN_ORIGIN:'https://pandalap-lab.github.io',ADMIN_URL:'https://pandalap-lab.github.io/PandasBarCard/admin/'};
 const env=(k:string)=>{const v=Deno.env.get(k)||defaults[k];if(!v)throw new Error('Missing configuration: '+k);return v;};
 const db=createClient(env('SUPABASE_URL'),env('SUPABASE_SERVICE_ROLE_KEY'),{auth:{persistSession:false,autoRefreshToken:false}});
 const origin=env('ADMIN_ORIGIN');
 const checked=async(q:any)=>{const {data,error}=await q;if(error)throw new ApiError(409,'Vorgang nicht abgeschlossen. Daten neu laden oder Administrator kontaktieren.');return data;};
 const audit=(actor:string|null,event:string,details={})=>checked(db.from('bar_audit').insert({actor,event,details}));
 async function mail(to:string,subject:string,text:string){
- const r=await fetch('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+env('RESEND_API_KEY'),'Content-Type':'application/json'},body:JSON.stringify({from:env('MAIL_FROM'),to:[to],subject,text})});
- if(!r.ok)throw new ApiError(502,'E-Mail konnte nicht versendet werden.');
+ try{await sendMail(env,to,subject,text);}catch{throw new ApiError(502,'E-Mail konnte nicht bestätigt werden. Versandkonfiguration prüfen; bei Zeitüberschreitung zunächst Posteingang prüfen.');}
 }
 async function notice(actor:string,event:string,details:any){
  try{await mail(env('SECURITY_EMAIL'),'PANDAsBarCard: '+event,JSON.stringify({at:new Date().toISOString(),actor,...details},null,2));return true;}
