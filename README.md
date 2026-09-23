@@ -16,9 +16,9 @@ GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersat
 - Entwürfe, Benutzer und Audit: für Gäste gesperrt. Öffentliche Tabelle `bar_published`: nur lesbar.
 - Fotos: private Entwürfe, veröffentlichte Kopien im öffentlichen Bildbereich. Keine Browser-Schreibrechte auf Storage.
 - Veröffentlichung: Versionskontrolle und Transaktion mit Audit. Gleichzeitige Änderungen werden nicht still überschrieben.
-- Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Gmail-Versand ist eingerichtet; die Ende-zu-Ende-Prüfung des Reset-E-Mail-Versands steht noch aus.**
+- Passwortänderung und administrativer Reset: implementiert. Öffentliche Recovery-Mails blockiert. **Gmail-Versand ist eingerichtet; der Zugangstest des zweiten Administrators wird auf Nutzerwunsch später durchgeführt.**
 - Benachrichtigungen/Sicherheitsmails: Gmail-Anbindung mit serverseitiger OAuth-Sendefreigabe bereitgestellt. Empfänger für Sicherheitsmeldungen: noname.g8@gmail.com; Testmail versendet und Empfang vom Eigentümer bestätigt; Fehler werden protokolliert.
-- Passkeys: vorbereitet, derzeit deaktiviert; keine Behauptung einer produktiven Passkey-Einrichtung.
+- Passkeys: am 23.09.2026 in Supabase aktiviert, Domain `pandalap-lab.github.io`, Origin `https://pandalap-lab.github.io`. Registrierung und Anmeldung in der Adminseite eingebunden. Supabase kennzeichnet die Funktion als experimentell. Persönliche Registrierung/Face-ID-Prüfung erfolgt auf dem Gerät des Benutzers; noch nicht durchgeführt. TOTP/AAL2 und Rollenprüfung bleiben erhalten.
 - Keine Passwörter, Service-Schlüssel oder GitHub-Tokens im Browser. Publishable Key ist absichtlich öffentlich.
 
 ## Bedienung und Gestaltung
@@ -59,3 +59,9 @@ Gästekarte und Administration verwenden das Panda-Kopf-Martiniglas-Symbol unter
 iPhone: gewünschte Seite in Safari öffnen → Teilen → Zum Home-Bildschirm → Hinzufügen. Beide Seiten separat hinzufügen. Bereits gespeicherte Verknüpfungen gegebenenfalls vom Home-Bildschirm entfernen und neu hinzufügen, wenn iOS noch das alte Symbol zeigt. Android: gewünschte Seite in Chrome öffnen → Menü → Zum Startbildschirm hinzufügen / App installieren (Bezeichnung je nach Version).
 
 Bild mit der integrierten Bildgenerierung erzeugt, anschließend ausschließlich in die technischen Icon-Größen verkleinert. Finales Briefing: freundlicher, frontal ausgerichteter Panda-Kopf und nach links geneigtes vollständiges Martiniglas mit goldfarbenem Cocktail und Olive, ohne Körper, Kleidung, Hände, Schrift oder weitere Symbole; dunkler espresso-brauner Hintergrund. Das finale Original und alle Größen sind im Projekt gespeichert. Vollständiges Bildbriefing: docs/app-icon-prompt.txt.
+
+## Face ID / Passkeys
+
+Auf dem eigenen iPhone die Adminseite in Safari öffnen, mit Passwort und TOTP anmelden und unter Kontosicherheit „Face ID / Passkey einrichten“ wählen. Die Geräteabfrage selbst bestätigen. Danach „Mit Passkey anmelden“ verwenden. Face ID, Touch ID oder Gerätesperre werden vom Gerät gewählt; biometrische Daten verlassen das Gerät nicht. Bestehende Rollen und die AAL2-Prüfung bleiben erforderlich. Bei einem späteren Domainwechsel müssen Passkeys für die neue Domain erneut registriert werden. Passwort/TOTP bleiben der Rückweg.
+
+Prüfung am 23.09.2026: 13 automatisierte Tests erfolgreich. Mobile Browseransicht 390 × 844: Kategorienwechsel, horizontaler Drinkwechsel (2/5), feststehende Kategorienleiste und keine horizontale Seitenüberbreite geprüft. Physische iPhone-Gesten und Face ID können erst am echten Gerät bestätigt werden.
