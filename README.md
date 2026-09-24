@@ -23,7 +23,7 @@ GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersat
 
 ## Bedienung und Gestaltung
 
-Vertikales Scrollen durch Kategorien, horizontales Wischen durch Drinks. Kategorienleiste fest oben und horizontal scrollbar. Bilder erhalten einen begrenzten Bereich oberhalb des Namens. Weichere Übergänge, ein Prozent größere Basisschrift. Aa-Schriftvergrößerung, Kontrast, reduzierte Bewegung und Pinch-Zoom bleiben erhalten. Die Browser-Adresszeile lässt sich durch eine normale Webseite nicht verlässlich ausblenden und ist kein Authentifizierungsmechanismus.
+Vertikales Scrollen durch Kategorien, horizontales Wischen durch Drinks. Kategorienleiste fest oben und horizontal scrollbar. Bilder erhalten einen begrenzten Bereich oberhalb des Namens. Cocktailfotos verwenden eine gemeinsame elliptische CSS-Transparenzmaske direkt auf der proportional skalierten Bildfläche, einschließlich der Detailansicht. Das Zentrum bleibt ungefiltert; alle vier Ränder laufen vollständig transparent aus. Identische Standard- und WebKit-Maskenregeln gelten für alle Bildschirmgrößen. Weichere Übergänge, ein Prozent größere Basisschrift. Aa-Schriftvergrößerung, Kontrast, reduzierte Bewegung und Pinch-Zoom bleiben erhalten. Die Browser-Adresszeile lässt sich durch eine normale Webseite nicht verlässlich ausblenden und ist kein Authentifizierungsmechanismus.
 
 Bei Ausfall der Datenverbindung zeigt die Seite einen deutlich gekennzeichneten gespeicherten oder mitgelieferten Ersatzstand. Preise dann vor Ort bestätigen.
 
