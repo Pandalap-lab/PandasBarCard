@@ -80,6 +80,11 @@ Deno.serve(async(req)=>{
  try{
   if(req.method!=='POST')throw new ApiError(405,'POST erforderlich.');
   const input=await body(req);const action=input.action;
+  if(action==='pageview'){
+   // No visitor data is read or stored. A shared abuse ceiling bounds writes.
+   if(!await checked(db.rpc('bar_limit',{p_key:'pageviews-global',p_max:600})))return reply({ok:false},429);
+   await checked(db.rpc('bar_count_pageview'));return reply({ok:true});
+  }
   if(action==='passkeyComplete'){
    if(!await checked(db.rpc('bar_limit',{p_key:'passkey-complete-global',p_max:60})))throw new ApiError(429,'Zu viele Anmeldeversuche. Bitte eine Minute warten.');
    return reply(await completePasskey(input,{origin,env,db,checked,audit}));
@@ -94,8 +99,9 @@ Deno.serve(async(req)=>{
   if(!await checked(db.rpc('bar_limit',{p_key:actor,p_max:60})))throw new ApiError(429,'Zu viele Anfragen. Bitte eine Minute warten.');
   const verifiedPasskey=claims.aal!=='aal2'&&await checked(db.rpc('bar_passkey_session_valid',{p_session:claims.session_id,p_user:actor}))===true;
   if(action==='session')return reply({email:member.email,role:member.role,aal:claims.aal,strongAuth:claims.aal==='aal2'||verifiedPasskey,verifiedPasskey});
-  const policy:Record<string,string>={load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',testMail:'users',audit:'audit'};
+  const policy:Record<string,string>={statistics:'read',load:'read',save:'save',publish:'publish',upload:'save',users:'users',createUser:'users',updateUser:'users',resetPassword:'users',testMail:'users',audit:'audit'};
   if(!policy[action])throw new ApiError(400,'Unbekannte Aktion.');authorize(member,claims,policy[action],verifiedPasskey);
+  if(action==='statistics')return reply(await checked(db.rpc('bar_pageview_stats')));
   if(action==='testMail'){
    if(!await checked(db.rpc('bar_limit',{p_key:actor+':test-mail',p_max:1})))throw new ApiError(429,'Bitte eine Minute bis zur nächsten Testmail warten.');
    const recipient=env('SECURITY_EMAIL');
