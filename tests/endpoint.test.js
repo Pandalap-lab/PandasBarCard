@@ -14,6 +14,8 @@ globalThis.fetch=async(url,opts={})=>{
  if(path==='/auth/v1/user')return respond({id,email:'test@example.test'});
  if(path.endsWith('/rpc/bar_passkey_session_valid'))return respond(passkeyGrant);
  if(path.endsWith('/rpc/bar_session_valid'))return respond(session);
+ if(path.endsWith('/rpc/bar_count_pageview'))return respond(null);
+ if(path.endsWith('/rpc/bar_pageview_stats'))return respond({today:2,last7:4,last30:6,total:8});
  if(path.endsWith('/rpc/bar_limit'))return respond(true);
  if(path.endsWith('/bar_members'))return respond({user_id:id,email:'test@example.test',role,enabled});
  if(path.endsWith('/bar_audit'))return respond(null,201);
@@ -72,4 +74,16 @@ test('Device-verified passkey session opens administration but cannot bypass rol
  role='admin';session=false;assert.equal((await request('publish')).status,401);
  session=true;enabled=false;assert.equal((await request('publish')).status,403);
  enabled=true;passkeyGrant=false;assert.equal((await request('publish')).status,403);aal='aal2';
+});
+
+test('Pageview accepts anonymous count only, stats require verified session and existing read role',async()=>{
+ const anonymous=action=>handler(new Request('https://unit.supabase.co/functions/v1/bar-admin',{method:'POST',headers:{origin:env.ADMIN_ORIGIN,'content-type':'application/json'},body:JSON.stringify({action})}));
+ assert.equal((await anonymous('pageview')).status,200);
+ assert.equal((await anonymous('statistics')).status,401);
+ assert.equal((await request('pageview','https://evil.example')).status,403);
+ aal='aal1';assert.equal((await request('statistics')).status,403);
+ aal='aal2';enabled=false;assert.equal((await request('statistics')).status,403);enabled=true;
+ session=false;assert.equal((await request('statistics')).status,401);session=true;
+ for(const r of ['admin','editor','viewer']){role=r;const response=await request('statistics');assert.equal(response.status,200);assert.equal((await response.json()).total,8);}
+ role='admin';
 });
