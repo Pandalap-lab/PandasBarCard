@@ -81,3 +81,6 @@ body.guest{font-size:16.16px}
  .guest.has-reveal:not(.reduce-motion) .category-section{opacity:.25;transition:opacity .8s ease}
  .guest.has-reveal:not(.reduce-motion) .category-section.in-view{opacity:1}
 }
+
+/* Discreet disclosure, confined to the existing guest footer. */
+.guest footer .ai-notice{display:block;margin-top:1rem;font-size:.75rem;line-height:1.5;color:var(--muted);letter-spacing:normal;text-transform:none}
