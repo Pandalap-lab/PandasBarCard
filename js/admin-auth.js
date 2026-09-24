@@ -1,4 +1,5 @@
 import {createClient} from './vendor/supabase.js';
+import {startDashboard} from './admin-dashboard.js?v=20260924';
 import {signInWithVerifiedPasskey} from './passkey-login.js';
 const $=id=>document.getElementById(id);
 let client,config,member,factorId;
@@ -27,7 +28,7 @@ async function ready(){
  $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled||!window.PublicKeyCredential||member.aal!=='aal2';
  if(config.passkeysEnabled&&member.aal==='aal2'){try{await passkeys();}catch{message('Passkey-Verwaltung derzeit nicht verfügbar. Passwort/TOTP bleibt nutzbar.');}}
  $('userManagement').hidden=member.role!=='admin';$('auditPanel').hidden=member.role!=='admin';
- const editor=await import('./admin.js?v=20260923-pdf');await editor.startOnline({api,role:member.role});
+ const editor=await import('./admin.js?v=20260924-dashboard');await editor.startOnline({api,role:member.role});startDashboard({api,role:member.role});
 }
 async function passkeys(){
  const keys=checked(await client.auth.passkey.list());$('passkeyList').replaceChildren();
@@ -46,7 +47,7 @@ async function users(){
  }
 }
 export async function init(){
- $('offlineMode').onclick=run(async()=>{if(confirm('Nur lokalen Entwurf öffnen? Hier sind keine Online-Veröffentlichungen möglich.')){const m=await import('./admin.js?v=20260923-pdf');await m.startOffline();message('Lokaler Entwurfsmodus ohne Online-Zugriff.');}});
+ $('offlineMode').onclick=run(async()=>{if(confirm('Nur lokalen Entwurf öffnen? Hier sind keine Online-Veröffentlichungen möglich.')){const m=await import('./admin.js?v=20260924-dashboard');await m.startOffline();startDashboard({role:'offline'});message('Lokaler Entwurfsmodus ohne Online-Zugriff.');}});
  try{
   config=await (await fetch('./config.json',{cache:'no-store'})).json();
   if(!config.supabaseUrl||!config.publishableKey){message('Online-Administration noch nicht eingerichtet. Die lokale Entwurfsfunktion bleibt verfügbar.');$('loginForm').inert=true;return;}
