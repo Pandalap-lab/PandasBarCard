@@ -1,5 +1,5 @@
 import{countChanges}from './changes.js?v=2';
-import{createActionRunner}from './action-feedback.js';
+import{createActionRunner}from './action-feedback.js?v=20261007-2';
 import{loadData,saveDraft,validate,photoURL,setPhotoMap}from './store.js';const $=id=>document.getElementById(id);let baseline,data,current,dirty=false,uploading=false;
 function msg(s){$('message').textContent=s;}function persist(silent=false){try{saveDraft(data);updateDraftStatus();if(!silent)msg('Entwurf in diesem Browser gespeichert.');return true;}catch(e){if(!silent)msg('Nicht gespeichert: Browserspeicher voll oder nicht verfügbar. Bitte Daten exportieren.');return false;}}
 function node(tag,text){const e=document.createElement(tag);if(text)e.textContent=text;return e;}
@@ -28,9 +28,9 @@ function display(){updateDraftStatus();categories();select(data.drinks[0]?.id);$
 export async function startOffline(){online=null;baseline=await loadData();data=await loadData({draft:true});$('draftWorkspace').inert=false;$('onlineTools').hidden=true;$('saveDrink').textContent='Lokal speichern';display();}
 export async function startOnline(connection){online=connection;await serverLoad();$('serverSave').disabled=online.role==='viewer';$('serverPublish').disabled=online.role!=='admin';$('saveDrink').disabled=online.role==='viewer';$('saveDrink').textContent='Drink speichern';$('draftWorkspace').inert=online.role==='viewer';$('modeLabel').textContent='Arbeitsentwurf · '+online.role;}
 async function serverLoad(){if(dirty&&!confirm('Ungespeicherte Formularänderungen verwerfen?'))return;const r=await online.api('load');baseline=r.published.document;data=r.document;serverVersion=r.version;setPhotoMap(r.photos);serverDocument=JSON.stringify(data);const previous=localStorage.getItem("pandas-barcard-draft-v1");if(previous&&previous!==serverDocument)localStorage.setItem("pandas-barcard-before-server",previous);saveDraft(data);display();$('serverStatus').textContent=r.publish_lock?'Veröffentlichung muss im Backend geprüft werden (Sperre aktiv).':'Serverstand geladen · Version '+serverVersion;}
-async function runServer(label,fn,status=$('serverStatus')){
+async function runServer(label,fn,status=$('serverStatus'),primary=$('saveDrink')){
  if(serverRun?.busy)return;
- serverRun=createActionRunner({buttons:[$('saveDrink'),$('serverSave'),$('serverPublish'),$('serverLoad')],regions:[$('editor'),$('list'),$('new'),$('view-categories'),$('dataTools'),$('loadPublished')].filter(Boolean),status});
+ serverRun=createActionRunner({buttons:[$('saveDrink'),$('serverSave'),$('serverPublish'),$('serverLoad')],regions:[$('editor'),$('list'),$('new'),$('view-categories'),$('dataTools'),$('loadPublished')].filter(Boolean),status,primary});
  await serverRun(label,fn);
  if(status!==$('serverStatus'))$('serverStatus').textContent=status.textContent;
 }
@@ -45,8 +45,8 @@ async function saveServer(){
  const text='Entwurf auf Server gespeichert · Version '+serverVersion+'. Noch nicht veröffentlicht.'+(r.emailSent===false?' · Änderungs-E-Mail nicht bestätigt, siehe Protokoll.':'')+warning;
  $('serverStatus').textContent=text;msg(text);
 }
-$('serverLoad').onclick=async()=>{if(serverRun?.busy)return;if(confirm('Arbeitsentwurf durch Serverstand ersetzen? Vorher bei Bedarf exportieren.'))await runServer('Serverstand wird geladen …',serverLoad);};
-$('serverSave').onclick=()=>runServer('Wird gespeichert …',async()=>{if(dirty){if(!$('editor').reportValidity())throw Error('Bitte die markierten Formularfelder prüfen.');if(!commitEditor())return;}await saveServer();});
+$('serverLoad').onclick=async()=>{if(serverRun?.busy)return;if(confirm('Arbeitsentwurf durch Serverstand ersetzen? Vorher bei Bedarf exportieren.'))await runServer('Serverstand wird geladen …',serverLoad,$('serverStatus'),$('serverLoad'));};
+$('serverSave').onclick=()=>runServer('Wird gespeichert …',async()=>{if(dirty){if(!$('editor').reportValidity())throw Error('Bitte die markierten Formularfelder prüfen.');if(!commitEditor())return;}await saveServer();},$('serverStatus'),$('serverSave'));
 $('serverPublish').onclick=async()=>{
  if(serverRun?.busy)return;
  if(dirty||JSON.stringify(data)!==serverDocument){$('serverStatus').textContent='Bitte zuerst speichern, die Vorschau prüfen und dann veröffentlichen.';return;}
@@ -58,7 +58,7 @@ $('serverPublish').onclick=async()=>{
   // Publishing succeeded even if the subsequent refresh cannot be completed.
   try{await serverLoad();$('serverStatus').textContent=text;}
   catch{$('serverStatus').textContent=text+' · Neuer Serverstand konnte nicht geladen werden. Bitte Serverstand laden; nicht erneut veröffentlichen.';}
- });
+ },$('serverStatus'),$('serverPublish'));
 };
 
 

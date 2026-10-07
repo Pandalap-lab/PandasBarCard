@@ -1,5 +1,5 @@
 // One shared lock for load/save/publish. Restore existing role restrictions.
-export function createActionRunner({buttons,regions=[],status,vibrate=()=>globalThis.navigator?.vibrate?.(15)}){
+export function createActionRunner({buttons,regions=[],status,primary=buttons[0],vibrate=()=>globalThis.navigator?.vibrate?.(15)}){
  let busy=false;
  const run=async(label,action)=>{
   if(busy)return;
@@ -8,7 +8,6 @@ export function createActionRunner({buttons,regions=[],status,vibrate=()=>global
   const regionStates=regions.map(region=>[region,region.inert]);
   for(const [button] of states){button.disabled=true;button.setAttribute('aria-busy','true');}
   for(const [region] of regionStates)region.inert=true;
-  const primary=buttons.find(button=>button===globalThis.document?.activeElement)||buttons[0];
   if(primary)primary.textContent=label;
   status.textContent=label;
   try{try{vibrate();}catch{/* Optional device feedback. */}return await action();}

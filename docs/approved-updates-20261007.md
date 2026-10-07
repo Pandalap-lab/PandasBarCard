@@ -31,7 +31,7 @@ Vollständiges Git-Backup: `../PandasBarCard-baseline-20261007.bundle` im lokale
 
 ## Automatisierte Prüfungen
 
-30 Tests erfolgreich: `node --test tests/*.test.js`. Zusätzlich die sieben HTTP-/Autorisierungstests gegen die **tatsächlich bereitgestellte Einzeldatei**: `node scripts/bundle-backend.mjs`, dann Umgebungsvariable `TEST_BACKEND_BUNDLE=1` und `node --test tests/endpoint.test.js`.
+31 Tests erfolgreich: `node --test tests/*.test.js`. Zusätzlich die sieben HTTP-/Autorisierungstests gegen die **tatsächlich bereitgestellte Einzeldatei**: `node scripts/bundle-backend.mjs`, dann Umgebungsvariable `TEST_BACKEND_BUNDLE=1` und `node --test tests/endpoint.test.js`.
 
 Abgedeckt: Auth/MFA/Passkey, Sitzungswiderruf, Rollen, Origin, fehlende Berechtigung, PostgreSQL-Rechte, Versionskonflikte, atomare Veröffentlichung, PDF-Regression, genau eine Seitenzählung pro Dokument, kalendarische Zeiträume, Ausfallisolation, Mailkodierung und Versandadapter. Neue Prüfungen zeigen, dass ein bestätigter Save bei Mailausfall erfolgreich bleibt und dieselbe Aktion nicht parallel gestartet werden kann. Das Bundle und die normalen Module zeigen dieselben HTTP-Ergebnisse.
 
@@ -62,7 +62,7 @@ Healthcheck live erfolgreich. Rein lesende SQL-Abfrage davor/danach: Heute **0**
 
 Vollständiges Neuladen erhöhte anschließend auf Heute **2**, Gesamt **23**. Der zusätzliche Adminaufruf erhöhte die Werte nicht. Kartenhash weiterhin identisch. Die zwei technischen Barkartenaufrufe bleiben als echte Seitenladungen in der Statistik enthalten.
 
-Websitebereitstellung und geplanter GitHub-Lauf werden nach der Veröffentlichung abschließend ergänzt.
+GitHub Pages wurde erfolgreich bereitgestellt ([Deployment](https://github.com/Pandalap-lab/PandasBarCard/actions/runs/37666032916)). Der unabhängig eingerichtete tägliche Healthcheck ist aktiviert; sein erster GitHub-Lauf war erfolgreich ([Prüflauf](https://github.com/Pandalap-lab/PandasBarCard/actions/runs/37666035505)). Ein zusätzlicher Test prüft die Beschriftung des tatsächlich ausgelösten Buttons ohne Tastaturfokus, wie bei Touch-Browsern.
 
 ## Verbleibende persönliche Abnahme
 

@@ -15,3 +15,9 @@ test('Failure does not claim success and unlocks retry',async()=>{
  await run('Wird gespeichert …',()=>{throw Error('Versionskonflikt. Bitte laden.');});assert.equal(status.textContent,'Versionskonflikt. Bitte laden.');assert.equal(a.disabled,false);
  await run('Wird gespeichert …',()=>{status.textContent='Bestätigt';});assert.equal(status.textContent,'Bestätigt');
 });
+test('Touch browsers without button focus still label the actual initiating action',async()=>{
+ const a=button(false),b=button(false),status={textContent:''};let finish;
+ const run=createActionRunner({buttons:[a,b],primary:b,status,vibrate(){}});
+ const task=run('Wird veröffentlicht …',()=>new Promise(resolve=>finish=resolve));
+ assert.equal(a.textContent,'Speichern');assert.equal(b.textContent,'Wird veröffentlicht …');finish();await task;assert.equal(b.textContent,'Speichern');
+});
