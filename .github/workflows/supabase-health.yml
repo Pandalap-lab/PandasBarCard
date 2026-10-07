@@ -1,0 +1,26 @@
+name: Supabase Healthcheck
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/supabase-health.yml'
+      - 'scripts/healthcheck.mjs'
+      - 'admin/config.json'
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: supabase-health
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Read public Supabase row without counting a pageview
+        run: node scripts/healthcheck.mjs

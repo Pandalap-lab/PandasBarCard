@@ -6,7 +6,7 @@ Digitale Gästekarte für First Floor, Wien. Die aktuelle Karte basiert auf `Kar
 
 QR-Code → GitHub Pages → veröffentlichte Kartendaten und Fotos aus Supabase.
 
-`/admin/` → Passwort + TOTP oder gerätebestätigter Passkey → serverseitige Rollenprüfung → geschützter Entwurf → Vorschau → **ÄNDERUNGEN VERÖFFENTLICHEN** → Supabase-Datenbank und Bildspeicher.
+`/admin/` → Passwort + TOTP oder gerätebestätigter Passkey → Dashboard → **Drink speichern** / **Entwurf auf Server speichern** → Vorschau → **ÄNDERUNGEN VERÖFFENTLICHEN** → Supabase-Datenbank und Bildspeicher.
 
 GitHub verwaltet nur noch die Website-Versionen und einen gekennzeichneten Ersatzstand. Für das Veröffentlichen von Kartendaten ist kein Repository-Schreibzugriff mehr nötig. Der zuvor eingerichtete GitHub-Token „PandasBarCard Supabase Publishing“ wurde am 23.09.2026 widerrufen und der ungenutzte GITHUB_TOKEN-Eintrag aus Supabase Secrets entfernt.
 
@@ -42,7 +42,7 @@ Der Gmail-API-Adapter ist live eingerichtet. 13 automatisierte Tests bestehen ei
 
 ## A5-Druckkarte als PDF
 
-Unter „Druckkarte als PDF“ können Administratoren und Bearbeiter die aktuelle veröffentlichte Karte oder den Arbeitsentwurf herunterladen. Voreinstellung: veröffentlichte Karte; im Onlinemodus wird sie vor dem Export neu vom Backend gelesen. Entwürfe erhalten einen klaren Entwurf-Vermerk. Ungespeicherte Formularänderungen müssen vor einem Entwurfsexport lokal gespeichert werden. Der Export veröffentlicht oder verändert keine Daten.
+Unter „Druckkarte als PDF“ können Administratoren und Bearbeiter die aktuelle veröffentlichte Karte oder den Arbeitsentwurf herunterladen. Voreinstellung: veröffentlichte Karte; im Onlinemodus wird sie vor dem Export neu vom Backend gelesen. Entwürfe erhalten einen klaren Entwurf-Vermerk. Ungespeicherte Formularänderungen müssen vor einem Entwurfsexport gespeichert werden (online: „Drink speichern“, offline: „Lokal speichern“). Der Export veröffentlicht oder verändert keine Daten.
 
 A5-Hochformat (148 × 210 mm), ruhiger brauner Hintergrund, goldene Überschriften/Preise und helle Schrift. Enthalten sind Kategorien, Getränkenamen, Zutaten, vorhandene Portionsangaben und Preise, keine Bilder. Fehlende Preise bleiben „Preis offen“; pausierte Drinks folgen der Anzeigeeinstellung. Text bleibt im PDF auswählbar; Seitenumbrüche und Fortsetzungsüberschriften werden automatisch erzeugt. Schrift unterstützt westliche europäische Zeichen; nicht unterstützte Zeichen melden einen Fehler, statt Inhalte still zu entfernen. PDF-Erstellung lokal im Browser mit gebündeltem pdf-lib 1.17.1, ohne externen PDF-Dienst. Build: `node scripts/vendor-pdf.mjs`. Druck: A5 und tatsächliche Größe / 100 %. Hintergrund ist bereits Bestandteil der PDF.
 
@@ -124,6 +124,30 @@ Der lokale Entwurfsmodus bleibt erhalten, ohne Besucherstatistik/Benutzerzugriff
 
 Layout: eine Kachelspalte unter 640 px, zwei ab 640 px und drei ab 900 px. Einheitliche Kachelhöhen innerhalb des Grids, maximal 1100 px Inhaltsbreite, mindestens 48 px große Aktionsflächen, 16 px Eingabeschrift, umbrechende Texte. Mobile Formulare stehen untereinander; die Drinkliste ist auf 260 px Höhe begrenzt. Die Auswahl eines Drinks bringt auf kleinen Bildschirmen das Formular in Sicht. Ab 900 px stehen Liste und Editor nebeneinander. Tabletformulare nutzen bei ausreichender Breite zwei Spalten. Zoom bleibt erlaubt. Zurück-Navigation ist am oberen Rand fixiert; längere Formulare bleiben normal scrollbar.
 
-Umsetzung: `js/admin-dashboard.js` gruppiert vorhandene DOM-Komponenten und erhält deren Ereignisse und Geschäftslogik; `css/admin.css` ergänzt die responsive Darstellung. Keine neue Benutzerrolle oder externe UI-Bibliothek. Die Backend-Erweiterung betrifft nur die Statistik.
+Umsetzung: `js/admin-dashboard.js` gruppiert vorhandene DOM-Komponenten und erhält deren Ereignisse und Geschäftslogik; `css/admin.css` ergänzt die responsive Darstellung. Keine neue Benutzerrolle oder externe UI-Bibliothek. Die damalige Backend-Erweiterung betraf nur die Statistik. Die Ergänzungen vom 07.10.2026 sind unten beschrieben.
 
 Abnahme und genaue Dateiliste: [Änderungs- und Prüfprotokoll vom 24.09.2026](docs/dashboard-statistics-checks.md).
+
+## Speichern, Veröffentlichen und Änderungs-E-Mails – 07.10.2026
+
+Im Onlinemodus sichert **Drink speichern** das bearbeitete Formular und den gesamten Arbeitsentwurf direkt auf dem Server. Es ist kein zusätzlicher Wechsel zum Speicherbereich erforderlich. Kategorien, Reihenfolge und importierte Daten werden weiterhin zunächst im Browser bearbeitet; **Entwurf auf Server speichern** sichert alle Änderungen gemeinsam und übernimmt bei Bedarf auch das offene Drinkformular. Im lokalen Modus bleibt **Lokal speichern** eine reine Browserfunktion. GitHub- oder Code-Kenntnisse werden für die Kartenpflege nicht benötigt.
+
+Speichern verändert noch keine Gästedaten. Danach im Dashboard **Entwurf & Veröffentlichung** öffnen, den gespeicherten Entwurf in der Vorschau prüfen und **ÄNDERUNGEN VERÖFFENTLICHEN** bestätigen. Administratoren dürfen veröffentlichen, Bearbeiter dürfen speichern, Nur-Lesen-Zugänge erhalten keine Schreibrechte. Bestehende Versionsprüfung, MFA/Passkey- und Sitzungsprüfung bleiben erhalten.
+
+Während einer Anfrage stehen „Wird gespeichert …“ bzw. „Wird veröffentlicht …“ am Button und im Status. Ein gemeinsamer Schutz verhindert paralleles Laden, Speichern und Veröffentlichen; betroffene Eingaben sind vorübergehend gesperrt. Gedrückter Zustand und optionale Gerätehaptik geben Rückmeldung. Erst die Backendantwort bestätigt den Erfolg. Bei fehlender Serverantwort nach spätestens 60 Sekunden oder einem Verbindungsfehler den Serverstand prüfen; die Anfrage wird nicht automatisch wiederholt. Eine bestätigte Veröffentlichung bleibt als erfolgreich gemeldet, auch wenn das anschließende Neuladen fehlschlägt. Bis zum Laden des neuen Stands ist erneutes Veröffentlichen gesperrt.
+
+Die vorhandenen Änderungsbenachrichtigungen nennen die authentifizierte E-Mail-Adresse, Benutzerkennung und Uhrzeit in Wien. Speichern meldet Änderungen am gemeinsamen Entwurf; Veröffentlichen meldet Unterschiede zur bisher veröffentlichten Karte. Enthalten sind betroffene Drinks, Kategorien und Einstellungen mit verständlichen Feldnamen und **Vorher → Nachher**, einschließlich Hinzufügen/Entfernen. Berechtigungsänderungen nennen alte und neue Rolle sowie Freigabe/Sperre. Metadaten zur Veröffentlichung und unterschiedliche private/öffentliche Referenzen desselben Bilds gelten nicht als Inhaltsänderung. Die ausführende Person wird pro bestätigtem Vorgang benannt; Veröffentlichungs-E-Mails sind keine lückenlose Zuordnung jedes Feldes zu früheren Bearbeitern.
+
+Versand bleibt serverseitig an den bestehenden konfigurierten Empfänger, ohne neue Mailberechtigung. Ein Mailfehler macht eine bestätigte Speicherung/Veröffentlichung nicht rückgängig und wird getrennt angezeigt bzw. im vorhandenen Audit protokolliert. Keine automatischen Versandwiederholungen. Keine neue Tabelle, Migration oder kostenpflichtiger Dienst.
+
+## Unabhängiger Supabase-Healthcheck
+
+`.github/workflows/supabase-health.yml` liest täglich um **06:17 UTC** (Wien: 08:17 Sommerzeit / 07:17 Winterzeit) über `scripts/healthcheck.mjs` genau die öffentliche `id=1` aus `bar_published`. Der Lauf ist unabhängig von Gästen, nutzt ausschließlich den vorhandenen öffentlichen Publishable Key und führt einen **GET** aus. Er öffnet keine Webseite, ruft weder `pageview` noch Statistik-RPCs auf und verändert keine Kartendaten, Sitzungen oder Benutzer. Er benötigt keinen Service-Schlüssel und keinen neuen Supabase-Endpunkt.
+
+Der Workflow läuft auf `main`, zusätzlich einmal bei Änderungen an seiner Konfiguration und auf Wunsch über GitHub Actions → **Supabase Healthcheck** → **Run workflow**. Erfolg setzt HTTP 200 und die erwartete öffentliche Zeile voraus; fehlende Daten, Fehler und Timeout ergeben einen fehlgeschlagenen Lauf. Lokal: `node scripts/healthcheck.mjs`.
+
+GitHub Actions verwendet im öffentlichen Repository kostenlose Standardrunner. Zeitgesteuerte Läufe können verzögert werden und werden in öffentlichen Repositories nach 60 Tagen ohne Repositoryaktivität automatisch deaktiviert. Dann den Workflow unter Actions wieder aktivieren. Supabase kann Free-Projekte bei geringer Aktivität pausieren; diese unabhängige Datenbankabfrage ist ein Health-/Keep-alive-Versuch und keine Verfügbarkeitsgarantie. Ein bereits pausiertes Projekt muss im Dashboard wiederhergestellt werden. Quellen: [GitHub-Zeitpläne](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule), [Supabase-Verfügbarkeit](https://supabase.com/docs/guides/deployment/going-into-prod#availability).
+
+Für die Bereitstellung im vorhandenen Supabase-Dashboard erzeugt `node scripts/bundle-backend.mjs` eine einzelne Datei unter `test-results/bar-admin-dashboard.ts`. Sie wird aus den unveränderten Sicherheitsmodulen und dem aktuellen Endpunktcode aufgebaut. Die Datei ist von Git ausgeschlossen; normale CLI-Bereitstellung nutzt weiterhin `supabase/functions/bar-admin`. Vor Dashboardbereitstellung den aktuellen Live-Code sichern und mit der Repositorybasis vergleichen.
+
+Aktuelle Dateiliste, Abnahme und Live-Status: [Prüfbericht vom 07.10.2026](docs/approved-updates-20261007.md).

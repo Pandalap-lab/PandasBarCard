@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {stripTypeScriptTypes} from 'node:module';
 const env={SUPABASE_URL:'https://unit.supabase.co',SUPABASE_SERVICE_ROLE_KEY:'test-only',ADMIN_ORIGIN:'https://pandalap-lab.github.io',GITHUB_REPOSITORY:'Pandalap-lab/PandasBarCard',GITHUB_BRANCH:'main',GITHUB_TOKEN:'test-only',RESEND_API_KEY:'test-only',MAIL_FROM:'test@example.test',SECURITY_EMAIL:'security@example.test'};
 let passkeyGrant=false;
-let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),publishWrites=0,session=true,updates=[],mailRequests=[],version=1;
+let handler,role='admin',aal='aal2',enabled=true,sha='a'.repeat(40),publishWrites=0,session=true,updates=[],mailRequests=[],version=1,saveWrites=0,mailFails=false;
 const id='11111111-1111-4111-8111-111111111111';
 const doc=JSON.parse(readFileSync(new URL('../data/drinks.json',import.meta.url)));
 globalThis.Deno={env:{get:k=>env[k]},serve:fn=>{handler=fn;}};
@@ -22,12 +22,15 @@ globalThis.fetch=async(url,opts={})=>{
  if(path.includes('/storage/v1/object/sign/bar-drafts/'))return respond({signedURL:'/object/sign/bar-drafts/image.webp?token=test'});
  if(path.includes('/storage/v1/object/bar-drafts/'))return respond({Key:path});
  if(path.endsWith('/bar_draft'))return respond({id:1,version,document:doc});
+ if(path.endsWith('/bar_published'))return respond({id:1,revision:1,document:doc});
+ if(path.endsWith('/rpc/bar_save')){saveWrites++;return respond(++version);}
  if(path.endsWith('/rpc/bar_publish')){publishWrites++;return respond(2);}
- if(u.hostname==='api.resend.com'){mailRequests.push(JSON.parse(opts.body));return respond({id:'test'});}
+ if(u.hostname==='api.resend.com'){mailRequests.push(JSON.parse(opts.body));return respond({id:'test'},mailFails?503:200);}
  throw Error('Unexpected mocked request '+path);
 };
-let src=readFileSync(new URL('../supabase/functions/bar-admin/index.ts',import.meta.url),'utf8');
-src=src.replace('npm:@supabase/supabase-js@2.105.0',import.meta.resolve('@supabase/supabase-js')).replace('./mail.js',new URL('../supabase/functions/bar-admin/mail.js',import.meta.url).href).replace('./passkey.js',new URL('../supabase/functions/bar-admin/passkey.js',import.meta.url).href).replace('./policy.js',new URL('../supabase/functions/bar-admin/policy.js',import.meta.url).href);
+let src=readFileSync(new URL(process.env.TEST_BACKEND_BUNDLE?'../test-results/bar-admin-dashboard.ts':'../supabase/functions/bar-admin/index.ts',import.meta.url),'utf8');
+src=src.replace('npm:@supabase/supabase-js@2.105.0',import.meta.resolve('@supabase/supabase-js'));
+for(const name of ['mail','change-mail','passkey','policy'])src=src.replace('./'+name+'.js',new URL('../supabase/functions/bar-admin/'+name+'.js',import.meta.url).href);
 await import('data:text/javascript;base64,'+Buffer.from(stripTypeScriptTypes(src)).toString('base64'));
 const request=(action,origin=env.ADMIN_ORIGIN,fields={})=>{
  const token='x.'+Buffer.from(JSON.stringify({sub:id,aal,session_id:id,exp:Date.now()/1000+900})).toString('base64url')+'.x';
@@ -43,6 +46,20 @@ test('HTTP endpoint rejects origin, disabled users, revoked sessions, missing MF
 });
 test('Publication commits a Supabase snapshot without any GitHub call',async()=>{
  const response=await request('publish');assert.equal(response.status,200);assert.equal((await response.json()).revision,2);assert.equal(publishWrites,1);
+ assert.match(mailRequests.at(-1).text,/Ausgeführt von: test@example.test/);
+ assert.match(mailRequests.at(-1).text,/Keine inhaltlichen Änderungen/);
+});
+
+test('Save checks role/version, explains actual changes and separates failed mail from committed save',async()=>{
+ const edited=structuredClone(doc);edited.drinks[0].price=19.5;
+ role='viewer';assert.equal((await request('save',env.ADMIN_ORIGIN,{document:edited})).status,403);role='admin';
+ assert.equal((await request('save',env.ADMIN_ORIGIN,{document:edited,version:99})).status,409);assert.equal(saveWrites,0);
+ mailFails=true;const r=await request('save',env.ADMIN_ORIGIN,{document:edited});assert.equal(r.status,200);
+ const saved=await r.json();assert.equal(saved.version,2);assert.equal(saved.emailSent,false);assert.equal(saveWrites,1);
+ assert.match(mailRequests.at(-1).text,/Ausgeführt von: test@example.test/);
+ assert.match(mailRequests.at(-1).text,/Preis:.* → .*19,50/);
+ assert.match(mailRequests.at(-1).text,/bis zur Veröffentlichung unverändert/);
+ mailFails=false;
 });
 
 test('Photo upload requires editor MFA and returns only a private storage reference',async()=>{

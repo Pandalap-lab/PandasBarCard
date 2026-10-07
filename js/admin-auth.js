@@ -7,8 +7,12 @@ const message=s=>{$('authMessage').textContent=s;};
 export async function api(action,fields={}){
  const {data:{session}}=await client.auth.getSession();
  if(!session)throw Error('Bitte erneut anmelden.');
- const r=await fetch(config.supabaseUrl+'/functions/v1/bar-admin',{method:'POST',headers:{Authorization:'Bearer '+session.access_token,'Content-Type':'application/json',apikey:config.publishableKey},body:JSON.stringify({action,...fields})});
- const result=await r.json();if(!r.ok)throw Error(result.error||'Server nicht erreichbar.');return result;
+ let r,result;
+ try{
+  r=await fetch(config.supabaseUrl+'/functions/v1/bar-admin',{method:'POST',headers:{Authorization:'Bearer '+session.access_token,'Content-Type':'application/json',apikey:config.publishableKey},body:JSON.stringify({action,...fields}),signal:AbortSignal.timeout(60000)});
+  result=await r.json();
+ }catch{throw Error('Keine Serverbestätigung erhalten. Bitte Serverstand laden und prüfen, bevor du erneut speicherst oder veröffentlichst.');}
+ if(!r.ok)throw Error(result.error||'Server nicht erreichbar.');return result;
 }
 function checked(result){if(result.error)throw result.error;return result.data;}
 const run=fn=>async e=>{e?.preventDefault();try{await fn();}catch(error){message(error.message);}};
@@ -28,7 +32,7 @@ async function ready(){
  $('onlineTools').hidden=false;$('registerPasskey').hidden=!config.passkeysEnabled||!window.PublicKeyCredential||member.aal!=='aal2';
  if(config.passkeysEnabled&&member.aal==='aal2'){try{await passkeys();}catch{message('Passkey-Verwaltung derzeit nicht verfügbar. Passwort/TOTP bleibt nutzbar.');}}
  $('userManagement').hidden=member.role!=='admin';$('auditPanel').hidden=member.role!=='admin';
- const editor=await import('./admin.js?v=20260924-dashboard');await editor.startOnline({api,role:member.role});startDashboard({api,role:member.role});
+ const editor=await import('./admin.js?v=20261007-save');await editor.startOnline({api,role:member.role});startDashboard({api,role:member.role});
 }
 async function passkeys(){
  const keys=checked(await client.auth.passkey.list());$('passkeyList').replaceChildren();
@@ -47,7 +51,7 @@ async function users(){
  }
 }
 export async function init(){
- $('offlineMode').onclick=run(async()=>{if(confirm('Nur lokalen Entwurf öffnen? Hier sind keine Online-Veröffentlichungen möglich.')){const m=await import('./admin.js?v=20260924-dashboard');await m.startOffline();startDashboard({role:'offline'});message('Lokaler Entwurfsmodus ohne Online-Zugriff.');}});
+ $('offlineMode').onclick=run(async()=>{if(confirm('Nur lokalen Entwurf öffnen? Hier sind keine Online-Veröffentlichungen möglich.')){const m=await import('./admin.js?v=20261007-save');await m.startOffline();startDashboard({role:'offline'});message('Lokaler Entwurfsmodus ohne Online-Zugriff.');}});
  try{
   config=await (await fetch('./config.json',{cache:'no-store'})).json();
   if(!config.supabaseUrl||!config.publishableKey){message('Online-Administration noch nicht eingerichtet. Die lokale Entwurfsfunktion bleibt verfügbar.');$('loginForm').inert=true;return;}
