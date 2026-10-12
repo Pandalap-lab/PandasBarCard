@@ -1,0 +1,27 @@
+name: Cloudflare Card Healthcheck
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cloudflare-health.yml'
+      - 'scripts/cloudflare-healthcheck.mjs'
+  schedule:
+    - cron: '43 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cloudflare-card-health
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    env:
+      CARD_MONITOR_ORIGIN: https://pandasbarcard.pandanuovo.com/candidate-test
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # existing pinned v4.2.2
+        with:
+          persist-credentials: false
+      - name: Check external HTTPS and complete public inventory without counting visitors
+        run: node scripts/cloudflare-healthcheck.mjs
